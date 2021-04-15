@@ -2,15 +2,17 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
+
 from .models import Plant
 from .serializers.common import PlantSerializer
+from .serializers.populated import PopulatedPlantSerializer
 
 class PlantListView(APIView):
     
     # ALL PLANTS
     def get(self, _request):
         plants = Plant.objects.all() # return everything from the db
-        serialized_plants = PlantSerializer(plants, many=True) # convert the data
+        serialized_plants = PopulatedPlantSerializer(plants, many=True) # convert the data
         return Response(serialized_plants.data, status=status.HTTP_200_OK)
 
     def post(self, request):
@@ -33,7 +35,7 @@ class PlantDetailView(APIView):
     # ONE PLANT
     def get(self, _request, pk):
         plant = Plant.objects.get(pk=pk)
-        serialized_plant = PlantSerializer(plant)
+        serialized_plant = PopulatedPlantSerializer(plant)
         return Response(serialized_plant.data, status=status.HTTP_200_OK)
 
     def delete(self, _request, pk):

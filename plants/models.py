@@ -10,6 +10,7 @@ class Plant(models.Model):
     image = models.CharField(max_length=1000)
     decorative_bonus = models.PositiveIntegerField()
     average_price = models.PositiveIntegerField()
+    categories = models.ManyToManyField('categories.Categories', related_name="plants")
 
     def __str__(self):
         return f"{self.plant_name} - {self.scientific_name}"
