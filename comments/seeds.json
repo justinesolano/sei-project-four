@@ -1,0 +1,38 @@
+[
+{
+  "model": "comments.comment",
+  "pk": 1,
+  "fields": {
+    "text": "My favourite plant!",
+    "created_at": "2021-04-15T21:46:17.835Z",
+    "plant": 4
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 2,
+  "fields": {
+    "text": "Love the flower - so beautiful.",
+    "created_at": "2021-04-15T21:54:57.714Z",
+    "plant": 3
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 3,
+  "fields": {
+    "text": "A classic!",
+    "created_at": "2021-04-15T21:55:07.980Z",
+    "plant": 1
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 4,
+  "fields": {
+    "text": "Looks so beautiful near my fireplace :D",
+    "created_at": "2021-04-15T21:55:27.373Z",
+    "plant": 2
+  }
+}
+]

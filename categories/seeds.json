@@ -1,0 +1,16 @@
+[
+{
+  "model": "categories.categories",
+  "pk": 1,
+  "fields": {
+    "name": "Flower"
+  }
+},
+{
+  "model": "categories.categories",
+  "pk": 2,
+  "fields": {
+    "name": "No Flower"
+  }
+}
+]
