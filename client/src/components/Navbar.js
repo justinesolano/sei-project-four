@@ -6,7 +6,7 @@ import titlelogo from '../assets/titlelogo.png'
 
 const Navbar = () => {
   return (
-    <nav className="navbar-parent">
+    <div className="ui secondary menu">
       <div className="left-nav">
         <Link to="/home">
           <img src={titlelogo} className="greenhouse-logo" />
@@ -23,7 +23,7 @@ const Navbar = () => {
           Register
         </Link>
       </div>
-    </nav>
+    </div>
   )
 }
 
