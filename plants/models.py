@@ -13,7 +13,7 @@ class Plant(models.Model):
     categories = models.ManyToManyField('categories.Categories', related_name="plants")
     owner = models.ForeignKey(
         'jwt_auth.User',
-        related_name='created_meals',
+        related_name='created_plants',
         on_delete = models.CASCADE
     )
 

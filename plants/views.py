@@ -9,8 +9,7 @@ from .serializers.common import PlantSerializer
 from .serializers.populated import PopulatedPlantSerializer
 
 class PlantListView(APIView):
-
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     
     # ALL PLANTS
     def get(self, _request):
