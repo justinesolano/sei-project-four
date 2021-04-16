@@ -18,6 +18,8 @@ const Register = () => {
 
   // const [upload, setUpload] = useState(null)
 
+  const [errors, setErrors] = useState('')
+
   const handleChange = event => {
     const newForm = { ...form, [event.target.name]: event.target.value }
     setForm(newForm)
@@ -32,13 +34,17 @@ const Register = () => {
   // }
 
   const handleSubmit = async event => {
-    event.preventDefault()
     try {
-      const response = await axios.post('/api/register/', form)
-      history.push('/login')
-      console.log(response)
+      event.preventDefault()
+      await axios.post('/api/auth/register/', form)
+      const response = await axios.post('/api/auth/login/', 
+        { email: form.email, password: form.password })
+      window.localStorage.setItem('token', response.data.token)
+      history.push('/home')
     } catch (err) {
-      console.log(err)
+      setErrors('ui red')
+      // window.alert('Your email or username is already in use.')
+      // console.log(err)
     }
   }
   // email
@@ -53,7 +59,7 @@ const Register = () => {
         <div className="required field">
           <label>Email</label>
           <input
-            className="register-input"
+            className={`input ${errors}`}
             placeholder="Email"
             type="text"
             name="email"
@@ -116,6 +122,7 @@ const Register = () => {
             onChange={handleChange}  
           />
         </div>
+        <button className="ui green button" type="submit">Submit!</button>
       </form>
     </body>
   )
