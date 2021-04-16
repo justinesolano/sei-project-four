@@ -33,10 +33,14 @@ const Register = () => {
   //   axios.post('')
   // }
 
+  const signUp = () => {
+    return axios.post('/api/auth/register/', form)
+  }
+
   const handleSubmit = async event => {
+    event.preventDefault
     try {
-      event.preventDefault()
-      await axios.post('/api/auth/register/', form)
+      await signUp(form)
       const response = await axios.post('/api/auth/login/', 
         { email: form.email, password: form.password })
       window.localStorage.setItem('token', response.data.token)
