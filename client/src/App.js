@@ -5,7 +5,7 @@ const App = () => {
   useEffect(() => {
     const getData = async () => {
       const res = await fetch('/api/plants')
-      console.log(await res.json())
+      console.log(res.json())
     }
     getData()
   }, [])
