@@ -2,55 +2,38 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
-
 const Register = () => {
-
-  const history = useHistory()
-
   const [form, setForm] = useState({
+    username: '',
     firstName: '',
     lastName: '',
-    username: '',
     email: '',
     password: '',
     passwordConfirmation: '',
   })
 
-  // const [upload, setUpload] = useState(null)
-
-  const [errors, setErrors] = useState('')
+  const history = useHistory()
 
   const handleChange = event => {
     const newForm = { ...form, [event.target.name]: event.target.value }
     setForm(newForm)
   }
-
-  // const fileSelected = event => {
-  //   console.log(event.target.files[0])
-  // }
-
-  // const fileUpload = () => {
-  //   axios.post('')
-  // }
-
-  const signUp = () => {
-    return axios.post('/api/auth/register/', form)
-  }
-
   const handleSubmit = async event => {
-    event.preventDefault
     try {
-      await signUp(form)
-      const response = await axios.post('/api/auth/login/', 
-        { email: form.email, password: form.password })
+      event.preventDefault()
+      await axios.post('/api/auth/register/', form)
+      const response = await axios.post('/api/auth/login/', { email: form.email, password: form.password })
       window.localStorage.setItem('token', response.data.token)
       history.push('/home')
     } catch (err) {
-      setErrors('ui red')
+      setErrors('button error')
       // window.alert('Your email or username is already in use.')
-      // console.log(err)
+      console.log(err)
     }
   }
+
+  const [errors, setErrors] = useState('')
+
   // email
   // first_name
   // last name

@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="ui secondary menu">
       <div className="left-nav">
-        <Link to="/home">
+        <Link to="/">
           <img src={titlelogo} className="greenhouse-logo" />
         </Link>
         <Link to="/explore">
