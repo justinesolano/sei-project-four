@@ -19,6 +19,7 @@ class PlantListView(APIView):
         return Response(serialized_plants.data, status=status.HTTP_200_OK)
 
     def post(self, request):
+        request.data["owner"] = request.user.id
         plant_to_add = PlantSerializer(data=request.data)
         if plant_to_add.is_valid():
             plant_to_add.save()
