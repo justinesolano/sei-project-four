@@ -2,8 +2,7 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth import get_user_model
 from django.conf import settings
-
-import jwt
+import jwt 
 
 User = get_user_model()
 
@@ -19,7 +18,7 @@ class JWTAuthentication(BasicAuthentication):
         token = header.replace('Bearer ', '')
 
         try:
-            payload = jwt.decode(token, settings.SECRET_KEY, algoritms=['HS256'])
+            payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
             user = User.objects.get(pk=payload.get('sub'))
 
         except jwt.exceptions.InvalidTokenError:
