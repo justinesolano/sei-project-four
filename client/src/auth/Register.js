@@ -21,8 +21,8 @@ const Register = () => {
   const handleSubmit = async event => {
     try {
       event.preventDefault()
-      await axios.post('/api/auth/register/', form)
-      const response = await axios.post('/api/auth/login/', { email: form.email, password: form.password })
+      await axios.post('/api/register/', form)
+      const response = await axios.post('/api/login/', { email: form.email, password: form.password })
       window.localStorage.setItem('token', response.data.token)
       history.push('/home')
     } catch (err) {

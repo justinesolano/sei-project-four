@@ -22,9 +22,9 @@ const Login = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('/api/login', formInfo)
+      const response = await axios.post('/api/login/', formInfo)
       window.localStorage.setItem('token', response.data.token)
-      history.push('/home')
+      history.push('/home/')
     } catch (err){
       setErrors('button error')
       console.log(err)

@@ -11,6 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
     password_confirmation = serializers.CharField(write_only=True)
 
     def validate(self, data):
+        # remove password & password confirmation from the dict 
         password = data.pop('password')
         password_confirmation = data.pop('password_confirmation')
         
