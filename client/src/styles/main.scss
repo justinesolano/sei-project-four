@@ -1,7 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import "semantic-ui-css/semantic.min.css";
 
-.left-nav{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-top: 0px;
+}
+// NAVBAR
+.logo-nav{
+  display: flex;
+  justify-content: center;
+}
+.ui.menu {
   font-family: 'Open Sans Condensed', sans-serif;
+  // font-size: 10px;
+  // display: flex;
+  // justify-content: space-around;
+  // min-height: 8vh;
+  // height: 65px;
+  // font-family: 'Helvetica';
+  // z-index: 1;
+  // width: 100%;
+}
+.item{
+  font-size: 13px;
+}
+
+// PLANT INDEX
+// .plant-index-parent{
+//   margin: 10px;
+// }
+.ui.four.column.grid.cards{
+  margin: 10px;
+}
+.avg-price{
+  color: black;
 }

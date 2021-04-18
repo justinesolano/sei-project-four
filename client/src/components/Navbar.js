@@ -2,28 +2,64 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // import greenhouselogo from '../assets/greenhouselogo.png'
 import titlelogo from '../assets/titlelogo.png'
-
+import { userIsAuthenticated /*getPayloadFromToken*/ } from './helpers/auth'
+import { Menu } from 'semantic-ui-react'
 
 const Navbar = () => {
+
+  // const [show, handleShow] = useState(false)
+
+  const handleLogout = () => {
+    window.localStorage.removeItem('token')
+    history.push('/')
+  }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () => {
+  //     if (window.scrollY > 10) {
+  //       handleShow(true)
+  //     } else handleShow(false)
+  //   })
+  //   return () => {
+  //     window.removeEventListener('scroll', window)
+  //   }
+  // }, [])
+
   return (
-    <div className="ui secondary menu">
-      <div className="left-nav">
-        <Link to="/">
-          <img src={titlelogo} className="greenhouse-logo" />
-        </Link>
-        <Link to="/explore">
+    <Menu className="ui menu">
+      <div className="left menu">
+        <Link to="/explore" className="item">
           Explore
         </Link>
+        <Link to="/allplants" className="item">
+          All Plants
+        </Link>
       </div>
-      <div className="right-nav">
-        <Link to="/login">
+      <Menu.Item className="logo-nav" position="right">
+        <Link to="/" className="logo centered">
+          <img src={titlelogo} className="greenhouse-logo" />
+        </Link>
+      </Menu.Item>
+      <div className="right menu">              
+        { !userIsAuthenticated() &&
+      <>
+        <Link to="/login" className="item">
           Login
         </Link>
-        <Link to="/register">
+        <Link to="/register" className="item">
           Register
         </Link>
+      </>
+        }
+        { userIsAuthenticated() &&
+      <>
+        <Link to="/login" className="item" onClick={handleLogout}>
+          Logout
+        </Link>
+      </>
+        }
       </div>
-    </div>
+    </Menu>
   )
 }
 

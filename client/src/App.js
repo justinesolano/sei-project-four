@@ -4,8 +4,11 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Register from './auth/Register'
 import Login from './auth/Login'
-import ExplorePlants from './components/ExplorePlants'
+import PlantIndex from './components/PlantIndex'
 import UserProfile from './components/UserProfile'
+import PlantCard from './components/PlantCard'
+import PlantShow from './components/PlantShow'
+
 
 
 const App = () => {
@@ -23,11 +26,17 @@ const App = () => {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/explore">
-          <ExplorePlants />
+        <Route path="/allplants">
+          <PlantIndex />
+        </Route>
+        <Route path="/plants">
+          <PlantCard />
         </Route>
         <Route exact path='/profile/:id'> 
           <UserProfile />
+        </Route>
+        <Route exact path='/:plant_name'> 
+          <PlantShow />
         </Route>
       </Switch>
     </BrowserRouter>

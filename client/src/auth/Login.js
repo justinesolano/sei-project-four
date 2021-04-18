@@ -45,6 +45,18 @@ const Login = () => {
             onChange={handleChange}  
           />
         </div>
+        <div className="field">
+          <label>Password</label>
+          <input
+            className={`input ${errors}`}
+            placeholder="Password"
+            type="password"
+            name="password"
+            value={formInfo.password}
+            onChange={handleChange}  
+          />
+        </div>
+        <button className="ui green button" type="submit">Submit!</button>
       </form>
     </body>
   )
