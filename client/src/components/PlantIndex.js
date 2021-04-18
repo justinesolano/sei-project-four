@@ -22,6 +22,7 @@ const Plants = () => {
     getData()
   }, [])
 
+  if (!plants) return null
 
   return (
     <>

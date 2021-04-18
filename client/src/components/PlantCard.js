@@ -3,15 +3,18 @@ import React from 'react'
 import cannotLoad from '../assets/cannotload.png'
 // import Plants from './PlantIndex'
 
-const PlantCard = ({ plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice }) => {
+const PlantCard = ({ plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice, description }) => {
 
   console.log('maintenanceLevel', maintenancelevel)
 
   return (
     <div className="ui link cards">
       <div className="card">
-        <div className="image">
+        <div className="image card-hover">
           <img src={image} alt={cannotLoad} />
+          <div className="overlay">
+            <div className="description">{description}</div>
+          </div>
         </div>
         <div className="content">
           <div className="header"> 

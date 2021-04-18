@@ -26,7 +26,7 @@ const Navbar = () => {
   // }, [])
 
   return (
-    <Menu className="ui menu">
+    <Menu className="ui borderless menu">
       <div className="left menu">
         <Link to="/explore" className="item">
           Explore
