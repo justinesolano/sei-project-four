@@ -46,7 +46,14 @@ class LoginView(APIView):
 
         return Response({'token': token, 'message': f'Welcome back {user_to_login.first_name}'})
 
-    # * GET USER
+# * GET ALL USERS
+class User(APIView):
+    def get(self, _request):
+        users = User.objects.all() # return everything from the db
+        serialized_user = UserSerializer(users, many=True) # convert the data
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+# * GET USER
 class UserView(APIView):
     def get_user(self, pk):
         try:
