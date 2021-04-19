@@ -5,8 +5,8 @@ import axios from 'axios'
 const Register = () => {
   const [form, setForm] = useState({
     username: '',
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     email: '',
     password: '',
     password_confirmation: '',
@@ -23,12 +23,13 @@ const Register = () => {
     event.preventDefault()
     try {
       // await axios.post('/api/auth/register/', form)
-      const response = await axios.post('/api/auth/register/', form)
+      await axios.post('/api/auth/register/', form)
+      const response = await axios.post('/api/auth/login/', { email: form.email, password: form.password })
       window.localStorage.setItem('token', response.data.token)
-      history.push('/home')
+      history.push('/')
     } catch (err) {
       setErrors('button error')
-      // window.alert('Your email or username is already in use.')
+      window.alert('Your email or username is already in use.')
       console.log(err)
     }
   }
@@ -61,7 +62,7 @@ const Register = () => {
             className="register-input"
             placeholder="First Name"
             type="text"
-            name="firstName"
+            name="first_name"
             value={form.firstName}
             onChange={handleChange}  
           />
@@ -72,7 +73,7 @@ const Register = () => {
             className="register-input"
             placeholder="Last Name"
             type="text"
-            name="lastName"
+            name="last_name"
             value={form.lastName}
             onChange={handleChange}  
           />

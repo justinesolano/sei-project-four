@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import titlelogo from '../assets/titlelogo.png'
 import { userIsAuthenticated /*getPayloadFromToken*/ } from './helpers/auth'
 import { Menu } from 'semantic-ui-react'
+// import { userIsAuthenticated, getPayloadFromToken } from '../helpers/auth'
+
 
 const Navbar = () => {
 
