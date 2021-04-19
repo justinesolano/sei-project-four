@@ -1,6 +1,6 @@
 import React from 'react'
 // import axios from 'axios'
-import Slider from './slide/Slider'
+import Sliders from './slide/Sliders'
 
 const Home = () => {
 
@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div>
-      <Slider
+      <Sliders
       />
       <h1>Hello</h1>
     </div>
