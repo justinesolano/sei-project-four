@@ -9,12 +9,23 @@ const Home = () => {
   const [favourites, setFavourites] = useState(null)
   const [newFavourites, setNewFavourites] = useState(null)
 
+  // setNewFavourites = setMyNewList
 
   useEffect(() => {
-    if (user.id === getPayloadFromToken().sub) {
-      setMyNewList(user.myList)
-      setMyList(user.myList)
+    const getUsers = async () => {
+      try {
+        const response = await axios.get('/api/profiles/')
+        response.data.map(user => {
+          if (user.id === getPayloadFromToken().sub) {
+            setNewFavourites(user.myList)
+            setFavourites(user.myList)
+          }
+        })
+      } catch (err) {
+        console.log(err)
+      }
     }
+    getUsers()
   })
 
   const handleFavourite = async (event) => {
@@ -46,6 +57,7 @@ const Home = () => {
     <div>
       <Sliders
       />
+      <h1>Hello</h1>
       <Favourites
         newFavourites={newFavourites}
         handleFavourite={handleFavourite}

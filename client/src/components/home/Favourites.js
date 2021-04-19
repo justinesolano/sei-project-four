@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 // import { Slide } from 'react-slideshow-image'
 // import Whirligig from 'react-whirligig'
-import Favourites from './Favourites'
+import FavouriteCard from './FavouriteCard'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 // import 'slick-carousel/slick/slick.css'
 // import 'slick-carousel/slick/slick-theme.css'
 
-const Sliders = ({ plantname }) => {
+const Favourites = ({ plantname, newFavourites }) => {
   const [plants, setPlants] = useState(null)
   // console.log('PLANTS', plants)
 
@@ -48,9 +48,9 @@ const Sliders = ({ plantname }) => {
       {plants &&
           <div>
             <Slider {...config}>
-              {plants.map(plant => (
-                <Link to={`/${plant.plantname}`} key={`/${plant.id}`}  >
-                  <Favourites key={plantname} {...plant} />
+              {newFavourites.map(favourite => (
+                <Link to={`/${favourite.plantname}`} key={`/${favourite.id}`}  >
+                  <FavouriteCard key={plantname} {...favourite} />
                 </Link>
               ))}
             </Slider>
@@ -60,4 +60,4 @@ const Sliders = ({ plantname }) => {
   )
 }
 
-export default Sliders
+export default Favourites
