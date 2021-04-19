@@ -1,13 +1,13 @@
 import React from 'react'
 
-const  Slide = ( { image } ) => {
+const  SlideShow = ( { image } ) => {
+  
   return (
     <div>
       <div className="each-slide">
         <div>
           <span> 
-            <img src={image} />
-            Hello
+            <img src={image} className="slide-image"/>
           </span>
         </div>
       </div>
@@ -15,4 +15,4 @@ const  Slide = ( { image } ) => {
   )
 }
 
-export default  Slide
+export default SlideShow

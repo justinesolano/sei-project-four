@@ -4,6 +4,8 @@
 @import "semantic-ui-css/semantic.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
+@import "react-slideshow-image/dist/styles.css";
+
 *{
   margin: 0;
   padding: 0;
@@ -28,11 +30,31 @@
 .slider{
   height: 50vh;
 }
+// .slider-container{
+//   height: 300px;
+//   width: 300px;
+// }
+
+.each-slide > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+.slide-image{
+  height: 300px;
+  width: 300px;
+}
 
 // PLANT INDEX
-// .plant-index-parent{
-//   margin: 10px;
-// }
 .ui.four.column.grid.cards{
   margin: 10px;
 }
@@ -42,7 +64,6 @@
 .avg-price{
   color: black;
   font-family: 'Comfortaa', cursive;
-  // font-weight: bolder;
 }
 // IMAGE ON HOVER SHOW DESCRIPTION
 .overlay {
@@ -56,7 +77,6 @@
   opacity: 0;
   transition: .5s ease;
   background-color: rgba(22, 95, 78, 0.6);
-  // background: linear-gradient(to bottom, rgba(162, 222, 208, 0.5), rgba(0,0,0,.3));
 }
 .image.card-hover:hover .overlay {
   opacity: 1;

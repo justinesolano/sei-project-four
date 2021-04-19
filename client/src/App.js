@@ -8,8 +8,7 @@ import PlantIndex from './components/PlantIndex'
 import UserProfile from './components/UserProfile'
 import PlantCard from './components/PlantCard'
 import PlantShow from './components/PlantShow'
-
-
+// import Slider from './components/slide/Slider.js'
 
 const App = () => {
 
