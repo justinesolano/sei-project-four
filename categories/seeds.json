@@ -12,5 +12,26 @@
   "fields": {
     "name": "No Flower"
   }
+},
+{
+  "model": "categories.categories",
+  "pk": 3,
+  "fields": {
+    "name": "Easy Care"
+  }
+},
+{
+  "model": "categories.categories",
+  "pk": 4,
+  "fields": {
+    "name": "Almost unkillable"
+  }
+},
+{
+  "model": "categories.categories",
+  "pk": 5,
+  "fields": {
+    "name": "High maintenance"
+  }
 }
 ]
