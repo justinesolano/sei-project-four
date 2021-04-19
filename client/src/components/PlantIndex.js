@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import PlantCard from  './PlantCard'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+// import { Button } from 'semantic-ui-react'
 
 
 const Plants = () => {
@@ -31,9 +32,9 @@ const Plants = () => {
         {plants &&
           <div className="ui four column grid cards">
             { plants.map(plant => (
-              <Link to={`/${plant.plantname}`} key="linkcard">
+              <div key="plant">
                 <PlantCard key={plant._id} {...plant} />
-              </Link>
+              </div>
             ))}
           </div>
         }
