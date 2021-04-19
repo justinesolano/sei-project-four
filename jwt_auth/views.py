@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import PermissionDenied # from login
+from rest_framework.exceptions import PermissionDenied, NotFound # from login
 from django.contrib.auth import get_user_model
 from datetime import datetime, timedelta # from login
 from django.conf import settings # from login
@@ -45,3 +45,24 @@ class LoginView(APIView):
         )
 
         return Response({'token': token, 'message': f'Welcome back {user_to_login.first_name}'})
+
+    # * GET USER
+class UserView(APIView):
+    def get_user(self, pk):
+        try:
+            return User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            raise NotFound(detail="🤥 That user does not exist!")
+
+    def get(self, _request, pk):
+        user = self.get_user(pk=pk)
+        serialized_user = UserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+    def put(self, request, pk):
+        user_to_edit = User.objects.get(pk=pk)
+        updated_user = UserSerializer(user_to_edit, data=request.data)
+        if updated_user.is_valid():
+            updated_user.save()
+            return Response(updated_user.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_user.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
