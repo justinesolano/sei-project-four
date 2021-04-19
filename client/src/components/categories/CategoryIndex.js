@@ -2,6 +2,8 @@ import axios from 'axios'
 // import { get } from 'mongoose'
 import React, { useState, useEffect } from 'react'
 import Slider from 'react-slick'
+import { Link } from 'react-router-dom'
+
 
 function CategoryIndex() {
 
@@ -49,10 +51,12 @@ function CategoryIndex() {
       <h1 className="browse">Categories</h1>
       <div className="slider-container">
         <Slider {...config}>
-          <div className="each-slide">
-            <h2>No Flower</h2>
-            <img src={noFlower} className="slide-image"/>
-          </div>
+          <Link to="/search">
+            <div className="each-slide">
+              <h2>No Flower</h2>
+              <img src={noFlower} className="slide-image"/>
+            </div>
+          </Link>
           <div className="each-slide">
             <h2>Has Flowers</h2>
             <img src={flower} className="slide-image"/>

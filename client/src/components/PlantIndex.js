@@ -5,9 +5,10 @@ import PlantCard from  './PlantCard'
 // import { Button } from 'semantic-ui-react'
 
 
-const Plants = () => {
+const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenance }*/) => {
 
   const [plants, setPlants] = useState(null)
+  const [filteredPlants, setFilteredPlants] = useState([])
   // console.log('PLANTS', plants)
 
   useEffect(() => {
@@ -23,21 +24,48 @@ const Plants = () => {
     getData()
   }, [])
 
+  const handleChange = (event) => {
+    const filteredArray = plants.filter(plant => {
+      return plant.plantname.toUpperCase().includes(event.target.value.toUpperCase())
+    })
+    setFilteredPlants(filteredArray)
+    console.log(event.target.value)
+  }
+
   if (!plants) return null
+
+  // var categoryContent = [
+  //   { category: flower, title: 'Has flowers' },
+  //   { category: noFlower, title: 'No flowers' },
+  //   { category: almostUnkillable, title: 'Almost unkillable' },
+  //   { category: easyCare, title: 'Easy care' },
+  //   { category: highMaintenance, title: 'Needs love' }
+  // ]
+  
 
   return (
     <>
+      <div className="ui search">
+        <div className="ui icon input">
+          <input className="prompt" type="text" placeholder="Find your ideal plant..." onChange={handleChange} />
+          <i className="search-icon"></i>
+        </div>
+        <div className="results"> </div>
+      </div>
       <h1 className="browse">Browse</h1>
       <div className="plant-index-parent">
-        {plants &&
-          <div className="ui four column grid cards">
-            { plants.map(plant => (
+        {/* {plants && */}
+        <div className="ui four column grid cards">
+          {(filteredPlants.length > 0 ? filteredPlants : plants).map(plant=> {
+            return <div key={plant.id}> <PlantCard key={plant._id} {...plant} /> </div>
+          })}
+          {/* { plants.map(plant => (
               <div key="plant">
                 <PlantCard key={plant._id} {...plant} />
               </div>
-            ))}
-          </div>
-        }
+            ))} */}
+        </div>
+        {/* } */}
       </div>
     </>
   )
