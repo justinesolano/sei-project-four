@@ -14,15 +14,15 @@ const Login = () => {
 
   const history = useHistory()
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const newFormInfo = { ...formInfo, [event.target.name]: event.target.value }
     setFormInfo(newFormInfo)
   }
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await axios.post('/api/login/', formInfo)
+      const response = await axios.post('/api/auth/login/', formInfo)
       window.localStorage.setItem('token', response.data.token)
       history.push('/home/')
     } catch (err){

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 const Register = () => {
@@ -12,17 +12,18 @@ const Register = () => {
     passwordConfirmation: '',
   })
 
-  const history = useHistory()
+  // const history = useHistory()
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const newForm = { ...form, [event.target.name]: event.target.value }
     setForm(newForm)
   }
-  const handleSubmit = async event => {
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
     try {
-      event.preventDefault()
-      await axios.post('/api/register/', form)
-      const response = await axios.post('/api/login/', { email: form.email, password: form.password })
+      // await axios.post('/api/auth/register/', form)
+      const response = await axios.post('/api/auth/register/', form)
       window.localStorage.setItem('token', response.data.token)
       history.push('/home')
     } catch (err) {

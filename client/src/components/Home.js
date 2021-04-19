@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Sliders from './home/Sliders'
+// import Sliders from './home/Sliders'
 import Favourites from './home/Favourites'
 import { getPayloadFromToken } from './helpers/auth'
 
@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const response = await axios.get('/api/profiles/')
+        const response = await axios.get('/api/auth/profiles/')
         response.data.map(user => {
           if (user.id === getPayloadFromToken().sub) {
             setNewFavourites(user.myList)
@@ -54,10 +54,11 @@ const Home = () => {
 
 
   return (
-    <div>
-      <Sliders
-      />
-      <h1>Hello</h1>
+    <div className>
+      {/* <Sliders
+      /> */}
+      <div> Hello</div>
+      <div className="ui divider"></div>
       <Favourites
         newFavourites={newFavourites}
         handleFavourite={handleFavourite}

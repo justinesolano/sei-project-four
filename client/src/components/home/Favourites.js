@@ -45,16 +45,18 @@ const Favourites = ({ plantname, newFavourites }) => {
 
   return (
     <div className="slider-container">
-      {plants &&
-          <div>
-            <Slider {...config}>
-              {newFavourites.map(favourite => (
-                <Link to={`/${favourite.plantname}`} key={`/${favourite.id}`}  >
-                  <FavouriteCard key={plantname} {...favourite} />
-                </Link>
-              ))}
-            </Slider>
-          </div>
+      {newFavourites ?
+        <div>
+          <Slider {...config} className="slider">
+            {newFavourites.map(favourite => {
+              <Link to={`/${favourite.plantname}`} key={`/${favourite.id}`}  >
+                <FavouriteCard key={plantname} {...favourite} />
+              </Link>
+            })}
+          </Slider>
+        </div>
+        :
+        <div></div>
       }
     </div>
   )

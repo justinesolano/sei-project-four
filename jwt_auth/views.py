@@ -14,7 +14,7 @@ from .serializers.common import UserSerializer
 User = get_user_model()
 
 class RegisterView(APIView):
-    
+
     def post(self, request):
         user_to_create = UserSerializer(data=request.data)
         if user_to_create.is_valid():
