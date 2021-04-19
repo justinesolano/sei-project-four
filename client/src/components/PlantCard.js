@@ -5,7 +5,9 @@ import cannotLoad from '../assets/cannotload.png'
 
 const PlantCard = ({ plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice, description }) => {
 
-  console.log('maintenanceLevel', maintenancelevel)
+  // const { plantname: plantName } = plant()
+
+  // console.log('maintenanceLevel', plantname)
 
   return (
     <div className="ui link cards">

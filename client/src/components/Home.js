@@ -4,6 +4,10 @@ import Slider from './slide/Slider'
 
 const Home = () => {
 
+  // const [myList, setMyList] = useState(null)
+  // const [myNewList, setMyNewList] = useState(null)
+
+
   return (
     <div>
       <Slider
