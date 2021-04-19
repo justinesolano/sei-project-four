@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 
 
-const PlantCard = ({ plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice, description, handleMyList  }) => {
+const PlantCard = ({ id, plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice, description, handleMyList  }) => {
 
   // const { plantname: plantName } = plant()
 
@@ -14,7 +14,7 @@ const PlantCard = ({ plantname, scientificname, image, maintenancelevel, decorat
 
   return (
     <>
-      <Link to={`/${plantname}`} key="linkcard">
+      <Link to={`/plants/${id}`} key="linkcard">
         <div className="ui link cards">
           <div className="card">
             <div className="image card-hover">

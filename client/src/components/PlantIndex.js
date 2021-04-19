@@ -9,6 +9,8 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
 
   const [plants, setPlants] = useState(null)
   const [filteredPlants, setFilteredPlants] = useState([])
+  const [errors, setErrors] = useState('')
+
   // console.log('PLANTS', plants)
 
   useEffect(() => {
@@ -25,11 +27,21 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
   }, [])
 
   const handleChange = (event) => {
-    const filteredArray = plants.filter(plant => {
-      return plant.plantname.toUpperCase().includes(event.target.value.toUpperCase())
-    })
-    setFilteredPlants(filteredArray)
-    console.log(event.target.value)
+    try {
+      const filteredArray = plants.filter(plant => {
+        return plant.plantname.toUpperCase().includes(event.target.value.toUpperCase()) || plant.scientificname.toUpperCase().includes(event.target.value.toUpperCase())
+      })
+      setFilteredPlants(filteredArray)
+      if (filteredArray.length === 0) {
+        setErrors('error')
+      } else {
+        console.log('Yay!')
+      }
+      console.log(event.target.value)
+    } catch (err){
+      console.log(err)
+    }
+
   }
 
   if (!plants) return null
@@ -41,12 +53,14 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
   //   { category: easyCare, title: 'Easy care' },
   //   { category: highMaintenance, title: 'Needs love' }
   // ]
+
+  
   
 
   return (
     <>
       <div className="ui search">
-        <div className="ui icon input">
+        <div className={`ui icon input ${errors}`}>
           <input className="prompt" type="text" placeholder="Find your ideal plant..." onChange={handleChange} />
           <i className="search-icon"></i>
         </div>

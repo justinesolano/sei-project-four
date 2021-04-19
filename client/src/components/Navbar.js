@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 // import greenhouselogo from '../assets/greenhouselogo.png'
 import titlelogo from '../assets/titlelogo.png'
-import { userIsAuthenticated /*getPayloadFromToken*/ } from './helpers/auth'
+import { userIsAuthenticated, getPayloadFromToken } from './helpers/auth'
 import { Menu } from 'semantic-ui-react'
 // import { userIsAuthenticated, getPayloadFromToken } from '../helpers/auth'
 
@@ -16,7 +16,7 @@ const Navbar = () => {
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     history.push('/')
-    // location.reload()
+    location.reload()
   }
 
   // useEffect(() => {
@@ -29,6 +29,7 @@ const Navbar = () => {
   //     window.removeEventListener('scroll', window)
   //   }
   // }, [])
+  const profileId = getPayloadFromToken().sub
 
   return (
     <Menu className="ui borderless menu">
@@ -58,6 +59,9 @@ const Navbar = () => {
         }
         { userIsAuthenticated() &&
       <>
+        <Link to={`/profile/${profileId}`}  className="item">
+          My profile
+        </Link>
         <Link to="/login" className="item" onClick={handleLogout}>
           Logout
         </Link>

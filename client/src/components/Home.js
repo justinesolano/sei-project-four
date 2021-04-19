@@ -61,7 +61,7 @@ const Home = () => {
       />
       <div> Hello</div>
       <div className="ui divider"></div>
-      <Link to="/search">
+      <Link to="/allplants">
         <CategoryIndex
         />
       </Link>

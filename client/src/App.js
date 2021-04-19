@@ -8,7 +8,7 @@ import PlantIndex from './components/PlantIndex'
 import UserProfile from './components/UserProfile'
 // import PlantCard from './components/PlantCard'
 import PlantShow from './components/PlantShow'
-import Search from './components/Search'
+// import Search from './components/Search'
 // import Slider from './components/slide/Slider.js'
 import CategoryIndex from './components/categories/CategoryIndex'
 
@@ -33,16 +33,16 @@ const App = () => {
         {/* <Route path="/plants">
           <PlantCard />
         </Route> */}
-        <Route path="/categories/">
+        <Route path="/categories">
           <CategoryIndex />
         </Route>
-        <Route path="/search">
+        {/* <Route path="/search">
           <Search />
-        </Route>
-        <Route exact path='/profile/:id'> 
+        </Route> */}
+        <Route exact path="/profile/:id"> 
           <UserProfile />
         </Route>
-        <Route exact path='/:plant_name'> 
+        <Route path="/plants/:id"> 
           <PlantShow />
         </Route>
       </Switch>
