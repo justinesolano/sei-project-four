@@ -5,11 +5,11 @@ import axios from 'axios'
 const Register = () => {
   const [form, setForm] = useState({
     username: '',
-    firstName: '',
-    lastName: '',
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
   })
 
   // const history = useHistory()
@@ -105,7 +105,7 @@ const Register = () => {
             className="register-input"
             placeholder="Password Confirmation"
             type="password"
-            name="passwordConfirmation"
+            name="password_confirmation"
             value={form.passwordConfirmation}
             onChange={handleChange}  
           />
