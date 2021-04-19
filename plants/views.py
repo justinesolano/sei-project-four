@@ -2,14 +2,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Plant
 from .serializers.common import PlantSerializer
 from .serializers.populated import PopulatedPlantSerializer
 
 class PlantListView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)  
     
     # ALL PLANTS
     def get(self, _request):
@@ -27,13 +27,11 @@ class PlantListView(APIView):
 
 
 class PlantDetailView(APIView):
-    # def get_plant(self, pk):
-    #     try:
-    #         plant = self.get_plant(pk=pk)
-    #     except Plant.DoesNotExist:
-    #         raise NotFound(detail="Cannot find that plant 🤷🏻‍♀️ 🌱")
-    #     serialized_plant = PlantSerializer(plant)
-    #     return Response(serialized_plant.data, status=status.HTTP_200_OK)
+    def get_plant(self, pk):
+        try:
+            return Plant.objects.get(pk=pk)
+        except Plant.DoesNotExist:
+            raise NotFound(detail="🌱 Cannot find that plant")
 
     # ONE PLANT
     def get(self, _request, pk):

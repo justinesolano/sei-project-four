@@ -26,6 +26,7 @@ const Register = () => {
       const response = await axios.post('/api/auth/register/', form)
       window.localStorage.setItem('token', response.data.token)
       history.push('/')
+      location.reload()
     } catch (err) {
       setErrors('button error')
       window.alert('Your email or username is already in use.')
@@ -36,7 +37,7 @@ const Register = () => {
   const [errors, setErrors] = useState('')
 
   // email
-  // first_name
+  // first_name 
   // last name
   // username
   // password/confirmation
@@ -51,7 +52,7 @@ const Register = () => {
             <input
               className={`input ${errors}`}
               placeholder="Email"
-              type="text"
+              // type="email"
               name="email"
               value={form.email}
               onChange={handleChange}  
@@ -62,9 +63,8 @@ const Register = () => {
             <input
               className="register-input"
               placeholder="First Name"
-              type="text"
               name="first_name"
-              value={form.firstName}
+              value={form.first_name}
               onChange={handleChange}  
             />
           </div>
@@ -73,9 +73,8 @@ const Register = () => {
             <input
               className="register-input"
               placeholder="Last Name"
-              type="text"
               name="last_name"
-              value={form.lastName}
+              value={form.last_name}
               onChange={handleChange}  
             />
           </div>
@@ -84,7 +83,6 @@ const Register = () => {
             <input
               className="register-input"
               placeholder="Username"
-              type="text"
               name="username"
               value={form.username}
               onChange={handleChange}  
@@ -108,7 +106,7 @@ const Register = () => {
               placeholder="Password Confirmation"
               type="password"
               name="password_confirmation"
-              value={form.passwordConfirmation}
+              value={form.password_confirmation}
               onChange={handleChange}  
             />
           </div>

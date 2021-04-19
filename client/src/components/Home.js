@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import Sliders from './home/Sliders'
+import Sliders from './home/Sliders'
 import Favourites from './home/Favourites'
 import { getPayloadFromToken } from './helpers/auth'
 
@@ -55,8 +55,8 @@ const Home = () => {
 
   return (
     <div className>
-      {/* <Sliders
-      /> */}
+      <Sliders
+      />
       <div> Hello</div>
       <div className="ui divider"></div>
       <Favourites

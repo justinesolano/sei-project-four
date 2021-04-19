@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 // import greenhouselogo from '../assets/greenhouselogo.png'
 import titlelogo from '../assets/titlelogo.png'
 import { userIsAuthenticated /*getPayloadFromToken*/ } from './helpers/auth'
@@ -11,9 +11,12 @@ const Navbar = () => {
 
   // const [show, handleShow] = useState(false)
 
+  const history = useHistory()
+
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     history.push('/')
+    location.reload()
   }
 
   // useEffect(() => {

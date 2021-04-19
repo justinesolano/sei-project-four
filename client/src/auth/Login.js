@@ -24,7 +24,8 @@ const Login = () => {
     try {
       const response = await axios.post('/api/auth/login/', formInfo)
       window.localStorage.setItem('token', response.data.token)
-      history.push('/home/')
+      history.push('/')
+      location.reload()
     } catch (err){
       setErrors('button error')
       console.log(err)
@@ -39,7 +40,7 @@ const Login = () => {
           <input
             className={`input ${errors}`}
             placeholder="Email"
-            type="text"
+            type="email"
             name="email"
             value={formInfo.email}
             onChange={handleChange}  
