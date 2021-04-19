@@ -9,6 +9,7 @@ import UserProfile from './components/UserProfile'
 import PlantCard from './components/PlantCard'
 import PlantShow from './components/PlantShow'
 // import Slider from './components/slide/Slider.js'
+import CategoryIndex from './components/categories/CategoryIndex'
 
 const App = () => {
 
@@ -30,6 +31,9 @@ const App = () => {
         </Route>
         <Route path="/plants">
           <PlantCard />
+        </Route>
+        <Route path="/categories">
+          <CategoryIndex />
         </Route>
         <Route exact path='/profile/:id'> 
           <UserProfile />

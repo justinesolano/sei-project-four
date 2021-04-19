@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Sliders from './home/Sliders'
+import CategoryIndex from './categories/CategoryIndex'
 import Favourites from './home/Favourites'
 import { getPayloadFromToken } from './helpers/auth'
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
 
@@ -27,6 +30,20 @@ const Home = () => {
     }
     getUsers()
   })
+
+  const [category, setCategory] = useState(null)
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get('/api/categories/')
+        setCategory(response.data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+  }, [])
 
   const handleFavourite = async (event) => {
     const name = event.target.name
@@ -59,6 +76,16 @@ const Home = () => {
       />
       <div> Hello</div>
       <div className="ui divider"></div>
+      {category &&
+      <div>
+        {category.map(each => {
+          <Link to={`/${each.name}`} key={`/${each.id}`} >
+            <CategoryIndex key={category.name}
+            />
+          </Link>
+        })}
+      </div>
+      }
       <Favourites
         newFavourites={newFavourites}
         handleFavourite={handleFavourite}
