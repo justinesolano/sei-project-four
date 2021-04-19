@@ -24,7 +24,7 @@ const Register = () => {
     try {
       // await axios.post('/api/auth/register/', form)
       const response = await axios.post('/api/auth/register/', form)
-      window.localStorage.setItem('token', response.data.token)
+      window.localStorage.setItem('token', JSON.stringify(response.data.token))
       history.push('/')
       location.reload()
     } catch (err) {
