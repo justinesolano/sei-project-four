@@ -9152,6 +9152,11 @@ react-slideshow-image@^3.4.6:
     "@tweenjs/tween.js" "^18.1.2"
     resize-observer-polyfill "^1.5.1"
 
+react-whirligig@^6.6.15:
+  version "6.6.15"
+  resolved "https://registry.yarnpkg.com/react-whirligig/-/react-whirligig-6.6.15.tgz#c3dfdb348b6609d5980b1ddb8bf884977443f7c4"
+  integrity sha512-XdpemECafwICwpQVl1pztr9yE/26C2RdXhuZHTlMCksCtisX68MYRvM0qA7MA1f86dKwRRvA6exML0U0fdxkfg==
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"

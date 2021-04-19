@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Slide } from 'react-slideshow-image'
+// import { Slide } from 'react-slideshow-image'
+import Whirligig from 'react-whirligig'
 import SlideShow from './SlideShow'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -21,6 +22,10 @@ const Slider = ({ plantname }) => {
     getData()
   }, [])
 
+  let whirligig
+  const next = () => whirligig.next()
+  const prev = () => whirligig.prev()
+
   // error conditional
 
   // if (!plants) return null
@@ -28,13 +33,29 @@ const Slider = ({ plantname }) => {
   return (
     <div className="slider-container">
       {plants &&
-        <Slide easing="ease">
-          {plants.map(plant => (
-            <Link to={`/${plant.plantname}`} key={`/${plant.id}`}  >
-              <SlideShow key={plantname} {...plant} />
-            </Link>
-          ))}
-        </Slide>
+            <div>
+              <button onClick={prev}>Prev</button>
+              <Whirligig
+                visibleSlides={3}
+                gutter="1em"
+                ref={(_whirligigInstance) => { 
+                  whirligig = _whirligigInstance 
+                }}>
+                {plants.map(plant => (
+                  <Link to={`/${plant.plantname}`} key={`/${plant.id}`}  >
+                    <SlideShow key={plantname} {...plant} />
+                  </Link>
+                ))}
+              </Whirligig>
+              <button onClick={next}>Next</button>
+            </div>
+        // <Slide easing="ease">
+        //   {plants.map(plant => (
+        //     <Link to={`/${plant.plantname}`} key={`/${plant.id}`}  >
+        //       <SlideShow key={plantname} {...plant} />
+        //     </Link>
+        //   ))}
+        // </Slide>
       }
     </div>
   )
