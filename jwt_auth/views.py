@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import PermissionDenied, NotFound # from login
 from django.contrib.auth import get_user_model
+from .models import User
 from datetime import datetime, timedelta # from login
 from django.conf import settings # from login
 import jwt
@@ -47,7 +48,7 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f'Welcome back {user_to_login.first_name}'})
 
 # * GET ALL USERS
-class User(APIView):
+class UserAllView(APIView):
     def get(self, _request):
         users = User.objects.all() # return everything from the db
         serialized_user = UserSerializer(users, many=True) # convert the data
