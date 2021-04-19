@@ -16,7 +16,7 @@ const Navbar = () => {
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     history.push('/')
-    location.reload()
+    // location.reload()
   }
 
   // useEffect(() => {
