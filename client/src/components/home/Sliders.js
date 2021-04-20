@@ -8,7 +8,7 @@ import Slider from 'react-slick'
 // import 'slick-carousel/slick/slick.css'
 // import 'slick-carousel/slick/slick-theme.css'
 
-const Sliders = ({ plantname }) => {
+const Sliders = () => {
   const [plants, setPlants] = useState(null)
   // console.log('PLANTS', plants)
 
@@ -49,8 +49,8 @@ const Sliders = ({ plantname }) => {
           <div>
             <Slider {...config}>
               {plants.map(plant => (
-                <Link to={`/${plant.plantname}`} key={`/${plant.id}`}  >
-                  <SlideShow key={plantname} {...plant} />
+                <Link to={`/plants/${plant.id}`} key={`/${plant.id}`}  >
+                  <SlideShow key={plant.plantname} {...plant} />
                 </Link>
               ))}
             </Slider>
