@@ -10,7 +10,7 @@ const PlantShow = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`/api/plants/${params._id}`)
+        const response = await axios.get(`/api/plants/${params.id}`)
         setPlant(response.data)
         console.log('PLANTS DATA RESPONSE', response.data)
       } catch (err) {

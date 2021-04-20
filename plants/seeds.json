@@ -1,0 +1,110 @@
+[
+{
+  "model": "plants.plant",
+  "pk": 1,
+  "fields": {
+    "plantname": "Devil's Ivy",
+    "scientificname": "Epipremnum Aureum",
+    "description": "A fast-growing vine, devil’s ivy is a climber whose length depends on whether it’s grown as a houseplant or outdoors. The vine produces waxy, heart-shaped foliage variegated with bright yellow and green. Indoor plants rarely bloom, but when planted outdoors, the vine produces an erect, 6-inch green spathe surrounding tiny flowers.",
+    "careinstructions": "When planted outdoors, devil’s ivy thrives in a wide range of soil conditions from acidic to alkaline and even tolerates occasionally wet locations. If you’re growing it in containers, an all-purpose, peaty potting mix that drains well is adequate for proper growth.  Devil’s ivy grows well in partial to full shade outdoors, but growth slows when it’s planted in deep shade and the foliage loses its variegation, turning mostly green. If growing indoors, make sure it receives filtered sunlight or bright artificial light.  You can feed both indoor and outdoor plants with a general-purpose liquid houseplant fertilizer. An application or two through the growing season should be sufficient.   Devil’s ivy is highly drought-tolerant for several weeks. While the plant is actively growing, water houseplants deeply – until it runs from the bottom drainage holes – approximately once a week or when the top inch or two of soil feels dry. During winter, cut back on watering to about once every other week. Watering outdoor plants once a week is sufficient but reduce the frequency to once every two weeks in winter.",
+    "family": "Araceae",
+    "size": "Medium",
+    "maintenancelevel": "Almost unkillable",
+    "bestsuited": "Outdoor, Indoor",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1618417886/o9s5jk0fkxdm0zpp7edh.jpg",
+    "decorativebonus": 4,
+    "averageprice": 20,
+    "owner": 3,
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 2,
+  "fields": {
+    "plantname": "Kentia Palm",
+    "scientificname": "Howea Forsteriana",
+    "description": "If you love the tropical look of a palm tree but don’t live in a tropical region, try growing a Kentia palm. These plants are notorious for being able to withstand conditions that many houseplants can’t tolerate. Plus, an indoor Kentia palm can attain a formidable height that makes it an outstanding focal point in interior landscapes.",
+    "careinstructions": "The plants are quite forgiving and tolerant of low light conditions but do prefer an area that receives indirect light indoors. You can also choose to keep your plant outdoors during the warmer months in a somewhat shaded location. While the Kentia can tolerate temperatures down to 25 F. (-4 C.) and up to 100 F. (38 C.), it is best to bring the plant back indoors prior to winter and offer protection from excessive heat during the summer – no direct sun.  They adapt to a wide range of soil, from clay to loam and acidic to alkaline. Plant container grown Kentia in well-draining potting mix, preferably on the sandy side. Once established, Kentia palm plants are fairly drought tolerant, although they do not like to be overly dry, or for that matter overly wet. Water only when the top inch or so (2.5 cm.) of soil starts to dry out. Mist indoor Kentia palm occasionally to provide some humidity and to remove any dust build-up.  Palms, in general, require minimal pruning. Over pruning may cause irreversible damage to the trunk. You should, however, remove old leaf bases by gently pulling; do not force them off, which can cause permanent scarring or open up injury for trunk rot disease.",
+    "family": "Arecaceae",
+    "size": "Large",
+    "maintenancelevel": "High",
+    "bestsuited": "Outdoor, Indoor",
+    "image": "1",
+    "decorativebonus": 4,
+    "averageprice": 70,
+    "owner": 1,
+    "categories": [
+      1
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 3,
+  "fields": {
+    "plantname": "Kentia Palm",
+    "scientificname": "Howea Forsteriana",
+    "description": "If you love the tropical look of a palm tree but don’t live in a tropical region, try growing a Kentia palm. These plants are notorious for being able to withstand conditions that many houseplants can’t tolerate. Plus, an indoor Kentia palm can attain a formidable height that makes it an outstanding focal point in interior landscapes.",
+    "careinstructions": "The plants are quite forgiving and tolerant of low light conditions but do prefer an area that receives indirect light indoors. You can also choose to keep your plant outdoors during the warmer months in a somewhat shaded location. While the Kentia can tolerate temperatures down to 25 F. (-4 C.) and up to 100 F. (38 C.), it is best to bring the plant back indoors prior to winter and offer protection from excessive heat during the summer – no direct sun.  They adapt to a wide range of soil, from clay to loam and acidic to alkaline. Plant container grown Kentia in well-draining potting mix, preferably on the sandy side. Once established, Kentia palm plants are fairly drought tolerant, although they do not like to be overly dry, or for that matter overly wet. Water only when the top inch or so (2.5 cm.) of soil starts to dry out. Mist indoor Kentia palm occasionally to provide some humidity and to remove any dust build-up.  Palms, in general, require minimal pruning. Over pruning may cause irreversible damage to the trunk. You should, however, remove old leaf bases by gently pulling; do not force them off, which can cause permanent scarring or open up injury for trunk rot disease.",
+    "family": "Arecaceae",
+    "size": "Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoor, Indoor",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1602863316/idemraxp5a0pmwam0gos.jpg",
+    "decorativebonus": 4,
+    "averageprice": 70,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 4,
+  "fields": {
+    "plantname": "White Bird of Paradise",
+    "scientificname": "Strelitzia Nicolai",
+    "description": "The Bird of Paradise boasts a stunning display of large tropical leaves that in the wilds of southern Africa can reach up to 6 feet tall! In human spaces, they’re more likely to stand anywhere from 3’- 8’ tall, but still rank among most houseplant fans’ favorites due to the remarkable size of their rich foliage.",
+    "careinstructions": "Before giving your plant a drink, it is best to check the moisture level in the soil first to ensure it isn’t moist right beneath the surface. Birds of Paradise enjoy moist (but not soggy) soil and being allowed to dry out slightly between watering. Try not to let the soil dry completely through the pot, but also avoid overwatering. Allow the top 2\\” - 3\\” of the soil to become dry between watering, but below that should remain moist.  These plants do particularly well in our self-watering containers.  The splits in the leaves are natural and allow light to access the lower portion of the plant. Keep your plant away from drafts, and apply extra humidity with a humidifier, pebble tray, or mister to keep the splitting to a minimum. Rotate your plant periodically to ensure even growth on all sides and don’t be afraid to prune discoloured/broken leaves. It is important to dust the leaves often so the plant can photosynthesize efficiently. To dust, thoroughly wipe down each leaf and take the opportunity to inspect the undersides of the foliage to keep an eye out for pests. Pro tip: In the winter months when less sunlight is available due to the elliptical orbit of the sun, Birds of Paradise go through a “resting” period and require less water. From October – February, you can dial back the amount of water given provided you don’t have the plant near a dry heat source. In general, it is better to adjust the amount of water given rather than the frequency of watering.",
+    "family": "Strelitziaceae",
+    "size": "Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoor, Indoor",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1604602574/aupkyv8vkvhaiywcvebj.jpg",
+    "decorativebonus": 5,
+    "averageprice": 120,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 5,
+  "fields": {
+    "plantname": "European Fan Palm",
+    "scientificname": "Chamaerops Humilis",
+    "description": "Chamaerops humilis is the only palm native to Europe and is native to rocky hills and mountains of the western Mediterranean Basin from Africa’s Atlas Mountains in Morocco, Algeria and Tunisia to Spain, Portugal, France and Italy. It provides an exotic focal point in the garden with its evergreen fan-shaped leaves. It’s naturally slow growing and rarely exceeds head height.",
+    "careinstructions": "Chamaerops palm grows best in partial shade at a location where it receives bright indirect sunlight. However, make sure it receives adequate light i.e., full sun for at least three to four hours as too little light can affect the growth. It is one of the most cold-hardy palm species and can tolerate temperatures down to 5° degrees Fahrenheit (-15° C). The water needs of this palm species are not very high. Water the plant moderately when it is actively growing, but only sparingly in the winter. Make sure to not overwater as it can cause fungal spots on the old leaves. Feed the Chamaerops palm with a balanced palm fertilizer 4 times per year. Mediterranean dwarf palm prefers loamy and well-drained soil. It is also drought-tolerant but appreciates slightly moist soil. The plant can tolerate a wide range of soil pHs. Removing damaged and dead fronds may help improve the growth rate of this palm species. Make sure to wear full clothes and wear protective gloves when pruning the Chamaerops plant because the sharp thorns on its stems and leaf stalks can cause an injury",
+    "family": "Arecaceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1591270091/u9xj2mwgsizrzhbc8iui.jpg",
+    "decorativebonus": 5,
+    "averageprice": 52,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+}
+]
