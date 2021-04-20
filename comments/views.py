@@ -32,3 +32,11 @@ class CommentDetailView(APIView):
             raise PermissionDenied()
         comment_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def put(self, request, pk):
+        comment_to_edit = Comment.objects(pk=pk)
+        updated_comment = CommentSerializer(comment_to_edit, data=request.data)
+        if updated_comment.is_valid():
+            updated_comment.save()
+            return Response(updated_comment.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_comment.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
