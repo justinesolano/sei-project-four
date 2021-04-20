@@ -45,6 +45,9 @@ const App = () => {
         <Route path="/plants/:id"> 
           <PlantShow />
         </Route>
+        <Route path="/plants/:id/comments"> 
+          <PlantShow />
+        </Route>
       </Switch>
     </BrowserRouter>
   )
