@@ -10,9 +10,9 @@ const PlantShow = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`/api/plants/${params.id}`)
+        const response = await axios.get(`/api/plants/${params._id}`)
         setPlant(response.data)
-        console.log('PLANTS DATA', response.data)
+        console.log('PLANTS DATA RESPONSE', response.data)
       } catch (err) {
         console.log(err)
       }
@@ -26,7 +26,8 @@ const PlantShow = () => {
 
   return (
     <div>
-      <h1>Plant</h1>
+      {/* <h1>{plant.plantname}</h1>
+      <img src={plant.image} alt={plant.plantname} /> */}
       <h1>Hello</h1>
     </div>
   )

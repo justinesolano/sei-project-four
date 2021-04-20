@@ -27,6 +27,9 @@ class PlantListView(APIView):
 
 
 class PlantDetailView(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)  
+
     def get_plant(self, pk):
         try:
             return Plant.objects.get(pk=pk)
@@ -35,17 +38,17 @@ class PlantDetailView(APIView):
 
     # ONE PLANT
     def get(self, _request, pk):
-        plant = Plant.objects.get(pk=pk)
+        plant = self.get_plant(pk=pk)
         serialized_plant = PopulatedPlantSerializer(plant)
         return Response(serialized_plant.data, status=status.HTTP_200_OK)
 
     def delete(self, _request, pk):
-        plant_to_delete = Plant.objects.get(pk=pk)
+        plant_to_delete = self.get_plant(pk=pk)
         plant_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def put(self, request, pk):
-        plant_to_edit = Plant.objects.get(pk=pk)
+        plant_to_edit = self.get_plant(pk=pk)
         updated_plant = PlantSerializer(plant_to_edit, data=request.data)
         if updated_plant.is_valid():
             updated_plant.save()
