@@ -28,9 +28,10 @@ const UserProfile = () => {
     <>
       { profile ?
         <div>
-          <h1>UserProfile</h1>
-          <img src={profile.profile_image}></img>
+          <h1> {profile.username} </h1>
           <h2> {profile.first_name} </h2>
+          <img src={profile.profile_image}></img>
+          <h2>Recent activity</h2>
         </div>
         :
         <h1>User does not exist</h1>  

@@ -11,7 +11,6 @@ const Comment = () => {
   const id = plantId.substr(plantId.length - 1)
   console.log('PLANT ID', plantId)
 
-
   const [formData, setFormData] = useState({
     text: '',
     plant: `${id}`,

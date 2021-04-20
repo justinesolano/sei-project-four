@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './components/Home'
 import Register from './auth/Register'
 import Login from './auth/Login'
@@ -11,6 +12,7 @@ import PlantShow from './components/PlantShow'
 // import Search from './components/Search'
 // import Slider from './components/slide/Slider.js'
 import CategoryIndex from './components/categories/CategoryIndex'
+import CommentEdit from './components/comments/CommentEdit'
 
 const App = () => {
 
@@ -36,19 +38,20 @@ const App = () => {
         <Route path="/categories">
           <CategoryIndex />
         </Route>
-        {/* <Route path="/search">
-          <Search />
-        </Route> */}
+        <Route path="/plants/:id/comment">
+          <CommentEdit />
+        </Route>
         <Route exact path="/profile/:id"> 
           <UserProfile />
         </Route>
         <Route path="/plants/:id"> 
           <PlantShow />
         </Route>
-        <Route path="/plants/:id/comments"> 
+        {/* <Route path="/plants/:id/comments"> 
           <PlantShow />
-        </Route>
+        </Route> */}
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }
