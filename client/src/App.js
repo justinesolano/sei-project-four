@@ -13,6 +13,7 @@ import PlantShow from './components/PlantShow'
 // import Slider from './components/slide/Slider.js'
 import CategoryIndex from './components/categories/CategoryIndex'
 import CommentEdit from './components/comments/CommentEdit'
+import MakePost from './components/MakePost'
 
 const App = () => {
 
@@ -47,9 +48,9 @@ const App = () => {
         <Route path="/plants/:id"> 
           <PlantShow />
         </Route>
-        {/* <Route path="/plants/:id/comments"> 
-          <PlantShow />
-        </Route> */}
+        <Route path="/newpost"> 
+          <MakePost />
+        </Route>
       </Switch>
       <Footer />
     </BrowserRouter>

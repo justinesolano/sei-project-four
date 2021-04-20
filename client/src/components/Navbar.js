@@ -59,6 +59,9 @@ const Navbar = () => {
         }
         { userIsAuthenticated() &&
       <>
+        <Link to="/newpost" className="item">
+        Make a post
+        </Link>
         <Link to={`/profile/${profileId}`}  className="item">
           My profile
         </Link>

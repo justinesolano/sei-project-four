@@ -21,5 +21,6 @@ urlpatterns = [
     path('api/plants/', include('plants.urls')),
     path('api/comments/', include('comments.urls')),
     path('api/categories/', include('categories.urls')),
-    path('api/auth/', include('jwt_auth.urls'))
+    path('api/auth/', include('jwt_auth.urls')),
+    path('api/posts/', include('posts.urls')),
 ]

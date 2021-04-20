@@ -8,6 +8,8 @@ from datetime import datetime, timedelta # from login
 from django.conf import settings # from login
 import jwt
 
+from .serializers.populated import PopulatedUserSerializer
+
 from .serializers.common import UserSerializer
 
 User = get_user_model()
@@ -50,7 +52,7 @@ class LoginView(APIView):
 class UserAllView(APIView):
     def get(self, _request):
         users = User.objects.all() # return everything from the db
-        serialized_user = UserSerializer(users, many=True) # convert the data
+        serialized_user = PopulatedUserSerializer(users, many=True) # convert the data
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
 # * GET USER
@@ -63,7 +65,7 @@ class UserView(APIView):
 
     def get(self, _request, pk):
         user = self.get_user(pk=pk)
-        serialized_user = UserSerializer(user)
+        serialized_user = PopulatedUserSerializer(user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):
