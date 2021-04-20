@@ -6,7 +6,7 @@ class Post(models.Model):
     image = models.CharField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     tags = models.CharField(max_length=1000)
-    categories = models.ManyToManyField('categories.Categories', related_name="posts")
+    # categories = models.ManyToManyField('categories.Categories', related_name="posts")
     owner = models.ForeignKey(
         'jwt_auth.User',
         related_name='posts',
