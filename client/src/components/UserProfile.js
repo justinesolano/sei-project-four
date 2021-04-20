@@ -22,13 +22,14 @@ const UserProfile = () => {
     getData()
   }, [id])
 
-  console.log('PLANTS ID', profile)
+  console.log('PROFILE ID', profile)
 
   return (
     <>
       { profile ?
         <div>
           <h1>UserProfile</h1>
+          <img src={profile.profile_image}></img>
           <h2> {profile.first_name} </h2>
         </div>
         :
