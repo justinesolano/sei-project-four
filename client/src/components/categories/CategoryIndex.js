@@ -2,7 +2,8 @@ import axios from 'axios'
 // import { get } from 'mongoose'
 import React, { useState, useEffect } from 'react'
 import Slider from 'react-slick'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+// import SimpleImageSlider from 'react-simple-image-slider'
 
 
 function CategoryIndex() {
@@ -22,11 +23,11 @@ function CategoryIndex() {
     getData()
   }, [])
 
-  const flower = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1508426178/products/anthurium-275.jpg'
-  const noFlower = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1535551624/products/rubber-plant-a8875c.jpg'
-  const almostUnkillable = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1519842763/products/zamioculcas-raven-f5ca64.jpg'
-  const easyCare = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1578052065/pk98gfouoobsjwvvr1ou.jpg'
-  const highMaintenance = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1594296523/dpnkx4fdp3yzijlbdtrr.jpg'
+  // const flower = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1508426178/products/anthurium-275.jpg'
+  // const noFlower = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1535551624/products/rubber-plant-a8875c.jpg'
+  // const almostUnkillable = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1519842763/products/zamioculcas-raven-f5ca64.jpg'
+  // const easyCare = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1578052065/pk98gfouoobsjwvvr1ou.jpg'
+  // const highMaintenance = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1594296523/dpnkx4fdp3yzijlbdtrr.jpg'
 
 
   const config = {
@@ -49,45 +50,27 @@ function CategoryIndex() {
   return (
     <>
       <h1 className="browse">Categories</h1>
-      {/* { category ?
+      { category ?
         <div className="slider-container">
           <div>
             <Slider {...config}>
               {category.map(item => (
                 <Link to={'/allplants'} key={item.id}>
                   <div className="each-slide">
-                    <span> 
-                      <img src={item.image} className="slide-image"/>
-                    </span>w
+                    <div>
+                      <span> 
+                        <img src={item.image} className="slide-image"/>
+                      </span>
+                    </div>
                   </div>
                 </Link>
-              ))} */}
-      <div className="slider-container">
-        <Slider {...config}>
-          <div className="each-slide">
-            <h2>No Flower</h2>
-            <img src={noFlower} className="slide-image"/>
+              ))}
+            </Slider>
           </div>
-          <div className="each-slide">
-            <h2>Has Flowers</h2>
-            <img src={flower} className="slide-image"/>
-          </div>
-          <div className="each-slide">
-            <h2>Almost Unkillable</h2>
-            <img src={almostUnkillable} className="slide-image"/>
-          </div>
-          <div className="each-slide">
-            <h2>Easy Care</h2>
-            <img src={easyCare} className="slide-image"/>
-          </div>
-          <div className="each-slide">
-            <h2>Needs Constant Attention</h2>
-            <img src={highMaintenance} className="slide-image"/>
-          </div>
-        </Slider>
-      </div>
-      {/* </div> */}
-      {/* <h2>Categories cannot load!</h2> */}
+        </div>
+        :
+        <h2>Cannot load categories</h2>
+      }
     </>
   )
 }
