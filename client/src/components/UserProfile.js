@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Slider from 'react-slick'
+import SlideShow from './home/SlideShow'
 
 
 const UserProfile = () => {
@@ -23,6 +25,20 @@ const UserProfile = () => {
     getData()
   }, [id])
 
+  const config = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    centerMode: true,
+    centerPadding: '80px',
+    focusOnSelect: true,
+    dragable: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  }
+
   console.log('PROFILE ID', profile)
 
   return (
@@ -33,21 +49,33 @@ const UserProfile = () => {
             <img src={profile.profile_image} className="profile-image"></img>
             <div className="profile-names">
               <h1 className="profile-username"> {profile.username} </h1>
-              <h2 className="profile-name"> {profile.first_name} </h2>
+              <div className="profile-fields">
+                <h3 className="profile-name"> {profile.first_name} {profile.last_name} </h3>
+                <h3 className="profile-email"> {profile.email} </h3>
+              </div>
             </div>
           </div>
           <>
             <h2 className="recent-activity">Recent activity</h2>
-            <div>
-              {profile.posts.map(post => (
-                <ul key={post.id}>
-                  <li>
-                    {post.title}
-                    <img src={post.image}></img>
-                  </li>
-                </ul>
-              ))}
-            </div>
+            { profile.posts.length > 5 ?
+              <div className="profile-slider">
+                <Slider {...config}>
+                  {profile.posts.map(post => (
+                    <SlideShow key={post.id} {...post} />
+                  ))}
+                </Slider>
+              </div>
+              :
+              <>
+                {profile.posts.map(post => (
+                  <div className="profile-posts" key={post.id}>
+                    <div className="ui card">
+                      <img src={post.image}></img>
+                    </div>
+                  </div>
+                ))}
+              </>
+            }
           </>
         </div>
         :

@@ -340,18 +340,45 @@
   display: flex;
   justify-content: center;
   margin: 30px;
+  margin-top: 40px;
 }
 .profile-image{
-  width: 450px;
-  height: 340px;
+  width: 300px;
+  height: 240px;
   border-radius: 200px;
-}.profile-names{
+  margin-right: 30px;
+  
+}
+.profile-username{
   display: flex;
   justify-content: center;
   align-content: center;
   font-family: 'Comfortaa';
-
+  font-weight: bold;
+  margin-bottom: -10px;
+  // margin-left: -30px;
 }
-.profile-page{
+.profile-name, .profile-page, .profile-email{
   font-family: 'Comfortaa';
+}
+.profile-fields{
+  margin: 10px;
+}
+.profile-email{
+  margin-top: -5px;
+}
+.profile-names{
+  margin-top: 60px;
+}
+.profile-slider{
+  // display: flex;
+  justify-content: center;
+  width: 1600px;
+  margin-left: 150px;
+}
+.recent-activity{
+  font-family: 'Comfortaa';
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
 }
