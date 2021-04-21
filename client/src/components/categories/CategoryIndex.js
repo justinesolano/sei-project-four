@@ -49,6 +49,19 @@ function CategoryIndex() {
   return (
     <>
       <h1 className="browse">Categories</h1>
+      {/* { category ?
+        <div className="slider-container">
+          <div>
+            <Slider {...config}>
+              {category.map(item => (
+                <Link to={'/allplants'} key={item.id}>
+                  <div className="each-slide">
+                    <span> 
+                      <img src={item.image} className="slide-image"/>
+                    </span>w
+                  </div>
+                </Link>
+              ))} */}
       <div className="slider-container">
         <Slider {...config}>
           <div className="each-slide">
@@ -73,6 +86,8 @@ function CategoryIndex() {
           </div>
         </Slider>
       </div>
+      {/* </div> */}
+      {/* <h2>Categories cannot load!</h2> */}
     </>
   )
 }

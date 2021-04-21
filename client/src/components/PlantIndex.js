@@ -30,14 +30,15 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
   const handleChange = (event) => {
     try {
       const filteredArray = plants.filter(plant => {
-        return (plant.plantname.toUpperCase().includes(event.target.value.toUpperCase())) || (plant.maintenancelevel.toUpperCase().includes(event.target.value.toUpperCase())) 
-        // || (plant.maintenancelevel.name.toUpperCase().includes(event.target.value.toUpperCase())) /*|| (plant.averageprice.includes(event.target.value))*/
+        return (plant.plantname.toUpperCase().includes(event.target.value.toUpperCase())) || (plant.maintenancelevel.toUpperCase().includes(event.target.value.toUpperCase())) || (plant.scientificname.toUpperCase().includes(event.target.value.toUpperCase()))
+        // || (plant.categories.map(category => (category.name.toUpperCase().includes(event.target.value.toUpperCase())))) /*|| (plant.averageprice.includes(event.target.value))*/
       })
       setFilteredPlants(filteredArray)
       if (filteredArray.length === 0) {
         setErrors('error')
-      } else {
-        console.log('Yay!')
+      } 
+      if (filteredArray.length > 0) {
+        setErrors('')
       }
       console.log(event.target.value)
     } catch (err){

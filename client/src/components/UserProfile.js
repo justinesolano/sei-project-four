@@ -12,7 +12,6 @@ const UserProfile = () => {
 
   useEffect(() => {
     const getData = async () => {
-      // console.log('PARAMS', params)
       try {
         const { data } = await axios.get(`/api/auth/profile/${id}`)
         setProfile(data)
@@ -23,21 +22,6 @@ const UserProfile = () => {
     }
     getData()
   }, [id])
-
-
-  // useEffect(() => {
-  //   const getPost = async () => {
-  //     try {
-  //       const { data } = await axios.get('/api/posts/')
-  //       setPosts(data)
-  //       console.log('PROFILE', data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getPost()
-  // })
-  
 
   console.log('PROFILE ID', profile)
 
