@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import PlantCard from  './PlantCard'
-import Select from 'react-select'
-
-// import { Link } from 'react-router-dom'
-// import { Button } from 'semantic-ui-react'
-
+// import Select from 'react-select'
 
 const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenance }*/) => {
 
@@ -13,6 +9,9 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
   const [filteredPlants, setFilteredPlants] = useState([])
   const [errors, setErrors] = useState('')
 
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  // })
   // console.log('PLANTS', plants)
 
   useEffect(() => {
@@ -31,9 +30,7 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
   const handleChange = (event) => {
     try {
       const filteredArray = plants.filter(plant => {
-        return plant.plantname.toUpperCase().includes(event.target.value.toUpperCase()) || plant.scientificname.toUpperCase().includes(event.target.value.toUpperCase())
-        
-        /*|| plant.categories.map(category => (category.name.toUpperCase().includes(event.target.value.toUpperCase()))) */
+        return plant.plantname.toUpperCase().includes(event.target.value.toUpperCase()) || plant.scientificname.toUpperCase().includes(event.target.value.toUpperCase()) /*|| plant.categories.name.toUpperCase().includes(event.target.value.toUpperCase())*/
       })
       setFilteredPlants(filteredArray)
       if (filteredArray.length === 0) {
@@ -48,31 +45,20 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
 
   }
 
-  if (!plants) return null
+  // const handleMultiChange = (selected, name) => {
+  //   const values = selected ? selected.map(item => item.value) : []
+  //   setFormData({ ...formData, [name]: [...values] })
+  // }
 
-  // var categoryContent = [
-  //   { category: flower, title: 'Has flowers' },
-  //   { category: noFlower, title: 'No flowers' },
-  //   { category: almostUnkillable, title: 'Almost unkillable' },
-  //   { category: easyCare, title: 'Easy care' },
-  //   { category: highMaintenance, title: 'Needs love' }
+  // const selectOptions = [
+  //   { value: 'name', label: 'Flower' },
+  //   { value: 'name', label: 'No Flower' },
+  //   { value: 'name', label: 'Almost Unkillable' },
+  //   { value: 'name', label: 'Easy Care' },
+  //   { value: 'name', label: 'Needs love' }
   // ]
-  const handleMultiChange = (selected, name) => {
-    const values = selected ? selected.map(item => item.value) : []
-    setFormdata({ ...formdata, [name]: [...values] })
-  }
 
-  const [formdata, setFormdata] = useState({
-    name: '',
-  })
-
-  const selectOptions = [
-    { value: 'name', label: 'Flower' },
-    { value: 'name', label: 'No Flower' },
-    { value: 'name', label: 'Almost Unkillable' },
-    { value: 'name', label: 'Easy Care' },
-    { value: 'name', label: 'Needs love' }
-  ]
+  if (!plants) return null
 
   return (
     <>
@@ -82,17 +68,18 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
           <i className="search-icon"></i>
         </div>
         <div className="results"> </div>
-        <div className="field">
-          <label className="label">Your Breakfast Order</label>
+        {/* <div className="field">
+          <label className="label"></label>
           <div className="control">
             <Select
               options={selectOptions}
               isMulti
-              name="breakfastOrder"
-              onChange={(selected) => handleMultiChange(selected, 'breakfastOrder')}
+              name="name"
+              placeholder="Filter by Category"
+              onChange={handleChange}
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <h1 className="browse">Browse</h1>
       <div className="plant-index-parent">
@@ -114,3 +101,12 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
 }
 
 export default Plants
+
+
+// var categoryContent = [
+//   { category: flower, title: 'Has flowers' },
+//   { category: noFlower, title: 'No flowers' },
+//   { category: almostUnkillable, title: 'Almost unkillable' },
+//   { category: easyCare, title: 'Easy care' },
+//   { category: highMaintenance, title: 'Needs love' }
+// ]

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 
 
-const PlantCard = ({ id, plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice, description, handleMyList  }) => {
+const PlantCard = ({ id, plantname, scientificname, image, maintenancelevel, decorativebonus,averageprice, description, handleMyList, categories }) => {
 
   // const { plantname: plantName } = plant()
 
@@ -33,6 +33,10 @@ const PlantCard = ({ id, plantname, scientificname, image, maintenancelevel, dec
             Average price:
                 <i className="pound sign icon"></i>
                 {`${averageprice}`}
+              </span>
+              <span className="category">
+            Categories:
+                {`${categories[0].name}`}
               </span>
             </div>
             <div className="extra content">
