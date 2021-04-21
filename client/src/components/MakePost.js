@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 // import { useHistory } from 'react-router-dom'
-import { getTokenFromLocalStorage } from '../helpers/auth'
-import { ImageUploadField } from './upload/ImageUpload'
+// import { getTokenFromLocalStorage } from './helpers/auth'
+import { ImageUploadField } from './ImageUpload'
 
 
 const MakePost = () => {
@@ -29,10 +29,11 @@ const MakePost = () => {
   const handleSubmit = async (event) => {
     console.log('FORM DATA', formData)
     event.preventDefault()
+    
     try {
       const response = await axios.post('/api/posts/', formData, {
         headers: {
-          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`,
         },
       })
       // history.push(`/api/auth/profile/${profile}`)

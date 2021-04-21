@@ -14,6 +14,8 @@ import PlantShow from './components/PlantShow'
 import CategoryIndex from './components/categories/CategoryIndex'
 import CommentEdit from './components/comments/CommentEdit'
 import MakePost from './components/MakePost'
+import Explore from './components/Explore'
+
 
 const App = () => {
 
@@ -33,9 +35,9 @@ const App = () => {
         <Route path="/allplants">
           <PlantIndex />
         </Route>
-        {/* <Route path="/plants">
-          <PlantCard />
-        </Route> */}
+        <Route path="/explore">
+          <Explore />
+        </Route>
         <Route path="/categories">
           <CategoryIndex />
         </Route>

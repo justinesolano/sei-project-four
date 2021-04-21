@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+import { ImageUploadField } from '../components/ImageUpload'
+
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -10,6 +12,8 @@ const Register = () => {
     email: '',
     password: '',
     password_confirmation: '',
+    profile_image: '',
+    posts: [],
   })
 
   const history = useHistory()
@@ -21,13 +25,14 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    console.log('HISTORY', history)
     try {
       // await axios.post('/api/auth/register/', form)
       const response = await axios.post('/api/auth/register/', form)
       const responseTwo = await axios.post('/api/auth/login/', { email: form.email, password: form.password })
       window.localStorage.setItem('token', JSON.stringify(response.data.token))
       window.localStorage.setItem('token', JSON.stringify(responseTwo.data.token))
-      history.push('/')
+      history.push('/login')
       location.reload()
     } catch (err) {
       setErrors('button error')
@@ -38,16 +43,14 @@ const Register = () => {
 
   const [errors, setErrors] = useState('')
 
-  // email
-  // first_name 
-  // last name
-  // username
-  // password/confirmation
+  const handleImageUrl = url => {
+    setForm({ ...form, profile_image: url })
+  }
 
   return (
     <>
       <h1>Register</h1>
-      <body className="register-body">
+      <div className="register-body">
         <form className="ui form" onSubmit={handleSubmit}>
           <div className="required field">
             <label>Email</label>
@@ -70,7 +73,7 @@ const Register = () => {
               onChange={handleChange}  
             />
           </div>
-          <div className="field">
+          <div className="field required">
             <label>Last Name</label>
             <input
               className="register-input"
@@ -111,10 +114,40 @@ const Register = () => {
               value={form.password_confirmation}
               onChange={handleChange}  
             />
+            <div className="required">
+              <label>
+                <i className="ui upload icon"> </i>
+            Image
+              </label>
+              <ImageUploadField
+              // type="file"
+              // className="post-image"
+              // placeholder="Image"
+                name="profile_image"
+                value={form.profile_image}
+                onChange={handleChange} 
+                handleImageUrl={handleImageUrl} 
+              />
+            </div>
+            <div className="post-field">
+              <label>
+                <i className="ui upload icon"> </i>
+            Posts
+              </label>
+              <input
+              // type="file"
+              // className="post-image"
+              // placeholder="Image"
+                name="posts"
+                value={form.posts}
+                onChange={handleChange} 
+                handleImageUrl={handleImageUrl} 
+              />
+            </div>
           </div>
           <button className="ui green button" type="submit">Submit!</button>
         </form>
-      </body>
+      </div>
     </>
   )
 }

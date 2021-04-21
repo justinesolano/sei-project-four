@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import PlantCard from  './PlantCard'
+import Select from 'react-select'
+
 // import { Link } from 'react-router-dom'
 // import { Button } from 'semantic-ui-react'
 
@@ -55,9 +57,22 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
   //   { category: easyCare, title: 'Easy care' },
   //   { category: highMaintenance, title: 'Needs love' }
   // ]
+  const handleMultiChange = (selected, name) => {
+    const values = selected ? selected.map(item => item.value) : []
+    setFormdata({ ...formdata, [name]: [...values] })
+  }
 
-  
-  
+  const [formdata, setFormdata] = useState({
+    name: '',
+  })
+
+  const selectOptions = [
+    { value: 'name', label: 'Flower' },
+    { value: 'name', label: 'No Flower' },
+    { value: 'name', label: 'Almost Unkillable' },
+    { value: 'name', label: 'Easy Care' },
+    { value: 'name', label: 'Needs love' }
+  ]
 
   return (
     <>
@@ -67,6 +82,17 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
           <i className="search-icon"></i>
         </div>
         <div className="results"> </div>
+        <div className="field">
+          <label className="label">Your Breakfast Order</label>
+          <div className="control">
+            <Select
+              options={selectOptions}
+              isMulti
+              name="breakfastOrder"
+              onChange={(selected) => handleMultiChange(selected, 'breakfastOrder')}
+            />
+          </div>
+        </div>
       </div>
       <h1 className="browse">Browse</h1>
       <div className="plant-index-parent">
