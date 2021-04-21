@@ -3,16 +3,11 @@ import axios from 'axios'
 import PlantCard from  './PlantCard'
 // import Select from 'react-select'
 
-const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenance }*/) => {
+const Plants = () => {
 
   const [plants, setPlants] = useState(null)
   const [filteredPlants, setFilteredPlants] = useState([])
   const [errors, setErrors] = useState('')
-
-  // const [formData, setFormData] = useState({
-  //   name: '',
-  // })
-  // console.log('PLANTS', plants)
 
   useEffect(() => {
     const getData = async () => {
@@ -46,19 +41,6 @@ const Plants = (/*{ flower, noFlower, almostUnkillable, easyCare, highMaintenanc
     }
 
   }
-
-  // const handleMultiChange = (selected, name) => {
-  //   const values = selected ? selected.map(item => item.value) : []
-  //   setFormData({ ...formData, [name]: [...values] })
-  // }
-
-  // const selectOptions = [
-  //   { value: 'name', label: 'Flower' },
-  //   { value: 'name', label: 'No Flower' },
-  //   { value: 'name', label: 'Almost Unkillable' },
-  //   { value: 'name', label: 'Easy Care' },
-  //   { value: 'name', label: 'Needs love' }
-  // ]
 
   if (!plants) return null
 

@@ -33,33 +33,38 @@ const Login = () => {
   }
 
   return (
-    <body className="register-body">
-      <form className="ui form" onSubmit={handleSubmit}>
-        <div className="field">
-          <label>Email</label>
-          <input
-            className={`input ${errors}`}
-            placeholder="Email"
-            type="email"
-            name="email"
-            value={formInfo.email}
-            onChange={handleChange}  
-          />
+    <div className="login-page">
+      <div className="login-body">
+        <div className="login-white">
+          <h1 className="login-title">Login</h1>
+          <form className="ui form login" onSubmit={handleSubmit}>
+            <div className="field">
+              <label className="field-title-two">Email</label>
+              <input
+                className={`input ${errors}`}
+                placeholder="Email"
+                type="email"
+                name="email"
+                value={formInfo.email}
+                onChange={handleChange}  
+              />
+            </div>
+            <div className="field">
+              <label className="field-title-two">Password</label>
+              <input
+                className={`input ${errors}`}
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={formInfo.password}
+                onChange={handleChange}  
+              />
+            </div>
+            <button className="ui login button" type="submit">Submit!</button>
+          </form>
         </div>
-        <div className="field">
-          <label>Password</label>
-          <input
-            className={`input ${errors}`}
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={formInfo.password}
-            onChange={handleChange}  
-          />
-        </div>
-        <button className="ui green button" type="submit">Submit!</button>
-      </form>
-    </body>
+      </div>
+    </div>
   )
 }
 

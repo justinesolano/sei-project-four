@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import PostCard from './PostCard'
 import { Link } from 'react-router-dom'
 
-const Explore = ({ id }) => {
+const Explore = () => {
 
   const [posts, setPosts] = useState(null)
 
@@ -35,7 +35,7 @@ const Explore = ({ id }) => {
         <div className="ui grid">
           { posts.map(post => (
             <div className="four wide column" key={post.id}>
-              <Link to={`/profile/${id}`}>
+              <Link to={`/profile/${post.owner.id}`}>
                 <PostCard {...post} />
               </Link>
             </div>

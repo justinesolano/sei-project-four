@@ -32,7 +32,7 @@ const Register = () => {
       const responseTwo = await axios.post('/api/auth/login/', { email: form.email, password: form.password })
       window.localStorage.setItem('token', JSON.stringify(response.data.token))
       window.localStorage.setItem('token', JSON.stringify(responseTwo.data.token))
-      history.push('/login')
+      history.push('/')
       location.reload()
     } catch (err) {
       setErrors('button error')
@@ -48,107 +48,107 @@ const Register = () => {
   }
 
   return (
-    <>
-      <h1>Register</h1>
+    <div className="register-page">
       <div className="register-body">
-        <form className="ui form" onSubmit={handleSubmit}>
-          <div className="required field">
-            <label>Email</label>
-            <input
-              className={`input ${errors}`}
-              placeholder="Email"
-              // type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}  
-            />
-          </div>
-          <div className="required field">
-            <label>First Name</label>
-            <input
-              className="register-input"
-              placeholder="First Name"
-              name="first_name"
-              value={form.first_name}
-              onChange={handleChange}  
-            />
-          </div>
-          <div className="field required">
-            <label>Last Name</label>
-            <input
-              className="register-input"
-              placeholder="Last Name"
-              name="last_name"
-              value={form.last_name}
-              onChange={handleChange}  
-            />
-          </div>
-          <div className="required field">
-            <label>Username</label>
-            <input
-              className="register-input"
-              placeholder="Username"
-              name="username"
-              value={form.username}
-              onChange={handleChange}  
-            />
-          </div>
-          <div className="required field">
-            <label>Password</label>
-            <input
-              className="register-input"
-              placeholder="Password"
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}  
-            />
-          </div>
-          <div className="required field">
-            <label>Confirm your password</label>
-            <input
-              className="register-input"
-              placeholder="Password Confirmation"
-              type="password"
-              name="password_confirmation"
-              value={form.password_confirmation}
-              onChange={handleChange}  
-            />
-            <div className="required">
-              <label>
-                <i className="ui upload icon"> </i>
-            Image
-              </label>
-              <ImageUploadField
-              // type="file"
-              // className="post-image"
-              // placeholder="Image"
-                name="profile_image"
-                value={form.profile_image}
-                onChange={handleChange} 
-                handleImageUrl={handleImageUrl} 
-              />
-            </div>
-            <div className="post-field">
-              <label>
-                <i className="ui upload icon"> </i>
-            Posts
-              </label>
+        <div className="register-white">
+          <h1 className="register-title">Register</h1>
+          <form className="ui form" onSubmit={handleSubmit}>
+            <div className="required field">
+              <label className="field-title">Email</label>
               <input
-              // type="file"
-              // className="post-image"
-              // placeholder="Image"
-                name="posts"
-                value={form.posts}
-                onChange={handleChange} 
-                handleImageUrl={handleImageUrl} 
+                className={`input ${errors}`}
+                placeholder="Email"
+                // type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}  
               />
             </div>
-          </div>
-          <button className="ui green button" type="submit">Submit!</button>
-        </form>
+            <div className="required field">
+              <label className="field-title">First Name</label>
+              <input
+                className="register-input"
+                placeholder="First Name"
+                name="first_name"
+                value={form.first_name}
+                onChange={handleChange}  
+              />
+            </div>
+            <div className="field required">
+              <label className="field-title">Last Name</label>
+              <input
+                className="register-input"
+                placeholder="Last Name"
+                name="last_name"
+                value={form.last_name}
+                onChange={handleChange}  
+              />
+            </div>
+            <div className="required field">
+              <label className="field-title">Username</label>
+              <input
+                className="register-input"
+                placeholder="Username"
+                name="username"
+                value={form.username}
+                onChange={handleChange}  
+              />
+            </div>
+            <div className="required field">
+              <label className="field-title">Password</label>
+              <input
+                className="register-input"
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}  
+              />
+            </div>
+            <div className="required field">
+              <label className="field-title">Confirm your password</label>
+              <input
+                className="register-input"
+                placeholder="Password Confirmation"
+                type="password"
+                name="password_confirmation"
+                value={form.password_confirmation}
+                onChange={handleChange}  
+              />
+              <div className="required">
+                <i className="ui upload icon"> </i>
+                <label className="field-title">Image</label>
+                <ImageUploadField
+                  // type="file"
+                  // className="post-image"
+                  // placeholder="Image"
+                  name="profile_image"
+                  value={form.profile_image}
+                  onChange={handleChange} 
+                  handleImageUrl={handleImageUrl} 
+                />
+              </div>
+              <div className="post-field">
+                <label>
+                  <i className="ui upload icon"> </i>
+            Posts
+                </label>
+                <input
+                  // type="file"
+                  // className="post-image"
+                  // placeholder="Image"
+                  name="posts"
+                  value={form.posts}
+                  onChange={handleChange} 
+                  handleImageUrl={handleImageUrl} 
+                />
+              </div>
+            </div>
+            <button className="ui button register" type="submit">Submit!</button>
+          </form>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 

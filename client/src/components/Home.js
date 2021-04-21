@@ -7,13 +7,13 @@ import Posts from './Posts'
 // import { getPayloadFromToken } from './helpers/auth'
 import { Link } from 'react-router-dom'
 import { userIsAuthenticated } from './helpers/auth'
-import { faTwitter } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Home = () => {
 
   const [posts, setPosts] = useState(null)
-  const element = <FontAwesomeIcon icon={faTwitter} />
+  // const element = <FontAwesomeIcon icon={faTwitter} />
 
   useEffect(() => {
     const getData = async () => {
@@ -80,6 +80,7 @@ const Home = () => {
         {/* <div className="ui divider"></div>
         <CategoryIndex
         /> */}
+        <div className="ui divider"></div>
         <div className="hero">
           <div className="sliders">
             <CategoryIndex
@@ -89,11 +90,20 @@ const Home = () => {
             <h2 className="home-title">Questions?</h2>
             <h4 className="home-description">Contact us!</h4>
             <div className="browse-buttons">
-              <Link to="/allplants" >
+              {/* <Link to="/allplants" >
                 <button className="browse-for-plants">Email</button>
-              </Link>
-              <i className="fab fa-twitter">{element}</i>
-
+              </Link> */}
+              <div className="social-media">
+                <a href="https://twitter.com/">
+                  <FontAwesomeIcon icon={faTwitter} className="icons fa-3x"/>
+                </a>
+                <Link to="https://www.facebook.com/">
+                  <FontAwesomeIcon icon={faFacebook} className="icons fa-3x"/>
+                </Link>
+                <Link to="https://www.instagram.com/">
+                  <FontAwesomeIcon icon={faInstagram} className="icons fa-3x"/>
+                </Link>
+              </div>
               {/* <Link to="/explore">
                 <button className="browse-for-plants">Browse purchased plants!</button>
               </Link> */}
@@ -105,11 +115,36 @@ const Home = () => {
       { !userIsAuthenticated() &&
       <>
         <div className="ui divider"></div>
-        <div className="home-title">Categories</div>
-        <Link to="/allplants">
-          <CategoryIndex
-          />
-        </Link>
+        <div className="second-row">
+          <div className="info-two">
+            <h2 className="home-title-two">Questions?</h2>
+            <h4 className="home-description-two">Contact us!</h4>
+            <div className="browse-buttons">
+              {/* <Link to="/allplants" >
+                <button className="browse-for-plants">Email</button>
+              </Link> */}
+              <div className="social-media">
+                <a href="https://twitter.com/">
+                  <FontAwesomeIcon icon={faTwitter} className="icons fa-3x"/>
+                </a>
+                <Link to="https://www.facebook.com/">
+                  <FontAwesomeIcon icon={faFacebook} className="icons fa-3x"/>
+                </Link>
+                <Link to="https://www.instagram.com/">
+                  <FontAwesomeIcon icon={faInstagram} className="icons fa-3x"/>
+                </Link>
+              </div>
+              {/* <Link to="/explore">
+                <button className="browse-for-plants">Browse purchased plants!</button>
+              </Link> */}
+            </div>
+          </div>
+          <div className="slider-two">
+            <CategoryIndex
+            />
+            {/* <div className="home-title">Categories</div> */}
+          </div>
+        </div>
       </>
       }
       {/* <Favourites
