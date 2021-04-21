@@ -31,24 +31,78 @@ const Home = () => {
 
 
   return (
-    <div className>
-      <Sliders
-      />
+    <div className="home-body">
+      {/* <div className="space">Hello</div> */}
+      <div className="hero">
+        <div className="sliders">
+          <Sliders
+          />
+        </div>
+        <div>
+          <h2 className="home-title">Plants for you</h2>
+          <h4 className="home-description">Need some ideas for nature&apos;s best home decor?</h4>
+          <div className="browse-buttons">
+            <Link to="/allplants" >
+              <button className="browse-for-plants">Browse the greenhouse!</button>
+            </Link>
+            <Link to="/explore">
+              <button className="browse-for-plants">Browse purchased plants!</button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      {/* <div className="home-title">Browse</div> */}
       { userIsAuthenticated() &&
       <>
         <div className="ui divider"></div>
-        <Link to="/allplants">
-          <CategoryIndex
-          />
-        </Link>
-        <div className="ui divider"></div>
-        <Posts
-        />
+        <div className="second-row">
+          <div className="info-two">
+            <h2 className="home-title-two">Have a good eye?</h2>
+            <h4 className="home-description-two">Upload photos of your greenery to inspire others!</h4>
+            <div className="browse-buttons-two">
+              <Link to="/newpost" >
+                <button className="browse-for-plants-two">Share your plants!</button>
+              </Link>
+              {/* <Link to="/explore">
+                <button className="browse-for-plants">Browse purchased plants!</button>
+              </Link> */}
+            </div>
+          </div>
+          <div className="slider-two">
+            <Posts
+            />
+            {/* <div className="home-title">Categories</div> */}
+          </div>
+        </div>
+        {/* <div className="ui divider"></div>
+        <CategoryIndex
+        /> */}
+        <div className="hero">
+          <div className="sliders">
+            <CategoryIndex
+            />
+          </div>
+          <div>
+            <h2 className="home-title">Questions?</h2>
+            <h4 className="home-description">Contact us!</h4>
+            <div className="browse-buttons">
+              <Link to="/allplants" >
+                <button className="browse-for-plants">Email</button>
+              </Link>
+              <i className="fab fa-twitter"></i>
+
+              {/* <Link to="/explore">
+                <button className="browse-for-plants">Browse purchased plants!</button>
+              </Link> */}
+            </div>
+          </div>
+        </div>
       </>
       }
       { !userIsAuthenticated() &&
       <>
         <div className="ui divider"></div>
+        <div className="home-title">Categories</div>
         <Link to="/allplants">
           <CategoryIndex
           />

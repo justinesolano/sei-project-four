@@ -37,7 +37,7 @@ function CategoryIndex() {
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '50px',
+    centerPadding: '80px',
     focusOnSelect: true,
     dragable: true,
     autoplay: true,
@@ -49,7 +49,6 @@ function CategoryIndex() {
 
   return (
     <>
-      <h1 className="browse">Categories</h1>
       { category ?
         <div className="slider-container">
           <div>

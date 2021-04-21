@@ -28,9 +28,9 @@ const Posts = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     centerMode: true,
-    centerPadding: '50px',
+    centerPadding: '80px',
     focusOnSelect: true,
     dragable: true,
     autoplay: true,
@@ -41,7 +41,6 @@ const Posts = () => {
 
   return (
     <>
-      <h1>Recent posts</h1>
       { post ?
         <div className="slider-container">
           <div>
@@ -52,6 +51,7 @@ const Posts = () => {
                     <div>
                       <span> 
                         <img src={item.image} className="slide-image"/>
+                        <h3 className="post-username"> {item.owner.username} </h3>
                       </span>
                     </div>
                   </div>

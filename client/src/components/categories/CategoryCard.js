@@ -23,7 +23,7 @@ const CategoryCard = () => {
   }, [])
 
   return (
-    <Link to={`/${category}`} key="linkcard">
+    <Link to="/allplants" key="linkcard">
       <div className="ui link cards">
         <div className="card">
           <div className="image card-hover">

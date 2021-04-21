@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import Home from './components/Home'
 import Register from './auth/Register'
 import Login from './auth/Login'
@@ -54,7 +54,7 @@ const App = () => {
           <MakePost />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }

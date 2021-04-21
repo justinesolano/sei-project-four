@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import "semantic-ui-css/semantic.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 @import "react-slideshow-image/dist/styles.css";
 @import "slick-carousel/slick/slick.css";
@@ -20,17 +21,109 @@
   justify-content: center;
 }
 .ui.borderless.menu {
-  font-family: 'Open Sans Condensed', sans-serif;
-  height: 45px;
-  font-size: 20px;
+  // font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Questrial', sans-serif;
+  // font-family: '';
+  height: 55px;
+  // font-size: 20px;
+  margin-bottom: 15px;
 }
 .item{
-  font-size: 20px;
+  font-size: 15px;
 }
 
 // HOME
+.home-body{
+  // background-image: url('../assets/homepage.jpg');
+  font-family: 'Comfortaa';
+  // height: 100vh;
+  margin-top: 0px;
+  background-color: rgb(255, 255, 255);
+}
+.home-title, .home-title-two, .home-description, .home-description-two{
+  font-family: 'Comfortaa';
+}
+.hero, .second-row{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.browse-for-plants{
+  display: flex;
+  height: 50px;
+  width: 250px;
+  margin: 10px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  border-width: 1px;
+  font-family: 'Comfortaa';
+  margin-left: 10px;
+}
+.browse-for-plants-two{
+  display: flex;
+  height: 50px;
+  width: 250px;
+  margin: 10px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  border-width: 1px;
+  font-family: 'Comfortaa';
+  margin-left: 70px;
+}
+.home-description, .home-description-two{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.browse-buttons{
+  margin-left: 55px;
+}
+
+.ui.divider{
+  margin-top: 10px;
+}
+.slider-container{
+  height: 370px;
+}
 .slider{
   height: 50vh;
+}
+.sliders{
+  width: 140vh;
+  height: 380px;
+  margin-left: -100px;
+}
+.slider-two{
+  width: 1200px;
+  height: 380px;
+  // display: flex;
+  // justify-content: center;
+  // margin-left: 640px;
+}
+.post-username{
+  margin-top: -30px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  font-family: 'Quicksand';
+  color: white;
+  text-shadow: 2px 2px #63da90;
+}
+.home-title, .home-title-two{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  height: 20px;
 }
 // .slider-container{
 //   height: 300px;
@@ -46,7 +139,7 @@
 }
 
 .each-slide span {
-  padding: 20px;
+  padding: 10px;
   font-size: 20px;
   background: #efefef;
   text-align: center;
@@ -67,6 +160,8 @@
   color: black;
   font-family: 'Comfortaa', cursive;
 }
+
+
 // IMAGE ON HOVER SHOW DESCRIPTION
 .overlay {
   position: absolute;
