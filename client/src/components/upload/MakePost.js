@@ -1,18 +1,19 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 // import { useHistory } from 'react-router-dom'
-import { getTokenFromLocalStorage } from './helpers/auth'
+import { getTokenFromLocalStorage } from '../helpers/auth'
+import { ImageUploadField } from './upload/ImageUpload'
+
 
 const MakePost = () => {
 
-  const profileId = window.location.href
-  const profile = profileId.substr(profileId.length - 1)
+  // const profileId = window.location.href
+  // const profile = profileId.substr(profileId.length - 1)
 
   const [formData, setFormData] = useState({
     title: '',
     image: '',
     tags: '',
-    categories: '',
   })
 
   // const history = useHistory()
@@ -34,7 +35,7 @@ const MakePost = () => {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         },
       })
-      history.push(`/api/auth/profile/${profile}`)
+      // history.push(`/api/auth/profile/${profile}`)
       location.reload()
       console.log('POSTED', response)
       setErrors('button error')
@@ -42,6 +43,11 @@ const MakePost = () => {
     } catch (err) {
       console.log(err)
     }
+  }
+
+
+  const handleImageUrl = url => {
+    setFormData({ ...formData, image: url })
   }
   
   // imagePath = file.value.replace('C:\\fakepath\\', '')
@@ -68,13 +74,14 @@ const MakePost = () => {
               <i className="ui upload icon"> </i>
             Image
             </label>
-            <input
-              type="file"
-              className="post-image"
-              placeholder="Image"
+            <ImageUploadField
+              // type="file"
+              // className="post-image"
+              // placeholder="Image"
               name="image"
               value={formData.image}
-              onChange={handleChange}  
+              onChange={handleChange} 
+              handleImageUrl={handleImageUrl} 
             />
           </div>
           <div className="required field">
