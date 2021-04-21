@@ -7,10 +7,13 @@ import Posts from './Posts'
 // import { getPayloadFromToken } from './helpers/auth'
 import { Link } from 'react-router-dom'
 import { userIsAuthenticated } from './helpers/auth'
+import { faTwitter } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Home = () => {
 
   const [posts, setPosts] = useState(null)
+  const element = <FontAwesomeIcon icon={faTwitter} />
 
   useEffect(() => {
     const getData = async () => {
@@ -89,7 +92,7 @@ const Home = () => {
               <Link to="/allplants" >
                 <button className="browse-for-plants">Email</button>
               </Link>
-              <i className="fab fa-twitter"></i>
+              <i className="fab fa-twitter">{element}</i>
 
               {/* <Link to="/explore">
                 <button className="browse-for-plants">Browse purchased plants!</button>
