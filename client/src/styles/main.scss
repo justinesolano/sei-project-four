@@ -288,3 +288,70 @@
   margin-left: 50px;
   height: 590px;
 }
+
+
+// ALL PLANTS
+.ui.four.column.grid.cards{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.browse{
+  display: flex;
+  justify-content: center;
+  font-family: 'Comfortaa';
+}
+.ui.search{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+
+// EXPLORE
+
+.image.explore{
+  height: 250px;
+  width: 260px;
+  margin-bottom: 5px;
+}
+.explore.title{
+  font-family: 'Comfortaa';
+  display: flex;
+  justify-content: center;
+}
+.ui.avatar.image{
+  margin-bottom: 7px;
+  margin-top: -5px;
+}
+.post-title{
+  font-family: 'Comfortaa';
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+// .explore-page{
+//   display: flex;
+//   justify-content: center;
+// }
+
+// USER PROFILE
+.profile-details{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.profile-image{
+  width: 450px;
+  height: 340px;
+  border-radius: 200px;
+}.profile-names{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Comfortaa';
+
+}
+.profile-page{
+  font-family: 'Comfortaa';
+}

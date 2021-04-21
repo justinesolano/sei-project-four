@@ -28,12 +28,16 @@ const UserProfile = () => {
   return (
     <>
       { profile ?
-        <div>
-          <h1> {profile.username} </h1>
-          <h2> {profile.first_name} </h2>
-          <img src={profile.profile_image}></img>
+        <div className="profile-page">
+          <div className="profile-details">
+            <img src={profile.profile_image} className="profile-image"></img>
+            <div className="profile-names">
+              <h1 className="profile-username"> {profile.username} </h1>
+              <h2 className="profile-name"> {profile.first_name} </h2>
+            </div>
+          </div>
           <>
-            <h2>Recent activity</h2>
+            <h2 className="recent-activity">Recent activity</h2>
             <div>
               {profile.posts.map(post => (
                 <ul key={post.id}>

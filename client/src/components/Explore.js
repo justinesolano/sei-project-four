@@ -27,22 +27,24 @@ const Explore = () => {
   return (
     <>   
       { posts ?
-        <>
+        <div className="explore-page">
           <div>
-            <h1>Explore</h1>
+            <h1 className="explore title">Explore</h1>
           </div>
-          { posts &&
-        <div className="ui grid">
+          <div className="explore">
+            { posts &&
+        <div className="ui four column grid cards">
           { posts.map(post => (
-            <div className="four wide column" key={post.id}>
+            <div className="content" key={post.id}>
               <Link to={`/profile/${post.owner.id}`}>
                 <PostCard {...post} />
               </Link>
             </div>
           ))}
         </div>
-          }
-        </>
+            }
+          </div>
+        </div>
         :
         <div>Something went wrong!</div>
       }

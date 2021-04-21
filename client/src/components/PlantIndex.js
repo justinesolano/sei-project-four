@@ -45,7 +45,8 @@ const Plants = () => {
   if (!plants) return null
 
   return (
-    <>
+    <div className="allplants">
+      <h1 className="browse">ALL PLANTS</h1>
       <div className="ui search">
         <div className={`ui icon input ${errors}`}>
           <input className="prompt" type="text" placeholder="Find your ideal plant..." onChange={handleChange} />
@@ -65,7 +66,6 @@ const Plants = () => {
           </div>
         </div> */}
       </div>
-      <h1 className="browse">Browse</h1>
       <div className="plant-index-parent">
         {/* {plants && */}
         <div className="ui four column grid cards">
@@ -80,7 +80,7 @@ const Plants = () => {
         </div>
         {/* } */}
       </div>
-    </>
+    </div>
   )
 }
 
