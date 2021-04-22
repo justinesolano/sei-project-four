@@ -67,13 +67,13 @@ const UserProfile = () => {
               </div>
               :
               <>
-                {profile.posts.map(post => (
-                  <div className="profile-posts" key={post.id}>
-                    <div className="ui card">
-                      <img src={post.image}></img>
+                <div className="profile-posts">
+                  {profile.posts.map(post => (
+                    <div className="less-than-five" key={post.id}>
+                      <img src={post.image} className="profile-activity"></img>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </>
             }
           </>

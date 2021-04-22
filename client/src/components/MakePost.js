@@ -85,7 +85,7 @@ const MakePost = () => {
               handleImageUrl={handleImageUrl} 
             />
           </div>
-          <div className="required field">
+          <div className="field">
             <label>Tags</label>
             <input
               className={`input ${errors}`}

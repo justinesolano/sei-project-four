@@ -382,3 +382,14 @@
   justify-content: center;
   margin-top: 70px;
 }
+.profile-posts{
+  display: flex;
+  // flex-direction: row;
+  justify-content: center;
+  // align-items: center;
+}
+.profile-activity{
+  height: 300px;
+  margin: 20px;
+  border-radius: 10px;
+}
