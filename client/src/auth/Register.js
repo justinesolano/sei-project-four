@@ -128,6 +128,21 @@ const Register = () => {
                   handleImageUrl={handleImageUrl} 
                 />
               </div>
+              <div className="post-field">
+                <label>
+                  <i className="ui upload icon"> </i>
+            Posts
+                </label>
+                <input
+                  // type="file"
+                  // className="post-image"
+                  // placeholder="Image"
+                  name="posts"
+                  value={form.posts}
+                  onChange={handleChange} 
+                  handleImageUrl={handleImageUrl} 
+                />
+              </div>
             </div>
             <button className="ui button register" type="submit">Submit!</button>
           </form>
