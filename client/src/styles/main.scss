@@ -407,3 +407,142 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
+// PLANT PAGE
+.plant-page-parent{
+  margin-top: 50px;
+  margin: 50px;
+  margin-left: 200px;
+  width: 180vh;
+  font-family: 'Comfortaa';
+}
+// .header.plant-header{
+//   font-family: 'Comfortaa';
+//   font-size: 40px;
+// }
+.item.plant-page{
+  font-family: 'Comfortaa';
+  width: 200px;
+  margin-left: 50px;
+}
+// content.plant-page{
+//   font-family: 'Comfortaa';
+//   margin-top: 20px;
+// }
+.plant-header, .plant-nickname, .plant-family-description{
+  font-family: 'Comfortaa';
+}
+.ui.items.plant-page{
+  display: flex;
+  justify-content: space-around;
+  // margin-left: 450px;
+}
+.plant-care{
+  font-family: 'Comfortaa';
+  text-decoration: underline;
+}
+// // .plant-info{
+// //   display: flex;
+// //   justify-content: center;
+// //   // flex-direction: column;
+// //   margin: 70px;
+// // }
+.plant-image{
+  width: 400px;
+  height: 450px;
+  margin-right: 50px;
+  border-radius: 20px;
+
+  // margin-bottom: -500px;
+}
+.plant-nickname{
+  font-style: italic;
+  margin-bottom: -15px;
+}
+// .plant-name-section{
+//   margin: -10px
+// }
+// content.plant-page{
+//   display: flex;
+//   margin-top: 50pxx;
+// }
+// .plant-care{
+//   display: flex;
+//   justify-content: center;
+//   margin-left: 450px;
+//   font-family: 'Comfortaa';
+
+// }
+.ui.comments, .comments-title{
+  display: flex;
+  justify-content: center;
+  // margin-left: 900px;
+  // width: 200vh;
+}
+.ui-comments{
+  margin: 20px;
+}
+.field-body.comment{
+  display: flex;
+  justify-content: center;
+}
+.button-comment-submit {
+  display: flex;
+  justify-content: center;
+  // width: 400px;
+  text-align: center;
+  // background-color: rgb(76, 219, 183);
+  color: rgb(255, 255, 255);
+}
+.ui.button.green.comment{
+    background-color: rgb(76, 219, 183);
+    color: rgb(255, 255, 255);
+    width: 500px;
+    margin-left: 5px;
+}
+.textarea{
+  width: 500px;
+  height: 100px;
+  font-family: 'Comfortaa';
+  
+}
+.plant-description{
+  font-style: italic;
+}
+// .content.comment{
+//   display: flex;
+//   justify-content: center;
+// }
+.comment.section{
+  // display: flex;
+  // justify-content: center;
+  margin-left: 500px;
+}
+.field-body.comment{
+  font-family: 'Comfortaa';
+
+}
+.ui.comments{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 500px;
+  // margin-right: 100px;
+}
+.comments-section{
+  margin-left: 710px;
+  width: 59vh;
+}
+.comments-title{
+  font-family: 'Comfortaa';
+  
+}
+// .plant-page-white{
+//   background-color: red;
+//   width: 1500px;
+// }
+// .plant-care{
+//   overflow: auto;
+// }

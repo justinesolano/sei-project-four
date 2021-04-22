@@ -24,7 +24,7 @@ const Posts = () => {
 
   console.log('PROFILE', post)
   const config = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

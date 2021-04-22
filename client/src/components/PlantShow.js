@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 // import { getTokenFromLocalStorage } from './helpers/auth'
 import Comment from './comments/Comment'
 
@@ -31,38 +31,56 @@ const PlantShow = () => {
     <>
       { plant ? 
         <>
-          <div>
-            <h1 className="plant-name">{plant.plantname}</h1>
-            <h2> {plant.scientificname} </h2>
-            <h2> {plant.family} </h2>
-            <img src={plant.image} alt={plant.plantname} className="plant-image"/>
-            <p> {plant.size} </p> <p> {plant.maintenancelevel} </p>
-            <p> Best suited: {plant.bestsuited} </p>
-            <p> {plant.averageprice} </p>
-            <p> {plant.description} </p>
-            <p> {plant.careinstructions} </p>
-            <Comment />
-            { plant &&
-            <>
-              <h2>Comments</h2>
-              <div className="ui comments">
-                {/* <h2>Comments</h2> */}
-                {plant.comments.map(comment => (
-                  <div key={comment.id} className="comment">
-                    <a className="avatar">
-                      <img src={comment.owner.profile_image} />
-                    </a>
-                    <div className="content">
-                      <h4> {comment.owner.username} </h4>
-                      <p>{comment.text}</p>
+          <div className="plant-page-all">
+            <div className="plant-page-white">
+              <div className="plant-page-parent">
+                <div className="ui items plant-page">
+                  <div className="item plant-page">
+                    <div className="plant-image">
+                      <img src={plant.image} alt={'../assets/cannotload.png'} className="plant-image"/>
+                      <p className="plant-description"> {plant.description} </p>
                     </div>
-                    <Link to={`/plants/${params.id}/comment`} className="ui button">Edit</Link>
-                    <div className="ui divider"/>
+                    <div className="content plant-page">
+                      <div className="plant-name-section">
+                        <h1 className="plant-header">{plant.plantname}</h1>
+                        <h2 className="plant-nickname"> {plant.scientificname} </h2>
+                        <h2 className="plant-family-description"> {plant.family} </h2>
+                      </div>
+                      <div className="ui divider"/>
+                      <p className="plant-size">Size: {plant.size} </p> <p>Maintenance: {plant.maintenancelevel} </p>
+                      <p> Best suited: {plant.bestsuited} </p>
+                      <p>Average price: £ {plant.averageprice} </p>
+                      <h3 className="plant-care"> Care instructions:</h3>
+                      <p>{plant.careinstructions} </p>
+                    </div>
                   </div>
-                ))}
+                </div>
+              </div>
+              <Comment />
+              { plant &&
+            <>
+              <h2 className="comments-title">Comments</h2>
+              <div className="ui comments">
+                <div className="comments-section">
+                  {/* <h2>Comments</h2> */}
+                  {plant.comments.map(comment => (
+                    <div key={comment.id} className="comment section">
+                      <a href={`/profile/${comment.owner.id}`} className="avatar">
+                        <img src={comment.owner.profile_image} />
+                      </a>
+                      <div className="content comment">
+                        <h4> {comment.owner.username} </h4>
+                        <p>{comment.text}</p>
+                      </div>
+                      {/* <Link to={`/plants/${params.id}/comment`} className="ui button">Edit</Link> */}
+                      <div className="ui divider"/>
+                    </div>
+                  ))}
+                </div>
               </div>
             </>
-            }
+              }
+            </div>
           </div>
         </>
         :

@@ -34,6 +34,7 @@ const Comment = () => {
         },
       })
       console.log('COMMENT', response)
+      location.reload()
       // history.push(`/plants/${params.id}`)
     } catch (err) {
       console.log(err)
@@ -45,7 +46,7 @@ const Comment = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="field-body">
+        <div className="field-body comment">
           <div className="field">
             <div className="control">
               {/* <h2 className="plant" name="plantname" > {formData.plant} </h2> */}
@@ -58,10 +59,11 @@ const Comment = () => {
             </div>
           </div>
         </div>
-        <button className="button" type="submit">
+        <div className="button-comment-submit">
+          <button className="ui button green comment" type="submit">
           Submit Comment
-        </button>
-
+          </button>
+        </div>
       </form>
 
     </>
