@@ -1,0 +1,145 @@
+[
+{
+  "model": "posts.post",
+  "pk": 9,
+  "fields": {
+    "title": "Plants",
+    "image": "https://imageresizer.static9.net.au/nyg5iC2JrrFGXJvFhSBLfJPqnlw=/400x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2Ff7f86e2e-6a1c-4d8c-9c0b-cd8c7de3c65e",
+    "created_at": "2021-04-20T23:46:17.131Z",
+    "tags": "Plants, exotic",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 19,
+  "fields": {
+    "title": "Test",
+    "image": "http://res.cloudinary.com/dm1bichyt/image/upload/v1619049026/SEI_54_TEST/qqqgfuixpsjjltrargrd.jpg",
+    "created_at": "2021-04-21T23:50:29.937Z",
+    "tags": "Test",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 23,
+  "fields": {
+    "title": "Justine",
+    "image": "http://res.cloudinary.com/dm1bichyt/image/upload/v1619056626/SEI_54_TEST/kmtvua4rysx34sjunywm.jpg",
+    "created_at": "2021-04-22T01:57:16.257Z",
+    "tags": "Plant",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 24,
+  "fields": {
+    "title": "Green",
+    "image": "http://res.cloudinary.com/dm1bichyt/image/upload/v1619092970/SEI_54_TEST/zclxybbit7o34tv6jres.jpg",
+    "created_at": "2021-04-22T12:02:59.402Z",
+    "tags": "Aloe Vera",
+    "owner": 30
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 25,
+  "fields": {
+    "title": "Swiss Cheese",
+    "image": "http://cdn.shopify.com/s/files/1/0150/6262/articles/kara-eads-547179-unsplash.jpg?v=1547149919",
+    "created_at": "2021-04-22T12:04:19.856Z",
+    "tags": "Swiss Cheese",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 26,
+  "fields": {
+    "title": "Pots",
+    "image": "https://specials-images.forbesimg.com/imageserve/5ff8b47e267041ceaab4f0bb/960x0.jpg?cropX1=0&cropX2=1078&cropY1=284&cropY2=1003",
+    "created_at": "2021-04-22T12:04:52.490Z",
+    "tags": "Plant",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 27,
+  "fields": {
+    "title": "Watering 🌿",
+    "image": "https://cdn.shopify.com/s/files/1/0150/6262/files/live-plants-blush-mobile_42646bba-fc11-49ad-ba44-c9453d17f9fd_2048x2048.jpg?v=1617641346",
+    "created_at": "2021-04-22T12:05:18.213Z",
+    "tags": "Watering, plant",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 28,
+  "fields": {
+    "title": "Lone plant",
+    "image": "https://www.rollingstone.com/wp-content/uploads/2020/10/the-sill_snake-plant-laurentii_variant_small_grant_cream_1280x.jpg",
+    "created_at": "2021-04-22T12:06:02.024Z",
+    "tags": "Pots, plant, snake plant",
+    "owner": 3
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 29,
+  "fields": {
+    "title": "Gardening",
+    "image": "https://s17026.pcdn.co/wp-content/uploads/sites/13/2018/05/GardeningAdobeStock_66266397.jpeg",
+    "created_at": "2021-04-22T12:09:39.247Z",
+    "tags": "Garden",
+    "owner": 7
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 30,
+  "fields": {
+    "title": "Indoor green",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/yucca-cane-plant-in-a-pot-on-a-white-background-royalty-free-image-1580856558.jpg",
+    "created_at": "2021-04-22T12:10:28.492Z",
+    "tags": "Plant",
+    "owner": 26
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 31,
+  "fields": {
+    "title": "Green Wall",
+    "image": "https://i.pinimg.com/originals/e5/98/b8/e598b8b2e04e10c5018b307d6fc767b0.jpg",
+    "created_at": "2021-04-22T12:30:09.508Z",
+    "tags": "Plants",
+    "owner": 30
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 32,
+  "fields": {
+    "title": "Plant",
+    "image": "http://res.cloudinary.com/dm1bichyt/image/upload/v1619100066/SEI_54_TEST/vityggrvc9amqdtolvxt.jpg",
+    "created_at": "2021-04-22T14:01:12.536Z",
+    "tags": "Plant",
+    "owner": 31
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 33,
+  "fields": {
+    "title": "sabine",
+    "image": "http://res.cloudinary.com/dm1bichyt/image/upload/v1619106281/SEI_54_TEST/svhpzl01a1hxjp2mafdm.jpg",
+    "created_at": "2021-04-22T15:44:48.449Z",
+    "tags": "flower",
+    "owner": 7
+  }
+}
+]

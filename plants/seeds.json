@@ -22,27 +22,6 @@
 },
 {
   "model": "plants.plant",
-  "pk": 2,
-  "fields": {
-    "plantname": "Kentia Palm",
-    "scientificname": "Howea Forsteriana",
-    "description": "If you love the tropical look of a palm tree but don’t live in a tropical region, try growing a Kentia palm. These plants are notorious for being able to withstand conditions that many houseplants can’t tolerate. Plus, an indoor Kentia palm can attain a formidable height that makes it an outstanding focal point in interior landscapes.",
-    "careinstructions": "The plants are quite forgiving and tolerant of low light conditions but do prefer an area that receives indirect light indoors. You can also choose to keep your plant outdoors during the warmer months in a somewhat shaded location. While the Kentia can tolerate temperatures down to 25 F. (-4 C.) and up to 100 F. (38 C.), it is best to bring the plant back indoors prior to winter and offer protection from excessive heat during the summer – no direct sun.  They adapt to a wide range of soil, from clay to loam and acidic to alkaline. Plant container grown Kentia in well-draining potting mix, preferably on the sandy side. Once established, Kentia palm plants are fairly drought tolerant, although they do not like to be overly dry, or for that matter overly wet. Water only when the top inch or so (2.5 cm.) of soil starts to dry out. Mist indoor Kentia palm occasionally to provide some humidity and to remove any dust build-up.  Palms, in general, require minimal pruning. Over pruning may cause irreversible damage to the trunk. You should, however, remove old leaf bases by gently pulling; do not force them off, which can cause permanent scarring or open up injury for trunk rot disease.",
-    "family": "Arecaceae",
-    "size": "Large",
-    "maintenancelevel": "High",
-    "bestsuited": "Outdoor, Indoor",
-    "image": "1",
-    "decorativebonus": 4,
-    "averageprice": 70,
-    "owner": 1,
-    "categories": [
-      1
-    ]
-  }
-},
-{
-  "model": "plants.plant",
   "pk": 3,
   "fields": {
     "plantname": "Kentia Palm",
@@ -103,6 +82,358 @@
     "owner": 3,
     "categories": [
       1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 6,
+  "fields": {
+    "plantname": "Snake Plant",
+    "scientificname": "Dracaena Trifasciata",
+    "description": "Similar to other household succulents, snake plants help to filter indoor air. What’s unique about this particular plant is that it’s one of the few plants that can convert carbon dioxide into oxygen at night. This quality makes it an ideal plant for bedroom decor as it can help regulate healthy airflow. That and its slick attractive leaves are good reasons to purchase one",
+    "careinstructions": "Perhaps one of the most popular reasons people include snake plants in their decor is that they’re low maintenance, requiring little attention to grow. They’re resilient, hardy plants and can survive in relatively dry environments, both indoors and out. Conditions ranging from 55 – 85℉ are fine for sansevieria, however, they prefer warmer temperatures. Temperatures below 50℉ can cause them harm. Indirect sunlight is best. Partial sun works best for snake plants. Though, it can still grow in darker corners or in brighter window areas. If completely shaded, the plant can dull and the leaves may become a bit floppy. Don’t overwater. Too much water is this plant’s weakness. Place a snake plant in a well-drained pot to avoid overwatering, as it can cause rotting. Only water the soil when it’s completely dry.  While the toxicity levels are low, it’s safest to keep pets away from your plant. It can cause excessive salivation, pain, nausea, vomiting, and diarrhoea. Being educated on poisonous plants can help you avoid any accidents all the while enjoying your greenery.",
+    "family": "Asparagaceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Indoor, Outdoor",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1563876772/products/snake-plant-dda326.jpg",
+    "decorativebonus": 4,
+    "averageprice": 25,
+    "owner": 3,
+    "categories": [
+      3,
+      2
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 7,
+  "fields": {
+    "plantname": "Alocasia Stingray",
+    "scientificname": "Alocasia macrorrhizos",
+    "description": "A rare and unusual houseplant, it’s easy to see why this alocasia is much sought after. Appropriately nicknamed alocasia stingray, its leaves look like a fever of stingrays (yes, that’s the collective noun - who knew?) winding through the air.",
+    "careinstructions": "This plant thrives best in well lit, bright conditions, however direct sunlight will scorch the leaves. Keep the compost moist with warm water. Do not allow the soil to dry out. Little and often is a good approach. It needs to be kept warm, ideally between 18-22°C It needs a moist environment with above average humidity. It is good to stand it on a pebble tray to improve humidity and mist frequently. Pop it near the shower for a while to give it an occasional boost if required. It is deal in kitchens and bathrooms. Furthermore, apply a slow release fertiliser once a month during the growing season. Alocasia have a dormant period where leaves will fade and die so do not be alarmed when this happens. During this period, the plants will require less water, so simply moisten the soil from time to time.",
+    "family": "Araceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1597167865/ofuhtckh0qpdcfow90qg.jpg",
+    "decorativebonus": 4,
+    "averageprice": 25,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 8,
+  "fields": {
+    "plantname": "Maidenhair fern",
+    "scientificname": "Adiantum",
+    "description": "If there were such a thing as green layered fashion, it would be all about the maidenhair fern (scientific name: Adiantum). This fern grows in layers that beautifully filter the light, and looks best at eye level.",
+    "careinstructions": "In their natural forest environment, maidenhair ferns are primarily covered by a canopy of trees, receiving a bit of shade and a bit of partial sunlight. Maidenhair ferns prefer moist but well-draining potting soil. Your best bet when it comes to ensuring your maidenhair fern thrives is to focus on multiple water sources for this thirsty species. Consistently moist soil is a great place to start—from there, be sure to water your fern consistently, either daily or every other day, never allowing the soil to dry out. Keep the fern in a plastic pot with holes, then place the plastic pot in a more attractive outer pot if you wish. This way, you can easily check on the moisture levels in the plastic pot, and the drainage holes will prevent the soil from becoming too soggy.",
+    "family": "Pteridaceae",
+    "size": "Small",
+    "maintenancelevel": "Needs love",
+    "bestsuited": "Indoors, Outdoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1526653346/products/maidenhair-fern-e1a1d9.jpg",
+    "decorativebonus": 3,
+    "averageprice": 15,
+    "owner": 3,
+    "categories": [
+      2,
+      5
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 9,
+  "fields": {
+    "plantname": "Fantasy Venice",
+    "scientificname": "Tradescantia Nanouk",
+    "description": "This plant is a special type of spiderwort plant that's become a must-have for plant lovers. Pink, white, purple, and green stripes pattern its lush leaves on upright stems.",
+    "careinstructions": "Tradescantia Nanouk does well in bright, indirect sunlight or full sun. Water your Tradescantia Nanouk once a week or when the top inch of the soil is dry. Be careful not to overwater them. Tradescantia Nanouk is less likely to be sensitive to humidity due to its thick leaves.",
+    "family": "Commelinaceae",
+    "size": "Small to Medium",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1599571546/lsvmslo5r2noyg0ifaka.jpg",
+    "decorativebonus": 5,
+    "averageprice": 15,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 10,
+  "fields": {
+    "plantname": "Corn Plant",
+    "scientificname": "Dracaena Fragrans",
+    "description": "Native tribes of northern Tanzania and Mt. Kilimanjaro used corn plants to mark sacred sites as far back as 1000 BC. This is a plant deserving of some respect.",
+    "careinstructions": "As we all do, he needs moisture to keep looking fresh. He’ll love a bathroom or a spray with a mister every few days. He's happy in anything from light shade to bright, soft light. Keep him out of harsh direct sun. Light watering He’s low maintenance on water. Stick a finger in his soil every week or so and if it comes out dry, time for a drink.",
+    "family": "Asparagaceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Almost unkillable",
+    "bestsuited": "Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1565100187/products/dracaena-fragrans-889a1f.jpg",
+    "decorativebonus": 5,
+    "averageprice": 45,
+    "owner": 3,
+    "categories": [
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 11,
+  "fields": {
+    "plantname": "Aglaonema ‘Silver Bay’",
+    "scientificname": "Aglaonema",
+    "description": "The Chinese evergreen comes from SouthEast Asia, where you’ll find it modestly basking in the dappled light under large tropical trees. It spreads freely and can often be found covering large areas of ground.",
+    "careinstructions": "She likes moist air, so give her a light mist once a week or so. It will stop the edges of her leaves browning. She’ll be fine in anything from light shade to bright light. Try to avoid direct sun as it burns her leaves. She’s ready for a drink whenever the top two inches of soil feel dry. She’s not fussy and copes with irregular watering.",
+    "family": "Araceae",
+    "size": "Small to Medium",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Indoor, Outdoor",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1563802945/products/aglaonema-silver-bay-bd4028.jpg",
+    "decorativebonus": 4,
+    "averageprice": 25,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 12,
+  "fields": {
+    "plantname": "Upright elephant ear",
+    "scientificname": "Alocasia Portodora",
+    "description": "If you think it looks big now, you should see Upright elephant ear, or Alocasia portodora, in the wild. It can grow as tall as 4 metres in its natural habitat in South-East Asia. It’s obviously much smaller than that in a domestic setting, but it still commands a lot of space.",
+    "careinstructions": "he likes a lot of moisture in the air. The bathroom is a great home, or mist her leaves every few days. Those giant leaves like a lot of light. The more the better, so give her the brightest spot in your home. She likes her soil moist, so check her once a week and water if the top inch of soil feels dry. Cut back in winter.",
+    "family": "Arums",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1594797789/b9t1ikcdcerl6qsqdyqj.jpg",
+    "decorativebonus": 5,
+    "averageprice": 80,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 13,
+  "fields": {
+    "plantname": "Yellow Gem",
+    "scientificname": "Ficus Altissima",
+    "description": "Ficus altissima is very similar to the enormously popular fiddle leaf fig in many ways. They both have the same thick, dark green, intricately patterned leaves. They both grow natively in Southeast Asia. The only significant different between them is that ficus altissima has oval-shaped leaves and doesn’t spread out as much as the fiddle leaf fig. That makes it a great choice for smaller spaces.",
+    "careinstructions": "He absorbs a lot of moisture through his leaves. You’ll see the healthiest growth if you give his leaves a regular mist.  He likes a lot of light, but he finds direct sun too harsh. Put him in a bright room, but not by the window. He likes a drink whenever the top two inches of his soil are dry. He’ll need a lot less water in winter.",
+    "family": "Moraceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoor, Indoor",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1603904035/i4efy9fkmewcf5xdqb9h.jpg",
+    "decorativebonus": 4,
+    "averageprice": 55,
+    "owner": 3,
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 14,
+  "fields": {
+    "plantname": "Calathea Orbifolia",
+    "scientificname": "Calathea Orbifolia",
+    "description": "Calatheas are wonderful houseplants. They come in a huge range of different patterns and colours and they’re all relatively easy to look after. Calathea orbifolia is a very handsome example, with large, round leaves striped with dark green and silver.",
+    "careinstructions": "He adores a steamy atmosphere. He’ll love living in your bathroom, but misting him regularly will also do the job.  He likes his soil to be lightly moist. Check him weekly and water him if the top two inches of soil feel dry. He can live in quite low light, but prefers something brighter. Avoid direct sunlight as it burns his leaves.",
+    "family": "Marantaceae",
+    "size": "Small to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1595262809/ltsoxuivswseihyul7gz.jpg",
+    "decorativebonus": 4,
+    "averageprice": 25,
+    "owner": 3,
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 15,
+  "fields": {
+    "plantname": "Sweetheart Plant",
+    "scientificname": "Philodendron Scandens",
+    "description": "Philo means ‘’loving’ in Greek, while dendron means ‘tree’. Which makes this the ‘loving tree’. While that could be because it’s just so easy to like, it’s probably because of its big heart-shaped leaves.",
+    "careinstructions": "A moist atmosphere helps keep his leaves healthy. Give him a good mist every few days. Or put him in a steamy bathroom.  He’ll be fine in semi-shade, though his leaves may fade a bit. He prefers a position in a bright room. He likes to be watered when his top two inches of soil are dry. He’s not keen on sitting in soggy soil.",
+    "family": "Philodendron Scandens",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1591268340/knmtjyhji3waoh2xpg7n.jpg",
+    "decorativebonus": 5,
+    "averageprice": 95,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 16,
+  "fields": {
+    "plantname": "Dumb Cane",
+    "scientificname": "Dieffenbachia Seguine",
+    "description": "Everything about the dumb cane, or dieffenbachia, is dramatic. Native to the tropics of Central and South America, it has huge variegated leaves. Even the way it grows is showy, new leaves curling up from the central stem before they unfurl.",
+    "careinstructions": "She absorbs a lot of moisture from the air. A nice regular misting will help her leaves stay fresh and healthy.  She likes a good amount of light throughout the day, but ideally not direct sunlight (it burns her). Check her weekly and if the top two inches of soil feel dry it’s time for a drink. She’s less thirsty in winter.",
+    "family": "Arums",
+    "size": "Small to Medium",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1618414247/grauwrakgome04lzkp6s.jpg",
+    "decorativebonus": 5,
+    "averageprice": 45,
+    "owner": 3,
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 17,
+  "fields": {
+    "plantname": "Rubber plant",
+    "scientificname": "Ficus elastica",
+    "description": "The rubber plant gets its name from the white latex coursing through its veins, which was once used to make rubber. Even its handsome, glossy leaves have a thick, rubber-like look.",
+    "careinstructions": "His leaves can absorb a lot of moisture, so spraying him with a mister every few days will encourage healthy growth.  He loves a bright room but he’s not partial to direct sun, so if your room is very sunny, place him away from the window.  Water him whenever the top two inches of soil are dry. He needs a lot less water in winter than in summer.",
+    "family": "Moraceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Indoors, Outdoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1526658066/products/rubber-plant-f40f25.jpg",
+    "decorativebonus": 4,
+    "averageprice": 35,
+    "owner": 3,
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 18,
+  "fields": {
+    "plantname": "Banana 'Dwarf Cavendish'",
+    "scientificname": "Musa Acuminata",
+    "description": "The plant that became known as the Cavendish banana was first brought to the UK in 1834, by the chaplain of Alton Towers, a stately home now better known as a theme park. The plants were gifted to William Cavendish, 6th Duke of Devonshire, who had them cultivated in his greenhouses and then named them after himself. Well, why wouldn’t you?",
+    "careinstructions": "Remind her of her jungle home by keeping the humidity high. She loves to be misted regularly. She will be ok in light shade, but she grows best in bright light. She can handle some direct sun. She likes her soil to stay slightly moist. Water her when the top two inches of soil feel dry.",
+    "family": "Musaceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1564154083/products/musa-dwarf-cavendish-18e2f2.jpg",
+    "decorativebonus": 4,
+    "averageprice": 50,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 19,
+  "fields": {
+    "plantname": "Peace Lily",
+    "scientificname": "Spathiphyllum wallisii",
+    "description": "As you may have guessed from its love of steamy conditions, the peace lily is native to tropical rainforests, specifically those of South and Central America. It’s thought it was brought to Europe some time in the late 1800s and it's adapted well to the UK’s less than tropical conditions.",
+    "careinstructions": "She loves humidity. If your bathroom gets lots of light, pop her in there. Or mist her every few days to keep her happy.  She’s easy when it comes to light, managing in most conditions, though she’ll flower more in a brighter spot. She’s pretty tough and will usually bounce back from a missed watering. Water her when the top inch of soil feels dry.",
+    "family": "Araceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Indoors, Outdoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1618417762/cdmr7biwe9skr4xdg3yl.jpg",
+    "decorativebonus": 3,
+    "averageprice": 45,
+    "owner": 3,
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 20,
+  "fields": {
+    "plantname": "Weeping Fig",
+    "scientificname": "Ficus Benjamina",
+    "description": "If you encountered ficus benjamina in the wild, mostly in Asia or Australia, you could expect it to be as tall as 30 metres. Don’t panic that you’re going to need to smash a hole in your roof. Our indoor version is much more compact.",
+    "careinstructions": "He loves moist air and absorbs a lot of water through his leaves.  Frequent misting will keep that greenery healthy.  Somewhere bright but away from direct sun is ideal. If he drops leaves, he probably needs more light. He likes his soil gently moist, but never soggy. Water him when the top two inches of soil are dry.",
+    "family": "Moraceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1519930296/products/ficus-benjamina-4bb763.jpg",
+    "decorativebonus": 4,
+    "averageprice": 70,
+    "owner": 3,
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 21,
+  "fields": {
+    "plantname": "Swiss Cheese Plant",
+    "scientificname": "Monstera Deliciosa",
+    "description": "This plant’s latin name, monstera deliciosa, translates as - you’ve probably worked this out - ‘delicious monster’. And isn’t it just. The monster part is likely because of its huge, glossy leaves. The delicious part is because in the wild it bears (apparently) very tasty fruit.",
+    "careinstructions": "He likes a moist atmosphere. He’ll appreciate misting every few days, especially when the central heating is on. He’ll be ok in a semi-shaded spot, but he’ll grow much better somewhere that gets lots of light but not direct sun. He likes to dry out a little between waterings. Give him a drink whenever the top two inches of soil feel dry.",
+    "family": "Araceae",
+    "size": "Medium to Large",
+    "maintenancelevel": "Easy care",
+    "bestsuited": "Outdoors, Indoors",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1618414094/r8qiv7cxd5vmr5euxzgw.jpg",
+    "decorativebonus": 4,
+    "averageprice": 70,
+    "owner": 3,
+    "categories": [
+      2,
       3
     ]
   }
