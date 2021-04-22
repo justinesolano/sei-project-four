@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import cannotLoad from '../assets/cannotLoad'
-// import Slider from 'react-slick'
 
 const CategoryCard = () => {
 
@@ -10,11 +9,9 @@ const CategoryCard = () => {
 
   useEffect(() => {
     const getData = async () => {
-      console.log('RESPONSE', category)
       try {
         const response = await axios.get('/api/posts/')
         setCategory(response.data)
-        console.log('POSTSS', response.data)
       } catch (err){
         console.log(err)
       }

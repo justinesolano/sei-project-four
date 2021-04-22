@@ -8,16 +8,13 @@ import SlideShow from './home/SlideShow'
 const UserProfile = () => {
 
   const [profile, setProfile] = useState(null)
-  // const [posts, setPosts] = useState('')
   const { id } = useParams()
-  // console.log('POST', posts)
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`/api/auth/profile/${id}`)
+        const { data } = await axios.get(`/api/auth/profile/${id}/`)
         setProfile(data)
-        console.log('PROFILE DATA', data)
       } catch (err){
         console.log(err)
       }
@@ -39,7 +36,6 @@ const UserProfile = () => {
     autoplaySpeed: 3000,
   }
 
-  console.log('PROFILE ID', profile)
 
   return (
     <>

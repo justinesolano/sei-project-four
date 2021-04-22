@@ -9,11 +9,9 @@ const Explore = () => {
 
   useEffect(() => {
     const getData = async () => {
-      console.log('RESPONSE', posts)
       try {
         const response = await axios.get('/api/posts/')
         setPosts(response.data)
-        console.log('POSTSS', response.data)
       } catch (err){
         console.log(err)
       }
@@ -23,7 +21,6 @@ const Explore = () => {
 
   if (!posts) return null
 
-  console.log('POSTS', posts)
   return (
     <>   
       { posts ?

@@ -2,30 +2,25 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
-// import { getTokenFromLocalStorage } from '../../helpers/auth'
 
 const CommentEdit = () => {
 
   const history = useHistory()
   const params = useParams()
 
-  console.log('HISTORY', history)
 
   const plantId = window.location.href
   const id = plantId.substr(plantId.length - 1)
-  // console.log('PLANT ID', plantId)
 
   const [formData, setFormData] = useState({
     text: '',
     plant: `${id}`,
   })
-  console.log('FORM DATA', formData)
 
   useEffect(() => {
-    console.log('PARAMS', params)
     const getData = async () => {
       try {
-        const response = await axios.get(`/api/plants/${params.id}`)
+        const response = await axios.get(`/api/plants/${params.id}/`)
         setFormData(response.data)
       } catch (err) {
         console.log(err)
@@ -42,7 +37,7 @@ const CommentEdit = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await axios.put(
-      `/api/plants/${id}/comment`, formData,
+      `/api/plants/${id}/comment/`, formData,
       {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
       }

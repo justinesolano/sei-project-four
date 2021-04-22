@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 function CategoryIndex() {
 
   const [category, setCategory] = useState(null)
-  console.log('CATEGORY', category)
 
   useEffect(() => {
     const getData = async () => {
@@ -22,12 +21,6 @@ function CategoryIndex() {
     }
     getData()
   }, [])
-
-  // const flower = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1508426178/products/anthurium-275.jpg'
-  // const noFlower = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1535551624/products/rubber-plant-a8875c.jpg'
-  // const almostUnkillable = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1519842763/products/zamioculcas-raven-f5ca64.jpg'
-  // const easyCare = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1578052065/pk98gfouoobsjwvvr1ou.jpg'
-  // const highMaintenance = 'https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1594296523/dpnkx4fdp3yzijlbdtrr.jpg'
 
 
   const config = {

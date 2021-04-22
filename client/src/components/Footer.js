@@ -1,14 +1,13 @@
 import React from 'react'
+import GA from '../assets/ga.png'
+import greenHouse from '../assets/greenhouse.png'
+
 
 const Footer = () => {
   return (
     <>
-      <script src="https://kit.fontawesome.com/c72b70522f.js" crossOrigin="anonymous"></script>
-
-      <div>
-        <div className="ui divider"></div>
-      Footer
-        <i className="fab fa-twitter">Twitter</i>
+      <div className="footer">
+        <p>Justine Solano <img src={greenHouse} className="greenhouse"></img><img src={GA} className="ga"></img></p>
       </div>
     </>
   )

@@ -25,9 +25,7 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('HISTORY', history)
     try {
-      // await axios.post('/api/auth/register/', form)
       const response = await axios.post('/api/auth/register/', form)
       const responseTwo = await axios.post('/api/auth/login/', { email: form.email, password: form.password })
       window.localStorage.setItem('token', JSON.stringify(response.data.token))
@@ -58,7 +56,6 @@ const Register = () => {
               <input
                 className={`input ${errors}`}
                 placeholder="Email"
-                // type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}  
@@ -119,9 +116,6 @@ const Register = () => {
                 <i className="ui upload icon"> </i>
                 <label className="field-title">Image</label>
                 <ImageUploadField
-                  // type="file"
-                  // className="post-image"
-                  // placeholder="Image"
                   name="profile_image"
                   value={form.profile_image}
                   onChange={handleChange} 
@@ -134,9 +128,6 @@ const Register = () => {
             Posts
                 </label>
                 <input
-                  // type="file"
-                  // className="post-image"
-                  // placeholder="Image"
                   name="posts"
                   value={form.posts}
                   onChange={handleChange} 

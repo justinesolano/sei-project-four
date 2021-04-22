@@ -12,11 +12,9 @@ const PlantShow = () => {
 
   useEffect(() => {
     const getData = async () => {
-      console.log('PARAMS', params)
       try {
-        const { data } = await axios.get(`/api/plants/${params.id}`)
+        const { data } = await axios.get(`/api/plants/${params.id}/`)
         setPlant(data)
-        console.log('PLANTS DATA RESPONSE', data)
       } catch (err) {
         console.log(err)
       }
@@ -24,8 +22,6 @@ const PlantShow = () => {
     getData()
   }, [params.id])
 
-
-  console.log('PLANTS ID', plant)
 
   return (
     <>

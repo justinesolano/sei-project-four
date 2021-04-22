@@ -10,11 +10,9 @@ const Posts = () => {
 
   useEffect(() => {
     const getData = async () => {
-      console.log('RESPONSE', post)
       try {
         const response = await axios.get('/api/posts/')
         setPost(response.data)
-        console.log('POSTSS', response.data)
       } catch (err){
         console.log(err)
       }
@@ -22,7 +20,6 @@ const Posts = () => {
     getData()
   }, [])
 
-  console.log('PROFILE', post)
   const config = {
     // dots: true,
     infinite: true,
@@ -36,7 +33,6 @@ const Posts = () => {
     autoplay: true,
     autoplaySpeed: 3000,
   }
-
 
 
   return (

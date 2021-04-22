@@ -9,11 +9,9 @@ const PostCard = ({ title, image, owner }) => {
 
   useEffect(() => {
     const getData = async () => {
-      console.log('RESPONSE', profile)
       try {
-        const response = await axios.get('/api/auth/profiles')
+        const response = await axios.get('/api/auth/profiles/')
         setProfile(response.data)
-        console.log('POSTSS', response.data)
       } catch (err){
         console.log(err)
       }

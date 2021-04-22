@@ -1,14 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-// import { useHistory } from 'react-router-dom'
-// import { getTokenFromLocalStorage } from './helpers/auth'
 import { ImageUploadField } from './ImageUpload'
 
 
 const MakePost = () => {
-
-  // const profileId = window.location.href
-  // const profile = profileId.substr(profileId.length - 1)
 
   const [formData, setFormData] = useState({
     title: '',
@@ -16,18 +11,15 @@ const MakePost = () => {
     tags: '',
   })
 
-  // const history = useHistory()
   const [errors, setErrors] = useState('')
 
   const handleChange = (event) => {
     const newForm = { ...formData, [event.target.name]: event.target.value }
     setFormData(newForm)
-    console.log('FORM', newForm)
   }
 
 
   const handleSubmit = async (event) => {
-    console.log('FORM DATA', formData)
     event.preventDefault()
     
     try {
@@ -36,11 +28,9 @@ const MakePost = () => {
           Authorization: `Bearer ${window.localStorage.getItem('token')}`,
         },
       })
-      // history.push(`/api/auth/profile/${profile}`)
       location.reload()
       console.log('POSTED', response)
       setErrors('button error')
-      // history.push(`/plants/${params.id}`)
     } catch (err) {
       console.log(err)
     }
@@ -51,7 +41,6 @@ const MakePost = () => {
     setFormData({ ...formData, image: url })
   }
   
-  // imagePath = file.value.replace('C:\\fakepath\\', '')
 
 
   return (

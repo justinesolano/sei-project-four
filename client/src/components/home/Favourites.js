@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react'
-// import { Slide } from 'react-slideshow-image'
-// import Whirligig from 'react-whirligig'
 import FavouriteCard from './FavouriteCard'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
-// import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
+
 
 const Favourites = ({ plantname, newFavourites }) => {
   const [plants, setPlants] = useState(null)
-  // console.log('PLANTS', plants)
 
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get('/api/plants/')
         setPlants(response.data)
-        console.log('PLANTS DATA', response.data)
       } catch (err) {
         console.log(err)
       }
@@ -40,7 +35,6 @@ const Favourites = ({ plantname, newFavourites }) => {
   }
 
 
-  // error conditional
   if (!plants) return null
 
   return (
