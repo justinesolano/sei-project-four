@@ -21,12 +21,11 @@
   justify-content: center;
 }
 .ui.borderless.menu {
-  // font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Questrial', sans-serif;
-  // font-family: '';
   height: 55px;
-  // font-size: 20px;
   margin-bottom: 15px;
+  background-color: rgb(255, 255, 255);
+  
 }
 .item{
   font-size: 15px;
@@ -36,9 +35,7 @@
 .home-body{
   background-image: url('../assets/leaves.jpeg');
   font-family: 'Comfortaa';
-  // height: 100vh;
   margin-top: 0px;
-  // background-color: rgb(255, 255, 255);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -217,7 +214,7 @@
 }
 
 
-// REGISTER
+// REGISTER AND LOGIN
 .register-page{
   background-image: url('../assets/floral.jpeg');
   height: 100vh;
@@ -260,6 +257,8 @@
 .register-white, .login-white{
   background-color: rgba(236, 236, 236, 0.6);
   width: 500px;
+  height: 360px;
+  padding-top: 20px;
 }
 .field-title{
   font-size: 13px;
@@ -392,4 +391,19 @@
   height: 300px;
   margin: 20px;
   border-radius: 10px;
+}
+
+
+// MAKE A POST
+.new-post {
+  display: flex;
+  justify-content: center;
+  font-family: 'Comfortaa';
+}
+.new-post-page {
+  background-image: url('../assets/branch.jpeg');
+  margin-top: -20px;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

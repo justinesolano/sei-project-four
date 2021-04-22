@@ -55,51 +55,53 @@ const MakePost = () => {
 
 
   return (
-    <>
-      <h1>New Post</h1>
+    <div className="new-post-page">
       <div className="register-body">
-        <form className="ui form" onSubmit={handleSubmit}>
-          <div className="required field">
-            <label>Title</label>
-            <input
-              className={`input ${errors}`}
-              placeholder="Title"
-              // type="email"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}  
-            />
-          </div>
-          <div className="required">
-            <label>
-              <i className="ui upload icon"> </i>
-            Image
-            </label>
-            <ImageUploadField
+        <div className="register-white">
+          <h1 className="new-post">New Post</h1>
+          <form className="ui form" onSubmit={handleSubmit}>
+            <div className="required field">
+              <label>Title</label>
+              <input
+                className={`input ${errors}`}
+                placeholder="Title"
+                // type="email"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}  
+              />
+            </div>
+            <div className="required">
+              <label>
+                <i className="ui upload icon"> </i>
+                <label>Image</label>
+              </label>
+              <ImageUploadField
               // type="file"
               // className="post-image"
               // placeholder="Image"
-              name="image"
-              value={formData.image}
-              onChange={handleChange} 
-              handleImageUrl={handleImageUrl} 
-            />
-          </div>
-          <div className="field">
-            <label>Tags</label>
-            <input
-              className={`input ${errors}`}
-              placeholder="Tags"
-              // type="email"
-              name="tags"
-              value={formData.tags}
-              onChange={handleChange}  
-            />
-          </div>
-          <button className="ui green button" type="submit">Submit!</button>
-        </form>
+                name="image"
+                value={formData.image}
+                onChange={handleChange} 
+                handleImageUrl={handleImageUrl} 
+              />
+            </div>
+            <div className="field">
+              <label>Tags</label>
+              <input
+                className={`input ${errors}`}
+                placeholder="Tags"
+                // type="email"
+                name="tags"
+                value={formData.tags}
+                onChange={handleChange}  
+              />
+            </div>
+            <button className="ui button register" type="submit">Submit!</button>
+          </form>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
