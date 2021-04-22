@@ -57,7 +57,7 @@ const MakePost = () => {
   return (
     <div className="new-post-page">
       <div className="register-body">
-        <div className="register-white">
+        <div className="make-post-white">
           <h1 className="new-post">New Post</h1>
           <form className="ui form" onSubmit={handleSubmit}>
             <div className="required field">
