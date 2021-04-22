@@ -254,10 +254,16 @@
 .ui.form.login{
   margin-top: 5px;
 }
-.register-white, .login-white{
+.register-white {
   background-color: rgba(236, 236, 236, 0.6);
   width: 500px;
-  height: 360px;
+  height: 650px;
+  padding-top: 20px;
+}
+.login-white{
+  background-color: rgba(236, 236, 236, 0.6);
+  width: 500px;
+  height: 300px;
   padding-top: 20px;
 }
 .field-title{
