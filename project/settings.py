@@ -1,5 +1,5 @@
-import os
 import django_on_heroku
+import os
 """
 Django settings for project project.
 
