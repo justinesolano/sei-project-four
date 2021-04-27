@@ -27,14 +27,12 @@ password: adminpass
 * SCSS
 * HTTP-proxy-middleware
 * React Router DOM
-
 ## Backend:
 * Python
 * Django
 * Django REST Framework
 * Psycopg2
 * PyJWT
-
 ## Development tools:
 * VSCode
 * Insomnia
