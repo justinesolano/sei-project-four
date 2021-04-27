@@ -72,7 +72,9 @@ From the start of the course, I had planned on doing a plant-centric app/website
 ### Wireframes
 ![GreenHouse Wireframe](client/src/assets/wireframes.jpg)
 
+I knew that having complex interlinked models in a solo project would be easily overwhelming so I used a Trello board to organise myself. I split the project into backend, frontend, webpages(components), extra functions and bugs, including a list for components that are finished and styled. This definitely helped me delegate tasks evenly each day and to see what I need to prioritise in order to reach the minimum viable product (MVP).
+
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
 
-## BACKEND SETUP
+## BACKEND SETUP (day 2 & 3)
