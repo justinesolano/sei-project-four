@@ -1,3 +1,5 @@
-# sei-project-four
+# General Assembly Project 4: GreenHouse
 
-GREENHOUSE
+## Description:
+
+
