@@ -1,7 +1,13 @@
 # General Assembly Project 4: GreenHouse
 
-## Goal:
-Create a full-stack app using React, Python, Django and PostgreSQL.
+## Project Brief:
+* **Build a full-stack application** by making your own backend and your own front-end
+* **Use a Python Django API** using Django REST Framework to serve your data from a Postgres database
+* **Consume your API with a separate front-end** built with React
+* **Be a complete product** which most likely means multiple relationships and CRUD functionality for at least a couple of models
+* **Implement thoughtful user stories/wireframes** that are significant enough to help you know which features are core MVP and which you can cut
+* **Have a visually impressive design** to kick your portfolio up a notch and have something to wow future clients & employers. **ALLOW** time for this.
+* **Be deployed online** so it's publicly accessible.
 
 ## Timeframe:
 7 Days
@@ -72,7 +78,7 @@ From the start of the course, I had planned on doing a plant-centric app/website
 ### Wireframes
 ![GreenHouse Wireframe](client/src/assets/wireframes.jpg)
 
-I knew that having complex interlinked models in a solo project would be easily overwhelming so I used a Trello board to organise myself. I split the project into backend, frontend, webpages(components), extra functions and bugs, including a list for components that are finished and styled. This definitely helped me delegate tasks evenly each day and to see what I need to prioritise in order to reach the minimum viable product (MVP).
+I knew that having complex interlinked models in a solo project would be easily overwhelming so I used a Trello board to organise myself. I split the project into backend, frontend, webpages(components), extra functions and bugs, including a list for components that are finished and styled. This definitely helped me delegate tasks evenly each day and to see what I need to prioritise in order to reach the minimum viable product (MVP). Although working on my own, I made sure to stay on Zoom all day in case I needed to quickly reach out to instructors for help which I did twice throughout the project. I also made sure to use and check Slack regularly for help from my classmates or to see if they were having similar obstacles. It made things go smoother and less stressful.
 
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
