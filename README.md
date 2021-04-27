@@ -21,7 +21,7 @@ GreenHouse allows users to browse for different types of plants to use for inter
 # Deployed app:
 To explore all features, use these login credentials:
 
-email: admin@email.com
+email: admin@email.com <br />
 password: adminpass
 
 ## Technologies used
@@ -83,4 +83,19 @@ I knew that having complex interlinked models in a solo project would be easily 
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
 
-## BACKEND SETUP (day 2 & 3)
+## BACKEND
+### Setup (day 2 & 3)
+
+## FRONTEND
+### Authentication (day 3)
+
+### Register & Login (day 3)
+
+### Navbar & Homepage (day 4)
+- sliders
+- links in navbar
+
+### Plant index (day 4)
+- all 
+
+### 
