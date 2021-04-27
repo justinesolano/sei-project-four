@@ -59,7 +59,7 @@ Clone or download sei-project-four repo then run these in Terminal:
 * `yarn start` to start front-end server
 
 # PROCESS
-## PLANNING
+## PLANNING (day 1)
 ## Concept
 From the start of the course, I had planned on doing a plant-centric app/website so I immediately knew that that was what I would do for my final project. I decided to do the project solo because I wanted to prove to myself that I could do a more complex website and understand the combination of concepts better through independent struggling and problem-solving. At the beginning of the planning stage, I made sure to establish first the "story" of the app and the way components linked/interacted with each other. I used Miro to create the steps representing the user journey and Photoshop to create a wireframe and ERD.
 
@@ -72,3 +72,7 @@ From the start of the course, I had planned on doing a plant-centric app/website
 ### Wireframes
 ![GreenHouse Wireframe](client/src/assets/wireframes.jpg)
 
+### Trello Organisation
+![GreenHouse Trello](client/src/assets/trello.jpg)
+
+## BACKEND SETUP
