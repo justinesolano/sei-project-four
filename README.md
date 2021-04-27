@@ -18,8 +18,8 @@ To explore all features, use these login credentials:
 email: admin@email.com
 password: adminpass
 
-# Technologies used
-## Frontend:
+## Technologies used
+### Frontend:
 - React
 - Axios
 - Semantic UI React
@@ -27,13 +27,13 @@ password: adminpass
 - SCSS
 - HTTP-proxy-middleware
 - React Router DOM
-## Backend:
+### Backend:
 - Python
 - Django
 - Django REST Framework
 - Psycopg2
 - PyJWT
-## Development tools:
+### Development tools:
 - VSCode
 - Insomnia
 - Yarn
