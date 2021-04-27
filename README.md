@@ -20,13 +20,13 @@ password: adminpass
 
 # Technologies used
 ## Frontend:
-* React
-* Axios
-* Semantic UI React
-* Semantic UI
-* SCSS
-* HTTP-proxy-middleware
-* React Router DOM
+  * React
+  * Axios
+  * Semantic UI React
+  * Semantic UI
+  * SCSS
+  * HTTP-proxy-middleware
+  * React Router DOM
 ## Backend:
 * Python
 * Django
