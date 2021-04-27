@@ -20,28 +20,28 @@ password: adminpass
 
 # Technologies used
 ## Frontend:
-  * React
-  * Axios
-  * Semantic UI React
-  * Semantic UI
-  * SCSS
-  * HTTP-proxy-middleware
-  * React Router DOM
+- React
+- Axios
+- Semantic UI React
+- Semantic UI
+- SCSS
+- HTTP-proxy-middleware
+- React Router DOM
 ## Backend:
-* Python
-* Django
-* Django REST Framework
-* Psycopg2
-* PyJWT
+- Python
+- Django
+- Django REST Framework
+- Psycopg2
+- PyJWT
 ## Development tools:
-* VSCode
-* Insomnia
-* Yarn
-* Git & GitHub
-* Google Chrome development tools
-* Trello Board (planning)
-* Adobe Photoshop 2021 (project assets and wireframes)
-* Heroku (deployment)
+- VSCode
+- Insomnia
+- Yarn
+- Git & GitHub
+- Google Chrome development tools
+- Trello Board (planning)
+- Adobe Photoshop 2021 (project assets and wireframes)
+- Heroku (deployment)
 
 ## Installation
 Clone or download sei-project-four repo then run these in Terminal:
