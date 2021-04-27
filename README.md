@@ -72,6 +72,3 @@ From the start of the course, I had planned on doing a plant-centric app/website
 ### Wireframes
 ![GreenHouse Wireframe](client/src/assets/wireframes.jpg)
 
-
-
-
