@@ -18,7 +18,8 @@ GreenHouse allows users to browse for different types of plants to use for inter
 # GreenHouse
 ![GreenHouse Home Page](client/src/assets/projectfour.jpg)
 
-# Deployed app:
+### Deployed version:
+"link"
 To explore all features, use these login credentials:
 
 email: admin@email.com <br />
@@ -83,19 +84,29 @@ I knew that having complex interlinked models in a solo project would be easily 
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
 
-## BACKEND
-### Setup (day 2 & 3)
+## BACKEND (day 2 & 3)
+### Setup
 
-## FRONTEND
-### Authentication (day 3)
+## FRONTEND (day 3, 4, 5, 6 & 7)
+### Authentication
 
-### Register & Login (day 3)
+### Register & Login
 
-### Navbar & Homepage (day 4)
+### Navbar & Homepage
 - sliders
 - links in navbar
 
-### Plant index (day 4)
+### Plant index and plant show
 - all 
 
-### 
+### User profile, user posts and make a post
+
+### Styling with Semantic UI and Semantic UI React
+
+### Final project walkthrough
+
+## Wins, major hurdles and unsolved problems
+
+## Key lessons
+
+## Extra features/improvements
