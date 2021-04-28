@@ -19,7 +19,8 @@ GreenHouse allows users to browse for different types of plants to use for inter
 ![GreenHouse Home Page](client/src/assets/projectfour.jpg)
 
 ### Deployed version:
-"link" <br />
+https://greenhouse-app.herokuapp.com/
+
 To explore all features, use these login credentials:
 
 email: admin@email.com <br />
