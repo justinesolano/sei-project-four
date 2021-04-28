@@ -1,4 +1,16 @@
 # General Assembly Project 4: GreenHouse
+![GreenHouse Logo](client/src/assets/titlelogo.png)
+
+# Table of Contents
+* Project Brief
+* Project Description
+* Technologies & Installation
+* Process - Planning
+* Process - Backend
+* Process - Frontend
+* Final Walkthrough
+* Wins & bugs
+* Extra Features
 
 ## Project Brief:
 * **Build a full-stack application** by making your own backend and your own front-end
@@ -87,7 +99,34 @@ I knew that having complex interlinked models in a solo project would be easily 
 
 ## BACKEND (day 2 & 3)
 ### Setup
-Creating a back-end using Python was more volatile than expected. TO create a PostgreSQL database, I used a Django REST Framework 
+To create a PostgreSQL database, I used a Django REST Framework. The backend has 5 models: categories, comments, users, plants and user posts. Creating a back-end using Python was, although intricate, more straightforward than expected. With the help of TablePlus and Insomnia, it made the process more organized and comprehensible.
+
+The Plant Model was the main model:
+``` python
+class Plant(models.Model):
+    plantname = models.CharField(max_length=50)
+    scientificname = models.CharField(max_length=50)
+    description = models.CharField(max_length=400)
+    careinstructions = models.CharField(max_length=1500)
+    family = models.CharField(max_length=50)
+    size = models.CharField(max_length=50)
+    maintenancelevel = models.CharField(max_length=50)
+    bestsuited = models.CharField(max_length=50)
+    image = models.CharField(max_length=1000)
+    decorativebonus = models.PositiveIntegerField()
+    averageprice = models.PositiveIntegerField()
+    categories = models.ManyToManyField('categories.Categories', related_name="plants")
+    owner = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='created_plants',
+        on_delete = models.CASCADE
+    )
+
+    def __str__(self):
+        return f"{self.plantname} - {self.scientificname}"
+```
+
+
 
 ## FRONTEND (day 3, 4, 5, 6 & 7)
 ### Authentication
