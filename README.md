@@ -5,9 +5,10 @@
 * Project Brief
 * Project Description
 * Technologies & Installation
-* Process - Planning
-* Process - Backend
-* Process - Frontend
+* Process
+    - Planning
+    - Backend
+    - Frontend
 * Final Walkthrough
 * Wins & bugs
 * Extra Features
@@ -33,10 +34,10 @@ GreenHouse allows users to browse for different types of plants to use for inter
 ### Deployed version:
 https://greenhouse-app.herokuapp.com/
 
-To explore the apps, use these login credentials:
+To explore the app, use these login credentials:
 
-email: admin@email.com <br />
-password: adminpass
+<b>email</b>: admin@email.com <br />
+<b>password</b>: adminpass
 
 ## Technologies used
 ### Frontend:
@@ -59,8 +60,9 @@ password: adminpass
 - Yarn
 - Git & GitHub
 - Google Chrome development tools
+- Miro (storyboard)
 - Trello Board (planning)
-- Adobe Photoshop 2021 (project assets and wireframes)
+- Adobe Photoshop 2021 (logo and wireframes)
 - Heroku (deployment)
 
 ## Installation
@@ -126,7 +128,88 @@ class Plant(models.Model):
         return f"{self.plantname} - {self.scientificname}"
 ```
 
+The field `careinstructions` was added after I had connected the backend to the frontend. Most of the fields were filled in using information from https://www.patchplants.com/gb/en/. Each plant image used was from this website.
 
+The plants app views.py has 4 different requests:
+``` python
+class PlantListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)  
+    
+    # ALL PLANTS
+    def get(self, _request):
+        plants = Plant.objects.all() # return everything from the db
+        serialized_plants = PopulatedPlantSerializer(plants, many=True) # convert the data
+        return Response(serialized_plants.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        request.data["owner"] = request.user.id
+        plant_to_add = PlantSerializer(data=request.data)
+        if plant_to_add.is_valid():
+            plant_to_add.save()
+            return Response(plant_to_add.data, status=status.HTTP_201_CREATED)
+        return Response(plant_to_add.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+
+class PlantDetailView(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)  
+
+    def get_plant(self, pk):
+        try:
+            return Plant.objects.get(pk=pk)
+        except Plant.DoesNotExist:
+            raise NotFound(detail="🌱 Cannot find that plant")
+
+    # ONE PLANT
+    def get(self, _request, pk):
+        plant = self.get_plant(pk=pk)
+        serialized_plant = PopulatedPlantSerializer(plant)
+        return Response(serialized_plant.data, status=status.HTTP_200_OK)
+
+    def delete(self, _request, pk):
+        plant_to_delete = self.get_plant(pk=pk)
+        plant_to_delete.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def put(self, request, pk):
+        plant_to_edit = self.get_plant(pk=pk)
+        updated_plant = PlantSerializer(plant_to_edit, data=request.data)
+        if updated_plant.is_valid():
+            updated_plant.save()
+            return Response(updated_plant.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_plant.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+```
+These requests are only available to the admin user and not any user that registers with the website, authenticated or not. Only the posts app POST request and comments app POST request concerns the authenticated user:
+
+** posts app views.py **
+```python
+class PostListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def post(self, request):
+        request.data["owner"] = request.user.id 
+        post_to_create = PostSerializer(data=request.data) 
+        if post_to_create.is_valid():
+            post_to_create.save()
+            return Response(post_to_create.data, status=status.HTTP_201_CREATED)
+        return Response(post_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+```
+
+** comments app views.py **
+``` python
+class CommentListView(APIView):
+
+    permissions_classes = (IsAuthenticated,)
+
+# if comment is valid, save it and return 201 and if not, return error and 422
+    def post(self, request):
+        request.data["owner"] = request.user.id
+        comment_to_create = CommentSerializer(data=request.data)
+        if comment_to_create.is_valid():
+            comment_to_create.save()
+            return Response(comment_to_create.data, status=status.HTTP_201_CREATED)
+        return Response(comment_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+```
 
 ## FRONTEND (day 3, 4, 5, 6 & 7)
 ### Authentication
