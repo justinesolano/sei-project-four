@@ -18,10 +18,10 @@ GreenHouse allows users to browse for different types of plants to use for inter
 # GreenHouse
 ![GreenHouse Home Page](client/src/assets/projectfour.jpg)
 
-## Deployed version:
+### Deployed version:
 https://greenhouse-app.herokuapp.com/
 
-To explore all features, use these login credentials:
+To explore the apps, use these login credentials:
 
 email: admin@email.com <br />
 password: adminpass
@@ -87,6 +87,7 @@ I knew that having complex interlinked models in a solo project would be easily 
 
 ## BACKEND (day 2 & 3)
 ### Setup
+Creating a back-end using Python was more volatile than expected. TO create a PostgreSQL database, I used a Django REST Framework 
 
 ## FRONTEND (day 3, 4, 5, 6 & 7)
 ### Authentication

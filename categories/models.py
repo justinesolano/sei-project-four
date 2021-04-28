@@ -5,4 +5,4 @@ class Categories(models.Model):
     image = models.CharField(max_length=1000)
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.name} - {self.image}"
