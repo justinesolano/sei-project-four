@@ -101,9 +101,18 @@ I knew that having complex interlinked models in a solo project would be easily 
 
 ## BACKEND (day 2 & 3)
 ### Setup
-To create a PostgreSQL database, I used a Django REST Framework. The backend has 5 models: categories, comments, users, plants and user posts. Creating a back-end using Python was, although intricate, more straightforward than expected. With the help of TablePlus and Insomnia, it made the process more organized and comprehensible.
+To create a PostgreSQL database, I used a Django REST Framework. The backend has 5 models: categories, comments, users, plants and user posts.
 
-The Plant Model was the main model:
+The jwt_auth app was created first to ensure that the user model was established <i>before</i> I needed to create a superuser to access the database.
+``` python
+class User(AbstractUser):
+    email = models.CharField(max_length=50, unique=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    profile_image = models.CharField(max_length=1000)
+```
+
+The Plant Model was the main model for the database:
 ``` python
 class Plant(models.Model):
     plantname = models.CharField(max_length=50)
@@ -181,7 +190,7 @@ class PlantDetailView(APIView):
 ```
 These requests are only available to the admin user and not any user that registers with the website, authenticated or not. Only the posts app POST request and comments app POST request concerns the authenticated user:
 
-** posts app views.py **
+<b> posts app views.py </b>
 ```python
 class PostListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
@@ -195,7 +204,7 @@ class PostListView(APIView):
         return Response(post_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 ```
 
-** comments app views.py **
+<b> comments app views.py </b>
 ``` python
 class CommentListView(APIView):
 
@@ -210,6 +219,11 @@ class CommentListView(APIView):
             return Response(comment_to_create.data, status=status.HTTP_201_CREATED)
         return Response(comment_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 ```
+
+Each app's model was tested in Insomnia and TablePlus before moving onto creating the next app. This ensured that I caught any errors for each model without letting them accumulate. I also tested the post and delete requests in the browser using 'localhost:8000/admin/'. This is where I added most of the plants to the database.
+
+Creating a back-end using Python was, although intricate, more straightforward than expected. I found Django to be a reliable database management system. Establishing relationships between 
+
 
 ## FRONTEND (day 3, 4, 5, 6 & 7)
 ### Authentication
