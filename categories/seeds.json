@@ -3,35 +3,40 @@
   "model": "categories.categories",
   "pk": 1,
   "fields": {
-    "name": "Flower"
+    "name": "Flower",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1508426178/products/anthurium-275.jpg"
   }
 },
 {
   "model": "categories.categories",
   "pk": 2,
   "fields": {
-    "name": "No Flower"
+    "name": "No Flower",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1535551624/products/rubber-plant-a8875c.jpg"
   }
 },
 {
   "model": "categories.categories",
   "pk": 3,
   "fields": {
-    "name": "Easy Care"
+    "name": "Easy Care",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1578052065/pk98gfouoobsjwvvr1ou.jpg"
   }
 },
 {
   "model": "categories.categories",
   "pk": 4,
   "fields": {
-    "name": "Almost unkillable"
+    "name": "Almost unkillable",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1519842763/products/zamioculcas-raven-f5ca64.jpg"
   }
 },
 {
   "model": "categories.categories",
   "pk": 5,
   "fields": {
-    "name": "High maintenance"
+    "name": "High maintenance",
+    "image": "https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1594296523/dpnkx4fdp3yzijlbdtrr.jpg"
   }
 }
 ]
