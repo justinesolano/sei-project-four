@@ -112,6 +112,34 @@ class User(AbstractUser):
     profile_image = models.CharField(max_length=1000)
 ```
 
+However, this threw an unexpected error. I successfully created the model but it would not let me create a superuser. This was a bigger obstacle than I expected. It took a few hours to get through and most of day 2 was spent trying to correct it. In the end, my solution was to delete the jwt_auth app, create the other models first and to create a superuser before. Because this would throw an error due to an already existing user conflicting with a new user model, there were extra steps that needed to be taken before I could successfully install the model. I deleted all the seeds files for each app, ran `python manage.py dumpdata app-name --output app-name/seeds.json --indent=2` in the terminal, dropped the database using `dropdb greenhouse`, deleted all migration files for all apps, re-created the database running `createdb greenhouse`, made my migrations then reseeded all apps by running `python manage.py loaddata plants/seeds.json` for each.
+
+The next error was also unexpected but easier to resolve. I input a function into the jwt_auth admin.py file to inform django to use our new user model:
+```python
+User = get_user_model()
+
+admin.site.register(User)
+```
+
+I tried to create a new user but this threw an error due to a user already being registered prior to the user model's creation. My solution was to add an unregister function,
+
+```python
+User = get_user_model()
+
+admin.site.unregister(User)
+
+admin.site.register(User)
+```
+
+to prevent triggering the error. I managed to create another user after. I deleted the unregister code afterwards which re-triggered the error. It wasn't until I deleted the first superuser that I could note out the unregister code.
+```python
+
+User = get_user_model()
+
+# admin.site.unregister(User) # had to drop db and still somehow has User registered on app 'jwt_auth', already registered error triggers so need to unregister first then register
+admin.site.register(User)
+```
+
 The Plant Model was the main model for the database:
 ``` python
 class Plant(models.Model):
@@ -222,7 +250,7 @@ class CommentListView(APIView):
 
 Each app's model was tested in Insomnia and TablePlus before moving onto creating the next app. This ensured that I caught any errors for each model without letting them accumulate. I also tested the post and delete requests in the browser using 'localhost:8000/admin/'. This is where I added most of the plants to the database.
 
-Creating a back-end using Python was, although intricate, more straightforward than expected. I found Django to be a reliable database management system. Establishing relationships between 
+Creating a back-end using Python was simultaneously hectic and straightforward. Establishing relationships between the apps and understanding the necessities of the models and serializers were easy. It was the errors that were really difficult to get through. However, this really helped improve my problem solving, especially as this was my first time using Python/Django and had no prior experience debugging with this language. I found Django to be a reliable database management system. Establishing relationships between 
 
 
 ## FRONTEND (day 3, 4, 5, 6 & 7)
