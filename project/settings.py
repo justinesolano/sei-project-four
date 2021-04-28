@@ -151,7 +151,7 @@ ROOT_URLCONF = 'project.urls' #check if you have this already, if not add it in
 STATIC_URL = '/static/' # same with this
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'frontend', "build", "static"),
+    os.path.join(BASE_DIR, 'client', "build", "static"),
 )
 
 django_on_heroku.settings(locals())
