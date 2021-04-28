@@ -1,6 +1,6 @@
 # General Assembly Project 4: GreenHouse
 ![GreenHouse Logo](client/src/assets/titlelogo.png)
-
+----
 # Table of Contents
 * Project Brief
 * Project Description
