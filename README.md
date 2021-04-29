@@ -278,7 +278,7 @@ class Plant(models.Model):
     averageprice = models.PositiveIntegerField()
 ```
 It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the components and functions that I wanted to work on and have for my MVP. These were:
-<br /> The sliders in the homepage using the Slider from 'react-slick' which is a carousel component:
+  <br /> The sliders in the homepage using the Slider from 'react-slick' which is a carousel component:
 ``` javascript
   const config = {
     // dots: true,
@@ -294,7 +294,7 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
     autoplaySpeed: 3000,
   }
 ``` 
-making a post page and the user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
+  making a post page and the user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
 ``` javascript
             <h2 className="recent-activity">Recent activity</h2>
             { profile.posts.length > 5 ?
