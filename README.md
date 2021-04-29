@@ -278,7 +278,7 @@ class Plant(models.Model):
     averageprice = models.PositiveIntegerField()
 ```
 It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the components and functions that I wanted to work on and have for my MVP and these were:
-The sliders in the homepage using the Slider from 'react-slick'
+<br /> The sliders in the homepage using the Slider from 'react-slick'
 ``` javascript
   const config = {
     // dots: true,
@@ -294,8 +294,13 @@ The sliders in the homepage using the Slider from 'react-slick'
     autoplaySpeed: 3000,
   }
 ```
+making a post page:
+```
 
- making a post page, and the user profile showcasing each user's posts. 
+```
+
+
+and the user profile showcasing each user's posts. 
 
 When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward.
 
