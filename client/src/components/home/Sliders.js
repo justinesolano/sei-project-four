@@ -24,7 +24,7 @@ const Sliders = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     centerMode: true,
     centerPadding: '80px',
     focusOnSelect: true,

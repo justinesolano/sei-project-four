@@ -295,7 +295,7 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
     autoplaySpeed: 3000,
   }
 ``` 
-  - the user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
+  - The user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
 ``` javascript
             <h2 className="recent-activity">Recent activity</h2>
             { profile.posts.length > 5 ?
@@ -318,7 +318,7 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
               </>
             }
 ```
-  - and making a post page/image upload where I used Cloudinary to allow users to upload and preview their images before submission:
+  - Making a post page/image upload where I used Cloudinary to allow users to upload and preview their images before submission:
 ```javascript
 const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
 const uploadPreset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
