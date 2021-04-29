@@ -277,8 +277,8 @@ class Plant(models.Model):
     decorativebonus = models.PositiveIntegerField()
     averageprice = models.PositiveIntegerField()
 ```
-It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the components and functions that I wanted to work on and have for my MVP and these were:
-<br /> The sliders in the homepage using the Slider from 'react-slick'
+It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the components and functions that I wanted to work on and have for my MVP. These were:
+<br /> The sliders in the homepage using the Slider from 'react-slick' which is a carousel component:
 ``` javascript
   const config = {
     // dots: true,
@@ -293,14 +293,30 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
     autoplay: true,
     autoplaySpeed: 3000,
   }
+``` 
+making a post page and the user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
+``` javascript
+            <h2 className="recent-activity">Recent activity</h2>
+            { profile.posts.length > 5 ?
+              <div className="profile-slider">
+                <Slider {...config}>
+                  {profile.posts.map(post => (
+                    <SlideShow key={post.id} {...post} />
+                  ))}
+                </Slider>
+              </div>
+              :
+              <>
+                <div className="profile-posts">
+                  {profile.posts.map(post => (
+                    <div className="less-than-five" key={post.id}>
+                      <img src={post.image} className="profile-activity"></img>
+                    </div>
+                  ))}
+                </div>
+              </>
+            }
 ```
-making a post page:
-```
-
-```
-
-
-and the user profile showcasing each user's posts. 
 
 When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward.
 
