@@ -15,6 +15,7 @@ function CategoryIndex() {
       try {
         const response = await axios.get('/api/categories/')
         setCategory(response.data)
+        console.log('RESPONSE', response)
       } catch (err) {
         console.log(err)
       }
@@ -46,12 +47,12 @@ function CategoryIndex() {
         <div className="slider-container">
           <div>
             <Slider {...config}>
-              {category.map(item => (
-                <Link to={'/allplants'} key={item.id}>
+              {category.map(catg => (
+                <Link to={'/allplants'} key={catg.id}>
                   <div className="each-slide">
                     <div>
                       <span> 
-                        <img src={item.image} className="slide-image"/>
+                        <img src={catg.image} className="slide-image"/>
                       </span>
                     </div>
                   </div>

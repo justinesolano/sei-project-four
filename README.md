@@ -63,6 +63,7 @@ To explore the app, use these login credentials:
 - Miro (storyboard)
 - Trello Board (planning)
 - Adobe Photoshop 2021 (logo and wireframes)
+- Cloudinary
 - Heroku (deployment)
 
 ## Installation
@@ -218,7 +219,7 @@ class PlantDetailView(APIView):
             return Response(updated_plant.data, status=status.HTTP_202_ACCEPTED)
         return Response(updated_plant.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 ```
-These requests are only available to the admin user and not any user that registers with the website, authenticated or not. Only the posts app POST request and comments app POST request concerns the authenticated user:
+These requests are only available to the admin user and not any user that registers with the website, authenticated or not. Besides login and register, only the posts app POST request and comments app POST request concerns the authenticated user:
 
 <b> posts app views.py </b>
 ```python
@@ -277,8 +278,8 @@ class Plant(models.Model):
     decorativebonus = models.PositiveIntegerField()
     averageprice = models.PositiveIntegerField()
 ```
-It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the components and functions that I wanted to work on and have for my MVP. These were:
-  <br /> The sliders in the homepage using the Slider from 'react-slick' which is a carousel component:
+It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the other components and functions that I wanted to finish for my MVP. These were:
+  - The sliders in the homepage using the Slider from 'react-slick' which is a carousel component:
 ``` javascript
   const config = {
     // dots: true,
@@ -294,7 +295,7 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
     autoplaySpeed: 3000,
   }
 ``` 
-  making a post page and the user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
+  - the user profile showcasing each user's posts. A slider also appears on the user profile to display the posts, but only if the user's number of posts are greater than 5:
 ``` javascript
             <h2 className="recent-activity">Recent activity</h2>
             { profile.posts.length > 5 ?
@@ -317,10 +318,80 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
               </>
             }
 ```
+  - and making a post page/image upload where I used Cloudinary to allow users to upload and preview their images before submission:
+```javascript
+const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
+const uploadPreset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
 
-When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward.
+export const ImageUploadField = ({ handleImageUrl, value }) => {
 
-It was during day 5 when I got into a comfortable pace building out the project and actually understanding the way React and Django were interacting. Although the beginning of the project was 
+  const handleUpload = async event => {
+    const data = new FormData()
+    data.append('file', event.target.files[0])
+    data.append('upload_preset', uploadPreset)
+    const response = await axios.post(uploadUrl, data)
+    handleImageUrl(response.data.url)
+  }
+```
+
+When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward. Howeverk, because the jwt_auth populated.py file in the serializers folder was populating the user's posts,
+```python
+class PopulatedUserSerializer(UserSerializer):
+    posts = PostSerializer(many=True)
+```
+
+ this presented a problem because this meant that when registering, new users would need to make a post right away as it was a requirement. My solution was simply to add the `blank=True` code so those fields would not be required and `null=True` so that the database column for this field can allow `NULL` values.
+ ```python
+class Post(models.Model):
+    
+    title = models.CharField(max_length=50, null=True, blank=True)
+    image = models.CharField(max_length=1000, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    tags = models.CharField(max_length=1000, null=True, blank=True)
+    # categories = models.ManyToManyField('categories.Categories', related_name="posts")
+    owner = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='posts',
+        on_delete = models.CASCADE
+    )
+``` 
+While the 'posts' field could be an empty array, the field 'post' itself needed to be included in the register form.
+``` javascript
+  const [form, setForm] = useState({
+    username: '',
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+    profile_image: '',
+    posts: [],
+  })
+``` 
+However, I did not want this to appear in the register form so although I had to include it in the JSX, below the `ImageUploadField` of the Register component,
+``` javascript
+              <div className="post-field">
+                <label>
+                  <i className="ui upload icon"> </i>
+            Posts
+                </label>
+                <input
+                  name="posts"
+                  value={form.posts}
+                  onChange={handleChange} 
+                  handleImageUrl={handleImageUrl} 
+                />
+              </div>
+``` 
+
+I made it invisible using the CSS:
+``` CSS
+.post-field{
+  display:none;
+}
+``` 
+
+It was during day 4/5 when I got into a more comfortable pace building out the project and actually understanding the way React and Django were interacting. Although the beginning of the project was chaotic, the halfway point became less stressful. I began to enjoy the process more and actually feel excited about the final product.
 
 One specific function that I really wanted to have was for the user to be able to search and filter the plants based on categories. I assumed this would be easy to implement into the search field through the handleChange function:
 ```javascript
