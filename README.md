@@ -121,7 +121,7 @@ User = get_user_model()
 admin.site.register(User)
 ```
 
-I tried to create a new user but this threw an error due to a user already being registered prior to the user model's creation. My solution was to add an unregister function,
+I tried to create a new user but this threw an error due to a user already being registered prior to the user model's creation. My solution was to add an unregister function to prevent triggering the error.
 
 ```python
 User = get_user_model()
@@ -131,7 +131,7 @@ admin.site.unregister(User)
 admin.site.register(User)
 ```
 
-to prevent triggering the error. I managed to create another user after. I deleted the unregister code afterwards which re-triggered the error. It wasn't until I deleted the first superuser that I could note out the unregister code.
+I managed to create another user after. I deleted the unregister code afterwards which re-triggered the error. It wasn't until I deleted the first superuser that I could note out the unregister code.
 ```python
 
 User = get_user_model()
@@ -139,21 +139,23 @@ User = get_user_model()
 # admin.site.unregister(User) # had to drop db and still somehow has User registered on app 'jwt_auth', already registered error triggers so need to unregister first then register
 admin.site.register(User)
 ```
+This was the problem that made the backend setup longer than I inteneded. However, the rest of the app setup afterwards was more straightforward.
+
 
 The Plant Model was the main model for the database:
 ``` python
 class Plant(models.Model):
-    plantname = models.CharField(max_length=50)
-    scientificname = models.CharField(max_length=50)
+    plant_name = models.CharField(max_length=50)
+    scientific_name = models.CharField(max_length=50)
     description = models.CharField(max_length=400)
-    careinstructions = models.CharField(max_length=1500)
+    care_instructions = models.CharField(max_length=1500)
     family = models.CharField(max_length=50)
     size = models.CharField(max_length=50)
-    maintenancelevel = models.CharField(max_length=50)
-    bestsuited = models.CharField(max_length=50)
+    maintenance_level = models.CharField(max_length=50)
+    best_suited = models.CharField(max_length=50)
     image = models.CharField(max_length=1000)
-    decorativebonus = models.PositiveIntegerField()
-    averageprice = models.PositiveIntegerField()
+    decorative_bonus = models.PositiveIntegerField()
+    average_price = models.PositiveIntegerField()
     categories = models.ManyToManyField('categories.Categories', related_name="plants")
     owner = models.ForeignKey(
         'jwt_auth.User',
@@ -248,17 +250,101 @@ class CommentListView(APIView):
         return Response(comment_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 ```
 
-Each app's model was tested in Insomnia and TablePlus before moving onto creating the next app. This ensured that I caught any errors for each model without letting them accumulate. I also tested the post and delete requests in the browser using 'localhost:8000/admin/'. This is where I added most of the plants to the database.
+Each app's model was tested in Insomnia and TablePlus before moving onto creating the next app. This ensured that I caught any errors for each model without letting them accumulate.
 
-Creating a back-end using Python was simultaneously hectic and straightforward. Establishing relationships between the apps and understanding the necessities of the models and serializers were easy. It was the errors that were really difficult to get through. However, this really helped improve my problem solving, especially as this was my first time using Python/Django and had no prior experience debugging with this language. I found Django to be a reliable database management system. Establishing relationships between 
+The morning of day 3 was used to ensure that the backend was up and running smoothly. At this point, all requests were working, the models were how I had planned them to be in the ERD, and the relationships between them were established.
+
+Creating a back-end using Python was simultaneously hectic and straightforward. Establishing relationships between the apps and understanding the necessities of the models and serializers were easy. It was the errors that were really difficult to get through. However, this really helped improve my problem solving especially as this was my first time using Python/Django and had no prior experience debugging with this language.
+
+<!-- I found Django to be a reliable database management system.  -->
 
 
 ## FRONTEND (day 3, 4, 5, 6 & 7)
+The latter part of day 3 was used to set up the front end. Starting the setup was also as hectic as the backend. When installing postgres/django, node became unlinked. This was fixed using a series of Terminal commands to uninstall and re-install node through Homebrew.
+
+The rest of the frontend steadily became easier to work on. I created the basic components first: Navbar, Home, Register, Login, PlantShow and PlantIndex. There was a notable error with using the backend model field names in the frontend. Due to using snake case for the backend, the frontend would not accept the field names if they weren't in camel case. Solutions I researched such as tweaking the linter files to ignore this did not work. Thus, I had to return to the backend and change the field names from snake case to camel case and remigrate the changes.
+```python
+class Plant(models.Model):
+    plantname = models.CharField(max_length=50)
+    scientificname = models.CharField(max_length=50)
+    description = models.CharField(max_length=400)
+    careinstructions = models.CharField(max_length=1500)
+    family = models.CharField(max_length=50)
+    size = models.CharField(max_length=50)
+    maintenancelevel = models.CharField(max_length=50)
+    bestsuited = models.CharField(max_length=50)
+    image = models.CharField(max_length=1000)
+    decorativebonus = models.PositiveIntegerField()
+    averageprice = models.PositiveIntegerField()
+```
+It wasn't the most desirable solution but I needed to move onto the rest of the components. It was here I realised that I had overestimated the time I had for finishing the rest of the project, specifically time for the more complex functions and styling. The UI design I created in the wireframes would take slightly longer to implement than I expected. I made a list prioritising the components and functions that I wanted to work on and have for my MVP and these were:
+The sliders in the homepage using the Slider from 'react-slick'
+``` javascript
+  const config = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    centerMode: true,
+    centerPadding: '80px',
+    focusOnSelect: true,
+    dragable: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  }
+```
+
+ making a post page, and the user profile showcasing each user's posts. 
+
+When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward.
+
+It was during day 5 when I got into a comfortable pace building out the project and actually understanding the way React and Django were interacting. Although the beginning of the project was 
+
+One specific function that I really wanted to have was for the user to be able to search and filter the plants based on categories. I assumed this would be easy to implement into the search field through the handleChange function:
+```javascript
+  const handleChange = (event) => {
+    try {
+      const filteredArray = plants.filter(plant => {
+        return (plant.plantname.toUpperCase().includes(event.target.value.toUpperCase())) || (plant.maintenancelevel.toUpperCase().includes(event.target.value.toUpperCase())) || (plant.scientificname.toUpperCase().includes(event.target.value.toUpperCase()))
+      })
+      setFilteredPlants(filteredArray)
+      if (filteredArray.length === 0) {
+        setErrors('error')
+      } 
+      if (filteredArray.length > 0) {
+        setErrors('')
+      }
+    } catch (err){
+      console.log(err)
+    }
+
+  }
+```
+
+Filtering by categories did not work. I had to find a cheat solution which was to use maintenancelevel as the replacement for the categories. This meant that the categories
+
+
+
+
+
+
+
+
+
+
+
+All the errors, big and small, encountered in the days prior helped me to better face and overcome the ones that came afterwards.
+
+
+### Navbar
+I started with the navigation bar as this was the most straightforward component. 
+
 ### Authentication
 
 ### Register & Login
 
-### Navbar & Homepage
+### Homepage
 - sliders
 - links in navbar
 
