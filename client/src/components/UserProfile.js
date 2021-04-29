@@ -23,11 +23,11 @@ const UserProfile = () => {
   }, [id])
 
   const config = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     centerMode: true,
     centerPadding: '80px',
     focusOnSelect: true,

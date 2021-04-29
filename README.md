@@ -28,9 +28,6 @@
 ## Description:
 GreenHouse allows users to browse for different types of plants to use for interior/exterior decorating. It also allows them to share their own pictures. These pictures appear on the Explore page, a compilation of all posts submitted.
 
-# GreenHouse
-![GreenHouse Home Page](client/src/assets/projectfour.jpg)
-
 ### Deployed version:
 https://greenhouse-app.herokuapp.com/
 
@@ -286,7 +283,7 @@ It wasn't the most desirable solution but I needed to move onto the rest of the 
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     centerMode: true,
     centerPadding: '80px',
     focusOnSelect: true,
@@ -334,13 +331,13 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
   }
 ```
 
-When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward. Howeverk, because the jwt_auth populated.py file in the serializers folder was populating the user's posts,
+When starting on the user profile and user posts, I realised I forgot to create a posts app on the backend for the users to be able to create new posts on the app. Setting this up was straightforward. However, because posts were being populated into the `PopulatedUserSerializer`,
 ```python
 class PopulatedUserSerializer(UserSerializer):
     posts = PostSerializer(many=True)
 ```
 
- this presented a problem because this meant that when registering, new users would need to make a post right away as it was a requirement. My solution was simply to add the `blank=True` code so those fields would not be required and `null=True` so that the database column for this field can allow `NULL` values.
+ This meant that when registering, new users would need to make a post right away as it was a requirement for the register POST request which presented a problem. My solution was simply to add the `blank=True` code so those fields would not be required and `null=True` so that the database column for the field can allow `NULL` values.
  ```python
 class Post(models.Model):
     
@@ -348,14 +345,9 @@ class Post(models.Model):
     image = models.CharField(max_length=1000, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     tags = models.CharField(max_length=1000, null=True, blank=True)
-    # categories = models.ManyToManyField('categories.Categories', related_name="posts")
-    owner = models.ForeignKey(
-        'jwt_auth.User',
-        related_name='posts',
-        on_delete = models.CASCADE
-    )
 ``` 
-While the 'posts' field could be an empty array, the field 'post' itself needed to be included in the register form.
+
+Furthermore, on the Register component, while the 'posts' field could be empty, the field 'post' itself needed to be included in the Register form.
 ``` javascript
   const [form, setForm] = useState({
     username: '',
@@ -368,7 +360,7 @@ While the 'posts' field could be an empty array, the field 'post' itself needed 
     posts: [],
   })
 ``` 
-However, I did not want this to appear in the register form so although I had to include it in the JSX, below the `ImageUploadField` of the Register component,
+However, I did not want this to appear in the form so although I had to include it in the JSX,
 ``` javascript
               <div className="post-field">
                 <label>
@@ -384,14 +376,14 @@ However, I did not want this to appear in the register form so although I had to
               </div>
 ``` 
 
-I made it invisible using the CSS:
+I made it invisible using the CSS which solved the issue.
 ``` CSS
 .post-field{
   display:none;
 }
 ``` 
 
-It was during day 4/5 when I got into a more comfortable pace building out the project and actually understanding the way React and Django were interacting. Although the beginning of the project was chaotic, the halfway point became less stressful. I began to enjoy the process more and actually feel excited about the final product.
+It was during days 4/5 when I got into a more comfortable pace building out the project and actually understanding the way React and Django were interacting. Although the beginning of the project was chaotic, the halfway point became less stressful. I began to enjoy the process more and actually feel excited about the final product.
 
 One specific function that I really wanted to have was for the user to be able to search and filter the plants based on categories. I assumed this would be easy to implement into the search field through the handleChange function:
 ```javascript
@@ -414,42 +406,38 @@ One specific function that I really wanted to have was for the user to be able t
   }
 ```
 
-Filtering by categories did not work. I had to find a cheat solution which was to use maintenancelevel as the replacement for the categories. This meant that the categories
+Filtering by categories did not work. I had to find a cheat solution which was to use maintenancelevel as the replacement for the categories. This meant that the categories app were not being put to use and was added to the list of bugs.
 
+### Styling
+I wanted to try something different for styling and use Semantic UI/Semantic UI React. This was the first project I've done using only these frameworks. I found it to be very straightforward and made the website look simple and clean as I intended. I implemented a nature theme throughout the app, using hi-res images from https://unsplash.com/ as backgrounds for the Register, Login, Home, and MakePost components. The fonts I used were modern, readable and adhered to the feel of the app.
 
+## Final project walkthrough
+Homepage:
+![GreenHouse Home Page](client/src/assets/projectfour.jpg)
 
+Register:
+![GreenHouse Trello](client/src/assets/register.jpg)
 
+Login:
+![GreenHouse Trello](client/src/assets/login.jpg)
 
+PlantIndex
+![GreenHouse Trello](client/src/assets/plantindex.jpg)
 
+PlantShow:
+![GreenHouse Trello](client/src/assets/plantshow.jpg)
 
+Explore:
+![GreenHouse Trello](client/src/assets/explore.jpg)
 
+MakePost:
+![GreenHouse Trello](client/src/assets/makepost.jpg)
 
-
-
-All the errors, big and small, encountered in the days prior helped me to better face and overcome the ones that came afterwards.
-
-
-### Navbar
-I started with the navigation bar as this was the most straightforward component. 
-
-### Authentication
-
-### Register & Login
-
-### Homepage
-- sliders
-- links in navbar
-
-### Plant index and plant show
-- all 
-
-### User profile, user posts and make a post
-
-### Styling with Semantic UI and Semantic UI React
-
-### Final project walkthrough
+UserProfile:
+![GreenHouse Trello](client/src/assets/userprofile.jpg)
 
 ## Wins, major hurdles and unsolved problems
+All the errors, big and small, encountered in the days prior helped me to better face and overcome the ones that came afterwards.
 
 ## Key lessons
 
