@@ -77,6 +77,7 @@ Clone or download sei-project-four repo then run these in Terminal:
 * `cd client` to go into the front-end directory
 * `yarn` to install front-end dependencies
 * `yarn start` to start front-end server
+* go to localhost:8000 in browser to see app
  
 # PROCESS
 ## PLANNING (day 1)
