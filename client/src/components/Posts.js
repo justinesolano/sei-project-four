@@ -29,7 +29,7 @@ const Posts = () => {
     centerMode: true,
     centerPadding: '80px',
     focusOnSelect: true,
-    dragable: true,
+    draggable: true,
     autoplay: true,
     autoplaySpeed: 3000,
   }

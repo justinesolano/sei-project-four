@@ -29,7 +29,7 @@ const Favourites = ({ plantname, newFavourites }) => {
     centerMode: true,
     centerPadding: '50px',
     focusOnSelect: true,
-    dragable: true,
+    draggable: true,
     autoplay: true,
     autoplaySpeed: 3000,
   }
