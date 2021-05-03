@@ -42,7 +42,7 @@ To explore the app, use these login credentials:
 - Axios
 - Semantic UI React
 - Semantic UI
-- SCSS
+- SASS
 - HTTP-proxy-middleware
 - React Router DOM
 ### Backend:
@@ -438,17 +438,17 @@ UserProfile:
 ![GreenHouse Trello](client/src/assets/userprofile.jpg)
  
 ## Wins, hurdles and unsolved problems
-Wins:
+### Wins:
 <br />All the errors, big and small, really helped push my problem-solving skills and helped me to better understand the code and the way it worked. This was especially valuable in this project because it was my first experience using Python and the set up was quite tumultuous at the beginning.
  
 Another unexpected win was working solo. I was very nervous doing this project on my own at first as I had not worked by myself since project one and doubted my coding skills often. However, it allowed me to be more decisive, have full creative control over the design, and feel more confident knowing that I had done everything on my own merit.
  
 By the end, I felt much more self-assured in my coding ability.
  
-Hurdles:
+### Hurdles:
 <br />Delving deeper into the complexities of the SQL database and Django was definitely a large curveball, especially with the time constraints. I spent more time figuring out the backend setup and getting it to work successfully than I had intended, leaving less time for the frontend which then left less time for styling. Although the design looked better than I expected, I only had less than 8 hours for styling when I would've liked at least a day or two to fully get the app looking more slick, especially the UserProfile component.
  
-Unsolved problems:
+### Unsolved problems:
 <br /> I would have liked to implement a categories search filter for the PlantShow page. I also did not have time to go over the error handling for the forms. Most of the deployed app was functional except for the categories image not showing up on the bottom slider of the homepage. Submitting a new post on the deployed app also has trouble with the POST request when the submit button is pressed but is working fine on the local server. The deployed app also changes the position of the comments on each plant page to be right-aligned instead of centered.
  
 ## Extra features/improvements
