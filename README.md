@@ -409,7 +409,7 @@ One specific function that I really wanted to have was for the user to be able t
  
 Filtering by categories did not work. I had to find a cheat solution which was to use maintenancelevel as the replacement for the categories. This meant that the categories app were not being put to use and was added to the list of bugs.
  
-### Styling
+### Styling (night 6 & day 7)
 I wanted to try something different for styling and use Semantic UI/Semantic UI React. This was the first project I've done using only these frameworks. I found it to be very straightforward and made the website look simple and clean as I intended. I implemented a nature theme throughout the app, using hi-res images from https://unsplash.com/ as backgrounds for the Register, Login, Home, and MakePost components. The fonts I used were modern, readable and adhered to the feel of the app.
  
 ## Final project walkthrough
