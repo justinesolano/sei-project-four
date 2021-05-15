@@ -6,7 +6,7 @@
 * [Project Description](#description)
 * [Technologies & Installation](#technologies-used)
 * [Process](#process)
-   - [Planning](#planning)
+   - [Planning](#planning-day-1)
    - [Backend](#backend)
    - [Frontend](#frontend)
 * [Final Walkthrough](#final-walkthrough)
