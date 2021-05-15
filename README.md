@@ -2,16 +2,16 @@
 ![GreenHouse Logo](client/src/assets/titlelogo.png)
 ----
 # Table of Contents
-* [Project Brief](#project-brief)
-* [Project Description](#description)
-* [Technologies & Installation](#technologies-used)
-* [Process](#process)
-   - [Planning](#planning-day-1)
-   - [Backend](#backend-section)
-   - [Frontend](#frontend-day-3-4-5-6-&-7)
-* [Final Walkthrough](#final-walkthrough)
-* [Wins & bugs](#wins-hurdles-and-unsolved-problems)
-* [Extra Features](#extra-features-improvements)
+* Project Brief
+* Project Description
+* Technologies & Installation
+* Process
+   - Planning
+   - Backend
+   - Frontend
+* Final Walkthrough
+* Wins & bugs
+* Extra Features
  
 ## Project Brief:
 * **Build a full-stack application** by making your own backend and your own front-end
@@ -98,7 +98,7 @@ I knew that having complex interlinked models in a solo project would be easily 
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
  
-## BACKEND (day 2 & 3) {#backend-section}
+## BACKEND (day 2 & 3)
 ### Setup
 To create a PostgreSQL database, I used a Django REST Framework. The backend has 5 models: categories, comments, users, plants and user posts.
  
