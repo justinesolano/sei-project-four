@@ -3,15 +3,15 @@
 ----
 # Table of Contents
 * [Project Brief](#project-brief)
-* Project Description
-* [Technologies & Installation] (#technologies-used)
-* Process
-   - Planning
-   - Backend
-   - Frontend
-* Final Walkthrough
-* Wins & bugs
-* Extra Features
+* [Project Description](#description)
+* [Technologies & Installation](#technologies-used)
+* [Process](#process)
+   - [Planning](#planning)
+   - [Backend](#backend)
+   - [Frontend](#frontend)
+* [Final Walkthrough](#final-walkthrough)
+* [Wins & bugs](#wins-hurdles-and-unsolved-problems)
+* [Extra Features](#extra-features-improvements)
  
 ## Project Brief:
 * **Build a full-stack application** by making your own backend and your own front-end
