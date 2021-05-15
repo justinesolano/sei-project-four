@@ -2,9 +2,9 @@
 ![GreenHouse Logo](client/src/assets/titlelogo.png)
 ----
 # Table of Contents
-* Project Brief
+* Project Brief (#Projecgt Brief)
 * Project Description
-* Technologies & Installation
+* Technologies & Installation (#Technologies Used)
 * Process
    - Planning
    - Backend
