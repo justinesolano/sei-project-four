@@ -7,7 +7,7 @@
 * [Technologies & Installation](#technologies-used)
 * [Process](#process)
    - [Planning](#planning-day-1)
-   - [Backend](#backend-day-2-3)
+   - [Backend](#backend-section)
    - [Frontend](#frontend-day-3-4-5-6-&-7)
 * [Final Walkthrough](#final-walkthrough)
 * [Wins & bugs](#wins-hurdles-and-unsolved-problems)
@@ -98,7 +98,7 @@ I knew that having complex interlinked models in a solo project would be easily 
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
  
-## BACKEND (day 2 & 3)
+## BACKEND (day 2 & 3) {#backend-section}
 ### Setup
 To create a PostgreSQL database, I used a Django REST Framework. The backend has 5 models: categories, comments, users, plants and user posts.
  
