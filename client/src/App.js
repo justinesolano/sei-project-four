@@ -13,7 +13,6 @@ import CommentEdit from './components/comments/CommentEdit'
 import MakePost from './components/MakePost'
 import Explore from './components/Explore'
 
-
 const App = () => {
 
   return (
