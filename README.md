@@ -93,7 +93,7 @@ From the start of the course, I had planned on doing a plant-centric app/website
 ### Wireframes
 ![GreenHouse Wireframe](client/src/assets/wireframes.jpg)
  
-I knew that having complex interlinked models in a solo project would be easily overwhelming so I used a Trello board to organise myself. I split the project into backend, frontend, webpages(components), extra functions and bugs, including a list for components that are finished and styled. This definitely helped me delegate tasks evenly each day and to see what I need to prioritise in order to reach the minimum viable product (MVP). Although working on my own, I made sure to stay on Zoom all day in case I needed to quickly reach out to instructors for help which I did twice throughout the project. I also made sure to use and check Slack regularly for help from my classmates or to see if they were having similar obstacles. It made things go smoother and less stressful.
+I knew that having complex interlinked models in a solo project would be easily overwhelming so I used a Trello board to organise myself. I split the project into backend, frontend, webpages (components), extra functions and bugs, including a list for components that are finished and styled. This definitely helped me delegate tasks evenly each day and to see what I need to prioritise in order to reach the minimum viable product (MVP). Although working on my own, I made sure to stay on Zoom all day in case I needed to quickly reach out to instructors for help which I did twice throughout the project. I also made sure to use and check Slack regularly for help from my classmates or to see if they were having similar obstacles. It made things go smoother and less stressful.
  
 ### Trello Organisation
 ![GreenHouse Trello](client/src/assets/trello.jpg)
@@ -407,7 +407,7 @@ One specific function that I really wanted to have was for the user to be able t
  }
 ```
  
-Filtering by categories did not work. I had to find a cheat solution which was to use maintenancelevel as the replacement for the categories. This meant that the categories app were not being put to use and was added to the list of bugs.
+Filtering by categories did not work. I had to find a cheat solution which was to use `maintenancelevel` as the replacement for the categories. This meant that the categories app were not being put to use and was added to the list of bugs.
  
 ### Styling (night 6 & day 7)
 I wanted to try something different for styling and use Semantic UI/Semantic UI React. This was the first project I've done using only these frameworks. I found it to be very straightforward and made the website look simple and clean as I intended. I implemented a nature theme throughout the app, using hi-res images from https://unsplash.com/ as backgrounds for the Register, Login, Home, and MakePost components. The fonts I used were modern, readable and adhered to the feel of the app.
@@ -452,7 +452,7 @@ Delving deeper into the complexities of the SQL database and Django was definite
 I would have liked to implement a categories search filter for the PlantShow page. I also did not have time to go over the error handling for the forms. Most of the deployed app was functional except for the categories image not showing up on the bottom slider of the homepage. Submitting a new post on the deployed app also has trouble with the POST request when the submit button is pressed but is working fine on the local server. The deployed app also changes the position of the comments on each plant page to be right-aligned instead of centered.
  
 ## Extra features/improvements
-- Users can favourite plants and have them show up on the favourites page.
+- Users can favourite plants and have them show up on the favourites page
 - Fully responsive design
 - Authenticated users can comment on other users' posts
 - Users can edit their profile picture
