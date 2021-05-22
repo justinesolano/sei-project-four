@@ -75,15 +75,15 @@ const Home = () => {
             <h4 className="home-description">Contact us!</h4>
             <div className="browse-buttons">
               <div className="social-media">
-                <a href="https://twitter.com/jsolano_dev">
+                <a href="https://twitter.com/jsolano_dev" target="__blank">
                   <FontAwesomeIcon icon={faTwitter} className="icons fa-3x"/>
                 </a>
-                <Link to="https://www.facebook.com/">
+                <a href="https://www.facebook.com/" target="__blank">
                   <FontAwesomeIcon icon={faFacebook} className="icons fa-3x"/>
-                </Link>
-                <Link to="https://www.instagram.com/">
+                </a>
+                <a href="https://www.instagram.com/" target="__blank">
                   <FontAwesomeIcon icon={faInstagram} className="icons fa-3x"/>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -99,15 +99,15 @@ const Home = () => {
             <h4 className="home-description-two">Contact us!</h4>
             <div className="browse-buttons">
               <div className="social-media">
-                <a href="https://twitter.com/">
+                <a href="https://twitter.com/jsolano_dev" target="__blank">
                   <FontAwesomeIcon icon={faTwitter} className="icons fa-3x"/>
                 </a>
-                <Link to="https://www.facebook.com/">
+                <a href="https://www.facebook.com/" target="__blank">
                   <FontAwesomeIcon icon={faFacebook} className="icons fa-3x"/>
-                </Link>
-                <Link to="https://www.instagram.com/">
+                </a>
+                <a href="https://www.instagram.com/" target="__blank">
                   <FontAwesomeIcon icon={faInstagram} className="icons fa-3x"/>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
